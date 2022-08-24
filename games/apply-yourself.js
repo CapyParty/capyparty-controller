@@ -1,396 +1,9 @@
 (self.webpackChunkjackbox_tv = self.webpackChunkjackbox_tv || []).push([
     ["games/apply-yourself"], {
-        56623: (e, t, s) => {
-            "use strict";
-            s.d(t, {
-                Z: () => d
-            });
-            var a = function() {
-                var e = this,
-                    t = e.$createElement,
-                    s = e._self._c || t;
-                return e.link ? s("a", {
-                    staticClass: "artifact-link",
-                    class: {
-                        "no-content": !e.hasProvidedContent
-                    },
-                    attrs: {
-                        target: "_blank",
-                        href: e.link,
-                        "aria-label": e.$t("POST_GAME.GALLERY_LINK")
-                    },
-                    on: {
-                        click: e.onLinkClick
-                    }
-                }, [e._t("default")], 2) : e._e()
-            };
-            a._withStripped = !0;
-            var r = s(2934),
-                n = s.n(r),
-                o = s(81127),
-                i = s(65853);
-            const c = n().extend({
-                props: {
-                    artifact: Object
-                },
-                i18n: {
-                    messages: i.s
-                },
-                computed: {
-                    link() {
-                        if (this.artifact) return `${this.artifact.rootId.includes("test")?"http":"https"}://${this.artifact.rootId.includes("test")?"games-test.jackbox.tv":"games.jackbox.tv"}/artifact/${this.artifact.categoryId}/${this.artifact.artifactId}/`
-                    },
-                    hasProvidedContent() {
-                        return void 0 !== this.$slots.default
-                    }
-                },
-                mounted() {
-                    this.$analytics.trackEvent({
-                        category: "PostGame",
-                        action: "galleryShown"
-                    })
-                },
-                methods: {
-                    onLinkClick() {
-                        this.$analytics.trackEvent({
-                            category: "PostGame",
-                            action: "galleryClicked"
-                        }), o.Q.setAsViewed(0)
-                    }
-                }
-            });
-            var l = (0, s(51900).Z)(c, a, [], !1, null, null, null);
-            l.options.__file = "src/apps/vue/components/GalleryLink.vue";
-            const d = l.exports
-        },
-        13494: (e, t, s) => {
-            "use strict";
-            s.d(t, {
-                Z: () => l
-            });
-            var a = function() {
-                var e = this,
-                    t = e.$createElement,
-                    s = e._self._c || t;
-                return s("div", {
-                    staticClass: "lobby-actions",
-                    class: {
-                        vip: e.player.hasControls
-                    }
-                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : s("p", {
-                    class: e.localClasses.message,
-                    domProps: {
-                        textContent: e._s(e.joinedCountText)
-                    }
-                }), e._v(" "), e.player.hasControls ? ["waitingForMore" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? s("button", {
-                    class: e.localClasses.action,
-                    domProps: {
-                        textContent: e._s(e.startText || e.$t("LOBBY.BUTTON_START"))
-                    },
-                    on: {
-                        click: e.onStartClick
-                    }
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? s("button", {
-                    class: e.localClasses.action,
-                    domProps: {
-                        textContent: e._s(e.cancelText || e.$t("LOBBY.BUTTON_CANCEL"))
-                    },
-                    on: {
-                        click: e.onCancelClick
-                    }
-                }) : e._e()] : e.player.gamepadStart ? ["waitingForMore" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.WAITING_FOR_GAMEPAD",
-                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.GAME_STARTING",
-                        expression: "'LOBBY.GAME_STARTING'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e()] : ["waitingForMore" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.waitingForVIPText))]) : e._e(), e._v(" "), "countdown" === e.player.status ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.GAME_STARTING",
-                        expression: "'LOBBY.GAME_STARTING'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e()], e._v(" "), "bottom" === e.messageLocation ? s("p", {
-                    class: e.localClasses.message,
-                    domProps: {
-                        textContent: e._s(e.joinedCountText)
-                    }
-                }) : e._e()], 2)
-            };
-            a._withStripped = !0;
-            var r = s(2934),
-                n = s.n(r),
-                o = s(65853);
-            const i = n().extend({
-                props: {
-                    cancelText: String,
-                    classes: Object,
-                    messageLocation: String,
-                    player: Object,
-                    shouldStart: Function,
-                    startText: String
-                },
-                i18n: {
-                    messages: o.s
-                },
-                computed: {
-                    joinedCountText() {
-                        return this.$tc("LOBBY.JOINED_COUNT", this.player.joinedPlayers, {
-                            count: this.player.joinedPlayers,
-                            maxPlayers: this.player.maxPlayers
-                        })
-                    },
-                    localClasses() {
-                        var e, t, s, a, r, n;
-                        return {
-                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
-                            status: null !== (a = null === (s = this.classes) || void 0 === s ? void 0 : s.status) && void 0 !== a ? a : "status",
-                            action: null !== (n = null === (r = this.classes) || void 0 === r ? void 0 : r.action) && void 0 !== n ? n : "action"
-                        }
-                    },
-                    neededText() {
-                        return this.$tc("LOBBY.PLAYERS_NEEDED", this.player.minPlayers - this.player.joinedPlayers)
-                    },
-                    waitingForVIPText() {
-                        return this.$t("LOBBY.WAITING_FOR_VIP", {
-                            name: this.player.vipName
-                        })
-                    }
-                },
-                methods: {
-                    onCancelClick() {
-                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
-                            action: "cancel"
-                        }).catch(this.$handleEcastError)
-                    },
-                    onStartClick() {
-                        return e = this, t = void 0, a = function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "start"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }, new((s = void 0) || (s = Promise))((function(r, n) {
-                            function o(e) {
-                                try {
-                                    c(a.next(e))
-                                } catch (e) {
-                                    n(e)
-                                }
-                            }
-
-                            function i(e) {
-                                try {
-                                    c(a.throw(e))
-                                } catch (e) {
-                                    n(e)
-                                }
-                            }
-
-                            function c(e) {
-                                var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
-                                    e(t)
-                                }))).then(o, i)
-                            }
-                            c((a = a.apply(e, t || [])).next())
-                        }));
-                        var e, t, s, a
-                    }
-                }
-            });
-            var c = (0, s(51900).Z)(i, a, [], !1, null, null, null);
-            c.options.__file = "src/apps/vue/components/LobbyActions.vue";
-            const l = c.exports
-        },
-        83933: (e, t, s) => {
-            "use strict";
-            s.d(t, {
-                Z: () => d
-            });
-            var a = function() {
-                var e = this,
-                    t = e.$createElement,
-                    s = e._self._c || t;
-                return e.player && e.player.status ? s("div", {
-                    staticClass: "post-game-actions",
-                    class: {
-                        vip: e.player.hasControls
-                    }
-                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.PLAY_AGAIN",
-                        expression: "'POST_GAME.PLAY_AGAIN'"
-                    }],
-                    class: e.localClasses.message
-                }), e._v(" "), e.player.hasControls ? ["waiting" === e.player.status ? s("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.BUTTON_SAME_PLAYERS",
-                        expression: "'POST_GAME.BUTTON_SAME_PLAYERS'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onSamePlayersClick
-                    }
-                }) : e._e(), e._v(" "), "waiting" === e.player.status ? s("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.BUTTON_NEW_PLAYERS",
-                        expression: "'POST_GAME.BUTTON_NEW_PLAYERS'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onNewPlayersClick
-                    }
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? s("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.BUTTON_CANCEL",
-                        expression: "'LOBBY.BUTTON_CANCEL'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onCancelClick
-                    }
-                }) : e._e()] : e.player.gamepadStart ? [s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.WAITING_FOR_GAMEPAD",
-                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
-                    }],
-                    class: e.localClasses.status
-                })] : [s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.waitingForVIPText))])], e._v(" "), "bottom" === e.messageLocation ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.PLAY_AGAIN",
-                        expression: "'POST_GAME.PLAY_AGAIN'"
-                    }],
-                    class: e.localClasses.message
-                }) : e._e()], 2) : e._e()
-            };
-            a._withStripped = !0;
-            var r = s(2934),
-                n = s.n(r),
-                o = s(65853),
-                i = function(e, t, s, a) {
-                    return new(s || (s = Promise))((function(r, n) {
-                        function o(e) {
-                            try {
-                                c(a.next(e))
-                            } catch (e) {
-                                n(e)
-                            }
-                        }
-
-                        function i(e) {
-                            try {
-                                c(a.throw(e))
-                            } catch (e) {
-                                n(e)
-                            }
-                        }
-
-                        function c(e) {
-                            var t;
-                            e.done ? r(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
-                                e(t)
-                            }))).then(o, i)
-                        }
-                        c((a = a.apply(e, t || [])).next())
-                    }))
-                };
-            const c = n().extend({
-                props: {
-                    shouldStart: Function,
-                    messageLocation: String,
-                    classes: Object,
-                    player: Object
-                },
-                i18n: {
-                    messages: o.s
-                },
-                computed: {
-                    localClasses() {
-                        var e, t, s, a, r, n;
-                        return {
-                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
-                            status: null !== (a = null === (s = this.classes) || void 0 === s ? void 0 : s.status) && void 0 !== a ? a : "status",
-                            action: null !== (n = null === (r = this.classes) || void 0 === r ? void 0 : r.action) && void 0 !== n ? n : "action"
-                        }
-                    },
-                    waitingForVIPText() {
-                        return this.$t("LOBBY.WAITING_FOR_VIP", {
-                            name: this.player.vipName
-                        })
-                    }
-                },
-                methods: {
-                    onSamePlayersClick() {
-                        return i(this, void 0, void 0, (function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "samePlayers"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }))
-                    },
-                    onNewPlayersClick() {
-                        return i(this, void 0, void 0, (function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "newPlayers"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }))
-                    },
-                    onCancelClick() {
-                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
-                            action: "cancel"
-                        }).catch(this.$handleEcastError)
-                    }
-                }
-            });
-            var l = (0, s(51900).Z)(c, a, [], !1, null, null, null);
-            l.options.__file = "src/apps/vue/components/PostGameActions.vue";
-            const d = l.exports
-        },
         24872: (e, t, s) => {
             "use strict";
             s.r(t), s.d(t, {
-                default: () => Ae
+                default: () => Pe
             });
             var a = function() {
                 var e = this,
@@ -580,8 +193,8 @@
             u._withStripped = !0;
             var p = s(44285),
                 h = s(55507),
-                v = s(89446),
-                f = function() {
+                f = s(89446),
+                v = function() {
                     var e = this,
                         t = e.$createElement,
                         s = e._self._c || t;
@@ -597,8 +210,8 @@
                         }, [t.complete ? s("Checked") : "connector" !== t.type ? s("Unchecked") : e._e()], 1)
                     })), 0)])
                 };
-            f._withStripped = !0;
-            var g = function() {
+            v._withStripped = !0;
+            var b = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -620,11 +233,11 @@
                     }
                 })])])])
             };
-            g._withStripped = !0;
-            var b = (0, c.Z)({}, g, [], !1, null, null, null);
-            b.options.__file = "src/games/pp8/apply-yourself/assets/progress/checked.vue";
-            const m = b.exports;
-            var y = function() {
+            b._withStripped = !0;
+            var g = (0, c.Z)({}, b, [], !1, null, null, null);
+            g.options.__file = "src/games/pp8/apply-yourself/assets/progress/checked.vue";
+            const m = g.exports;
+            var w = function() {
                 var e = this.$createElement,
                     t = this._self._c || e;
                 return t("svg", {
@@ -642,10 +255,10 @@
                     }
                 })])])])
             };
-            y._withStripped = !0;
-            var w = (0, c.Z)({}, y, [], !1, null, null, null);
-            w.options.__file = "src/games/pp8/apply-yourself/assets/progress/unchecked.vue";
-            const x = w.exports,
+            w._withStripped = !0;
+            var y = (0, c.Z)({}, w, [], !1, null, null, null);
+            y.options.__file = "src/games/pp8/apply-yourself/assets/progress/unchecked.vue";
+            const x = y.exports,
                 _ = n().extend({
                     components: {
                         Checked: m,
@@ -680,7 +293,7 @@
                         }
                     }
                 });
-            var k = (0, c.Z)(_, f, [], !1, null, null, null);
+            var k = (0, c.Z)(_, v, [], !1, null, null, null);
             k.options.__file = "src/games/pp8/apply-yourself/views/ProgressBar.vue";
             const C = k.exports;
             var S = function(e, t, s, a) {
@@ -755,14 +368,14 @@
                         const t = this.player.maxLength || Number.MAX_SAFE_INTEGER,
                             s = e.target,
                             a = s.value.replace(/[\u201C\u201D]/g, '"'),
-                            r = v.c.sanitizeInput(a);
+                            r = f.c.sanitizeInput(a);
                         s.value = r, s.value.length > t && (s.value = r.substring(0, t)), this.answer = s.value
                     },
                     onSubmit() {
                         return S(this, void 0, void 0, (function*() {
                             if (!this.answer) return;
                             this.submitting = !0;
-                            const e = v.c.sanitize(this.answer);
+                            const e = f.c.sanitize(this.answer);
                             try {
                                 (yield this.$ecast.updateText(this.player.textKey, e)) instanceof p.OK && (yield this.$ecast.updateObject(this.player.doneKey, {
                                     done: !0
@@ -784,7 +397,7 @@
                     autoSubmit() {
                         return S(this, void 0, void 0, (function*() {
                             if (this.answer && !this.submitting) try {
-                                const e = v.c.sanitize(this.answer);
+                                const e = f.c.sanitize(this.answer);
                                 yield this.$ecast.updateText(this.player.textKey, e)
                             } catch (e) {
                                 e instanceof h.EcastFilterError && (this.badAnswer = !0, yield this.$ecast.updateText(this.player.textKey, ""))
@@ -793,10 +406,10 @@
                     }
                 }
             });
-            var P = (0, c.Z)(I, u, [], !1, null, null, null);
-            P.options.__file = "src/games/pp8/apply-yourself/views/player/Writing.vue";
-            const E = P.exports;
-            var A = function() {
+            var $ = (0, c.Z)(I, u, [], !1, null, null, null);
+            $.options.__file = "src/games/pp8/apply-yourself/views/player/Writing.vue";
+            const E = $.exports;
+            var P = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -959,11 +572,11 @@
                     }
                 })], 1)], 1)
             };
-            A._withStripped = !0;
-            var $ = s(9980),
-                T = s.n($),
-                O = s(13494),
-                L = function() {
+            P._withStripped = !0;
+            var A = s(9980),
+                R = s.n(A),
+                W = s(13494),
+                D = function() {
                     var e = this,
                         t = e.$createElement,
                         s = e._self._c || t;
@@ -1016,10 +629,10 @@
                         staticClass: "name"
                     }, [e._v(e._s(e.username))])], 1)
                 };
-            L._withStripped = !0;
-            const R = n().extend({
+            D._withStripped = !0;
+            const M = n().extend({
                 components: {
-                    draggable: T()
+                    draggable: R()
                 },
                 props: {
                     addWord: Function,
@@ -1037,10 +650,10 @@
                     }
                 }
             });
-            var N = (0, c.Z)(R, L, [], !1, null, null, null);
-            N.options.__file = "src/games/pp8/apply-yourself/views/TopBar.vue";
-            const B = N.exports;
-            var M = function(e, t, s, a) {
+            var O = (0, c.Z)(M, D, [], !1, null, null, null);
+            O.options.__file = "src/games/pp8/apply-yourself/views/TopBar.vue";
+            const T = O.exports;
+            var V = function(e, t, s, a) {
                 return new(s || (s = Promise))((function(r, n) {
                     function o(e) {
                         try {
@@ -1067,12 +680,12 @@
                     c((a = a.apply(e, t || [])).next())
                 }))
             };
-            const W = ["#9D53BE", "#2A63D9", "#78786A"],
-                j = n().extend({
+            const j = ["#9D53BE", "#2A63D9", "#78786A"],
+                L = n().extend({
                     components: {
-                        draggable: T(),
-                        TopBar: B,
-                        LobbyActions: O.Z
+                        draggable: R(),
+                        TopBar: T,
+                        LobbyActions: W.Z
                     },
                     props: {
                         info: Object,
@@ -1115,13 +728,16 @@
                                         heart: s(82787), duck: s(70200), owl: s(91801), shirt: s(13301), dode: s(75082), poop: s(16588), bomb: s(96414), skull: s(78894), faker: s(87866), jack: s(43135), robot: s(22786), wampus: s(36817), screw: s(90666), moon: s(83394)
                                     };
                                 case "#78786A":
-                                default:
                                     return {
                                         heart: s(25204), duck: s(41910), owl: s(34821), shirt: s(36989), dode: s(58813), poop: s(14142), bomb: s(59369), skull: s(5634), faker: s(46052), jack: s(96846), robot: s(42542), wampus: s(53375), screw: s(35258), moon: s(33663)
                                     };
                                 case "#FF9999":
                                     return {
                                         heart: s(57246), duck: s(95627), owl: s(29255), shirt: s(51948), dode: s(31939), poop: s(23552), bomb: s(53937), skull: s(86748), faker: s(6418), jack: s(3196), robot: s(73768), wampus: s(27887), screw: s(35356), moon: s(32416)
+                                    };
+                                default:
+                                    return {
+                                        heart: s(25204), duck: s(41910), owl: s(34821), shirt: s(36989), dode: s(58813), poop: s(14142), bomb: s(59369), skull: s(5634), faker: s(46052), jack: s(96846), robot: s(42542), wampus: s(53375), screw: s(35258), moon: s(33663)
                                     }
                             }
                         })()), {
@@ -1146,7 +762,7 @@
                             const e = this.info.color;
                             return {
                                 backgroundColor: e,
-                                color: W.includes(e) ? "var(--highlight)" : "var(--text)",
+                                color: j.includes(e) ? "var(--highlight)" : "var(--text)",
                                 border: `2px solid ${e}`
                             }
                         }
@@ -1162,7 +778,7 @@
                         },
                         checkMove: e => e.draggedContext.element.available,
                         chooseAvatar(e) {
-                            return M(this, void 0, void 0, (function*() {
+                            return V(this, void 0, void 0, (function*() {
                                 const t = this.avatars[e],
                                     s = {
                                         action: "choose-avatar",
@@ -1176,7 +792,7 @@
                             }))
                         },
                         handleAvatarDrop(e) {
-                            return M(this, void 0, void 0, (function*() {
+                            return V(this, void 0, void 0, (function*() {
                                 yield this.chooseAvatar(e.oldIndex)
                             }))
                         },
@@ -1188,10 +804,10 @@
                         }
                     }
                 });
-            var D = (0, c.Z)(j, A, [], !1, null, null, null);
-            D.options.__file = "src/games/pp8/apply-yourself/views/player/Lobby.vue";
-            const V = D.exports;
-            var G = function() {
+            var B = (0, c.Z)(L, P, [], !1, null, null, null);
+            B.options.__file = "src/games/pp8/apply-yourself/views/player/Lobby.vue";
+            const N = B.exports;
+            var F = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -1507,8 +1123,8 @@
                     }
                 })], 1)])], 1)
             };
-            G._withStripped = !0;
-            var F = function(e, t, s, a) {
+            F._withStripped = !0;
+            var K = function(e, t, s, a) {
                 return new(s || (s = Promise))((function(r, n) {
                     function o(e) {
                         try {
@@ -1535,12 +1151,12 @@
                     c((a = a.apply(e, t || [])).next())
                 }))
             };
-            const K = ["magnet-answer", "composition-draggable", "submit-button", "composition-word"],
-                Y = n().extend({
+            const G = ["magnet-answer", "composition-draggable", "submit-button", "composition-word"],
+                Z = n().extend({
                     components: {
                         ProgressBar: C,
-                        TopBar: B,
-                        draggable: T()
+                        TopBar: T,
+                        draggable: R()
                     },
                     props: {
                         info: Object,
@@ -1675,7 +1291,7 @@
                             }
                             if (null == a || null == r) return;
                             const n = document.elementFromPoint(a, r);
-                            n && (K.indexOf(n.className) < 0 && this.removeWord(t), this.submitResponse(!1))
+                            n && (G.indexOf(n.className) < 0 && this.removeWord(t), this.submitResponse(!1))
                         },
                         hideShuffled() {
                             this.showShuffled = !1
@@ -1711,7 +1327,7 @@
                             this.showShuffled = !1, this.showSorted = !0
                         },
                         submitResponse(e) {
-                            return F(this, void 0, void 0, (function*() {
+                            return K(this, void 0, void 0, (function*() {
                                 try {
                                     const t = this.formatComposition(),
                                         s = yield this.$ecast.updateObject(this.player.answerKey, {
@@ -1729,7 +1345,7 @@
                             }))
                         },
                         onSubmit() {
-                            return F(this, void 0, void 0, (function*() {
+                            return K(this, void 0, void 0, (function*() {
                                 this.submitting = !0;
                                 try {
                                     const {
@@ -1750,7 +1366,7 @@
                         }
                     }
                 });
-            var Z = (0, c.Z)(Y, G, [function() {
+            var U = (0, c.Z)(Z, F, [function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -1762,9 +1378,9 @@
                     }
                 }, [s("span", [e._v("\n            Each sentence will be followed by buttons for each word in the sentence. Once a word has been added to your answer,\n            you can focus that word in the composition and press Alt + Left or Right to change word order\n        ")])])
             }], !1, null, null, null);
-            Z.options.__file = "src/games/pp8/apply-yourself/views/player/Magnets.vue";
-            const U = Z.exports;
-            var H = function() {
+            U.options.__file = "src/games/pp8/apply-yourself/views/player/Magnets.vue";
+            const H = U.exports;
+            var X = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -1866,8 +1482,8 @@
                     }
                 }, [e._v("Skip")])]) : e._e()])
             };
-            H._withStripped = !0;
-            var X = function(e, t, s, a) {
+            X._withStripped = !0;
+            var Y = function(e, t, s, a) {
                 return new(s || (s = Promise))((function(r, n) {
                     function o(e) {
                         try {
@@ -1897,7 +1513,7 @@
             const z = "job-achievement",
                 J = n().extend({
                     components: {
-                        TopBar: B
+                        TopBar: T
                     },
                     props: {
                         info: Object,
@@ -1915,7 +1531,7 @@
                     },
                     methods: {
                         handleBriefcaseClick() {
-                            return X(this, void 0, void 0, (function*() {
+                            return Y(this, void 0, void 0, (function*() {
                                 if (this.isPlayer(this.player)) {
                                     const e = this.$storage.get(z);
                                     if (e) {
@@ -1946,7 +1562,7 @@
                         },
                         isPlayer: e => void 0 !== e.responseKey,
                         skip() {
-                            return X(this, void 0, void 0, (function*() {
+                            return Y(this, void 0, void 0, (function*() {
                                 if (this.isPlayer(this.player) && this.player.responseKey) try {
                                     yield this.$ecast.updateObject(this.player.responseKey, {
                                         action: "skip"
@@ -1958,7 +1574,7 @@
                         }
                     }
                 });
-            var q = (0, c.Z)(J, H, [], !1, null, null, null);
+            var q = (0, c.Z)(J, X, [], !1, null, null, null);
             q.options.__file = "src/games/pp8/apply-yourself/views/Logo.vue";
             const Q = q.exports;
             var ee = function() {
@@ -2391,8 +2007,8 @@
             const se = ["magnet-answer", "section", "prompt", "prompt-text", "composition-draggable", "composition-draggable shake", "composition-draggable selected", "composition-draggable selected shake", "submit-button", "composition-word"],
                 ae = n().extend({
                     components: {
-                        TopBar: B,
-                        draggable: T()
+                        TopBar: T,
+                        draggable: R()
                     },
                     props: {
                         info: Object,
@@ -2766,7 +2382,7 @@
             ue._withStripped = !0;
             var pe = s(56623),
                 he = s(83933);
-            const ve = n().extend({
+            const fe = n().extend({
                 components: {
                     GalleryLink: pe.Z,
                     PostGameActions: he.Z
@@ -2776,10 +2392,10 @@
                     player: Object
                 }
             });
-            var fe = (0, c.Z)(ve, ue, [], !1, null, null, null);
-            fe.options.__file = "src/games/pp8/apply-yourself/views/player/PostGame.vue";
-            const ge = fe.exports;
-            var be = function() {
+            var ve = (0, c.Z)(fe, ue, [], !1, null, null, null);
+            ve.options.__file = "src/games/pp8/apply-yourself/views/player/PostGame.vue";
+            const be = ve.exports;
+            var ge = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -2826,7 +2442,7 @@
                     })])
                 })), 0)])])
             };
-            be._withStripped = !0;
+            ge._withStripped = !0;
             var me = function(e, t, s, a) {
                 return new(s || (s = Promise))((function(r, n) {
                     function o(e) {
@@ -2854,7 +2470,7 @@
                     c((a = a.apply(e, t || [])).next())
                 }))
             };
-            const ye = n().extend({
+            const we = n().extend({
                 props: {
                     audience: Object
                 },
@@ -2884,9 +2500,9 @@
                     }
                 }
             });
-            var we = (0, c.Z)(ye, be, [], !1, null, null, null);
-            we.options.__file = "src/games/pp8/apply-yourself/views/audience/Voting.vue";
-            const xe = we.exports;
+            var ye = (0, c.Z)(we, ge, [], !1, null, null, null);
+            ye.options.__file = "src/games/pp8/apply-yourself/views/audience/Voting.vue";
+            const xe = ye.exports;
             var _e = function() {
                 var e = this,
                     t = e.$createElement,
@@ -3028,7 +2644,7 @@
             };
             const Ce = n().extend({
                 components: {
-                    draggable: T()
+                    draggable: R()
                 },
                 props: {
                     audience: Object
@@ -3092,17 +2708,17 @@
             var Se = (0, c.Z)(Ce, _e, [], !1, null, null, null);
             Se.options.__file = "src/games/pp8/apply-yourself/views/audience/SinkVoting.vue";
             const Ie = Se.exports,
-                Pe = n().extend({
+                $e = n().extend({
                     components: {
                         AudienceVotingView: xe,
                         DoneView: d,
-                        LobbyView: V,
+                        LobbyView: N,
                         LogoView: Q,
-                        MagnetsView: U,
-                        PostGameView: ge,
+                        MagnetsView: H,
+                        PostGameView: be,
                         ResuMagnetsView: ne,
                         SinkVotingView: Ie,
-                        TopBar: B,
+                        TopBar: T,
                         VotingView: de,
                         WritingView: E
                     },
@@ -3151,9 +2767,9 @@
                         isVoting: e => "voting" === e.kind
                     }
                 });
-            var Ee = (0, c.Z)(Pe, a, [], !1, null, null, null);
+            var Ee = (0, c.Z)($e, a, [], !1, null, null, null);
             Ee.options.__file = "src/games/pp8/apply-yourself/views/Main.vue";
-            const Ae = Ee.exports
+            const Pe = Ee.exports
         },
         60071: (e, t, s) => {
             "use strict";
@@ -3749,4 +3365,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/4872.f757179f5b37a84d1c3a.js.map
+//# sourceMappingURL=sourcemaps/2862.3370087ddca248fc7790.js.map

@@ -1,88 +1,25 @@
 (self.webpackChunkjackbox_tv = self.webpackChunkjackbox_tv || []).push([
     ["games/survey-bomb"], {
         23493: (e, t, s) => {
-            var a = s(23279),
-                n = s(13218);
+            var n = s(23279),
+                a = s(13218);
             e.exports = function(e, t, s) {
                 var i = !0,
                     r = !0;
                 if ("function" != typeof e) throw new TypeError("Expected a function");
-                return n(s) && (i = "leading" in s ? !!s.leading : i, r = "trailing" in s ? !!s.trailing : r), a(e, t, {
+                return a(s) && (i = "leading" in s ? !!s.leading : i, r = "trailing" in s ? !!s.trailing : r), n(e, t, {
                     leading: i,
                     maxWait: t,
                     trailing: r
                 })
             }
         },
-        56623: (e, t, s) => {
-            "use strict";
-            s.d(t, {
-                Z: () => u
-            });
-            var a = function() {
-                var e = this,
-                    t = e.$createElement,
-                    s = e._self._c || t;
-                return e.link ? s("a", {
-                    staticClass: "artifact-link",
-                    class: {
-                        "no-content": !e.hasProvidedContent
-                    },
-                    attrs: {
-                        target: "_blank",
-                        href: e.link,
-                        "aria-label": e.$t("POST_GAME.GALLERY_LINK")
-                    },
-                    on: {
-                        click: e.onLinkClick
-                    }
-                }, [e._t("default")], 2) : e._e()
-            };
-            a._withStripped = !0;
-            var n = s(2934),
-                i = s.n(n),
-                r = s(81127),
-                o = s(65853);
-            const c = i().extend({
-                props: {
-                    artifact: Object
-                },
-                i18n: {
-                    messages: o.s
-                },
-                computed: {
-                    link() {
-                        if (this.artifact) return `${this.artifact.rootId.includes("test")?"http":"https"}://${this.artifact.rootId.includes("test")?"games-test.jackbox.tv":"games.jackbox.tv"}/artifact/${this.artifact.categoryId}/${this.artifact.artifactId}/`
-                    },
-                    hasProvidedContent() {
-                        return void 0 !== this.$slots.default
-                    }
-                },
-                mounted() {
-                    this.$analytics.trackEvent({
-                        category: "PostGame",
-                        action: "galleryShown"
-                    })
-                },
-                methods: {
-                    onLinkClick() {
-                        this.$analytics.trackEvent({
-                            category: "PostGame",
-                            action: "galleryClicked"
-                        }), r.Q.setAsViewed(0)
-                    }
-                }
-            });
-            var l = (0, s(51900).Z)(c, a, [], !1, null, null, null);
-            l.options.__file = "src/apps/vue/components/GalleryLink.vue";
-            const u = l.exports
-        },
         6305: (e, t, s) => {
             "use strict";
             s.d(t, {
                 Z: () => c
             });
-            var a = function() {
+            var n = function() {
                 var e = this,
                     t = e.$createElement;
                 return (e._self._c || t)("input", {
@@ -98,9 +35,9 @@
                     }
                 })
             };
-            a._withStripped = !0;
-            var n = s(2934),
-                i = s.n(n);
+            n._withStripped = !0;
+            var a = s(2934),
+                i = s.n(a);
             const r = i().extend({
                 props: {
                     value: String
@@ -112,173 +49,12 @@
                 },
                 methods: {
                     onInput(e) {
-                        return t = this, s = void 0, n = function*() {
+                        return t = this, s = void 0, a = function*() {
                             const t = e.target;
                             if (!(null == t ? void 0 : t.value)) return;
                             const s = -1 === t.maxLength ? Number.MAX_SAFE_INTEGER : t.maxLength;
                             t.value.length > s ? t.value = t.value.substring(0, s) : (this.$emit("input", t.value), yield i().nextTick(), t.value !== this.value && (t.value = this.value))
-                        }, new((a = void 0) || (a = Promise))((function(e, i) {
-                            function r(e) {
-                                try {
-                                    c(n.next(e))
-                                } catch (e) {
-                                    i(e)
-                                }
-                            }
-
-                            function o(e) {
-                                try {
-                                    c(n.throw(e))
-                                } catch (e) {
-                                    i(e)
-                                }
-                            }
-
-                            function c(t) {
-                                var s;
-                                t.done ? e(t.value) : (s = t.value, s instanceof a ? s : new a((function(e) {
-                                    e(s)
-                                }))).then(r, o)
-                            }
-                            c((n = n.apply(t, s || [])).next())
-                        }));
-                        var t, s, a, n
-                    }
-                }
-            });
-            var o = (0, s(51900).Z)(r, a, [], !1, null, null, null);
-            o.options.__file = "src/apps/vue/components/Input.vue";
-            const c = o.exports
-        },
-        13494: (e, t, s) => {
-            "use strict";
-            s.d(t, {
-                Z: () => l
-            });
-            var a = function() {
-                var e = this,
-                    t = e.$createElement,
-                    s = e._self._c || t;
-                return s("div", {
-                    staticClass: "lobby-actions",
-                    class: {
-                        vip: e.player.hasControls
-                    }
-                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : s("p", {
-                    class: e.localClasses.message,
-                    domProps: {
-                        textContent: e._s(e.joinedCountText)
-                    }
-                }), e._v(" "), e.player.hasControls ? ["waitingForMore" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? s("button", {
-                    class: e.localClasses.action,
-                    domProps: {
-                        textContent: e._s(e.startText || e.$t("LOBBY.BUTTON_START"))
-                    },
-                    on: {
-                        click: e.onStartClick
-                    }
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? s("button", {
-                    class: e.localClasses.action,
-                    domProps: {
-                        textContent: e._s(e.cancelText || e.$t("LOBBY.BUTTON_CANCEL"))
-                    },
-                    on: {
-                        click: e.onCancelClick
-                    }
-                }) : e._e()] : e.player.gamepadStart ? ["waitingForMore" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.WAITING_FOR_GAMEPAD",
-                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.GAME_STARTING",
-                        expression: "'LOBBY.GAME_STARTING'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e()] : ["waitingForMore" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.waitingForVIPText))]) : e._e(), e._v(" "), "countdown" === e.player.status ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.GAME_STARTING",
-                        expression: "'LOBBY.GAME_STARTING'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e()], e._v(" "), "bottom" === e.messageLocation ? s("p", {
-                    class: e.localClasses.message,
-                    domProps: {
-                        textContent: e._s(e.joinedCountText)
-                    }
-                }) : e._e()], 2)
-            };
-            a._withStripped = !0;
-            var n = s(2934),
-                i = s.n(n),
-                r = s(65853);
-            const o = i().extend({
-                props: {
-                    cancelText: String,
-                    classes: Object,
-                    messageLocation: String,
-                    player: Object,
-                    shouldStart: Function,
-                    startText: String
-                },
-                i18n: {
-                    messages: r.s
-                },
-                computed: {
-                    joinedCountText() {
-                        return this.$tc("LOBBY.JOINED_COUNT", this.player.joinedPlayers, {
-                            count: this.player.joinedPlayers,
-                            maxPlayers: this.player.maxPlayers
-                        })
-                    },
-                    localClasses() {
-                        var e, t, s, a, n, i;
-                        return {
-                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
-                            status: null !== (a = null === (s = this.classes) || void 0 === s ? void 0 : s.status) && void 0 !== a ? a : "status",
-                            action: null !== (i = null === (n = this.classes) || void 0 === n ? void 0 : n.action) && void 0 !== i ? i : "action"
-                        }
-                    },
-                    neededText() {
-                        return this.$tc("LOBBY.PLAYERS_NEEDED", this.player.minPlayers - this.player.joinedPlayers)
-                    },
-                    waitingForVIPText() {
-                        return this.$t("LOBBY.WAITING_FOR_VIP", {
-                            name: this.player.vipName
-                        })
-                    }
-                },
-                methods: {
-                    onCancelClick() {
-                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
-                            action: "cancel"
-                        }).catch(this.$handleEcastError)
-                    },
-                    onStartClick() {
-                        return e = this, t = void 0, a = function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "start"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }, new((s = void 0) || (s = Promise))((function(n, i) {
+                        }, new((n = void 0) || (n = Promise))((function(e, i) {
                             function r(e) {
                                 try {
                                     c(a.next(e))
@@ -295,191 +71,28 @@
                                 }
                             }
 
-                            function c(e) {
-                                var t;
-                                e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
-                                    e(t)
+                            function c(t) {
+                                var s;
+                                t.done ? e(t.value) : (s = t.value, s instanceof n ? s : new n((function(e) {
+                                    e(s)
                                 }))).then(r, o)
                             }
-                            c((a = a.apply(e, t || [])).next())
+                            c((a = a.apply(t, s || [])).next())
                         }));
-                        var e, t, s, a
+                        var t, s, n, a
                     }
                 }
             });
-            var c = (0, s(51900).Z)(o, a, [], !1, null, null, null);
-            c.options.__file = "src/apps/vue/components/LobbyActions.vue";
-            const l = c.exports
-        },
-        83933: (e, t, s) => {
-            "use strict";
-            s.d(t, {
-                Z: () => u
-            });
-            var a = function() {
-                var e = this,
-                    t = e.$createElement,
-                    s = e._self._c || t;
-                return e.player && e.player.status ? s("div", {
-                    staticClass: "post-game-actions",
-                    class: {
-                        vip: e.player.hasControls
-                    }
-                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.PLAY_AGAIN",
-                        expression: "'POST_GAME.PLAY_AGAIN'"
-                    }],
-                    class: e.localClasses.message
-                }), e._v(" "), e.player.hasControls ? ["waiting" === e.player.status ? s("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.BUTTON_SAME_PLAYERS",
-                        expression: "'POST_GAME.BUTTON_SAME_PLAYERS'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onSamePlayersClick
-                    }
-                }) : e._e(), e._v(" "), "waiting" === e.player.status ? s("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.BUTTON_NEW_PLAYERS",
-                        expression: "'POST_GAME.BUTTON_NEW_PLAYERS'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onNewPlayersClick
-                    }
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? s("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.BUTTON_CANCEL",
-                        expression: "'LOBBY.BUTTON_CANCEL'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onCancelClick
-                    }
-                }) : e._e()] : e.player.gamepadStart ? [s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.WAITING_FOR_GAMEPAD",
-                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
-                    }],
-                    class: e.localClasses.status
-                })] : [s("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.waitingForVIPText))])], e._v(" "), "bottom" === e.messageLocation ? s("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.PLAY_AGAIN",
-                        expression: "'POST_GAME.PLAY_AGAIN'"
-                    }],
-                    class: e.localClasses.message
-                }) : e._e()], 2) : e._e()
-            };
-            a._withStripped = !0;
-            var n = s(2934),
-                i = s.n(n),
-                r = s(65853),
-                o = function(e, t, s, a) {
-                    return new(s || (s = Promise))((function(n, i) {
-                        function r(e) {
-                            try {
-                                c(a.next(e))
-                            } catch (e) {
-                                i(e)
-                            }
-                        }
-
-                        function o(e) {
-                            try {
-                                c(a.throw(e))
-                            } catch (e) {
-                                i(e)
-                            }
-                        }
-
-                        function c(e) {
-                            var t;
-                            e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
-                                e(t)
-                            }))).then(r, o)
-                        }
-                        c((a = a.apply(e, t || [])).next())
-                    }))
-                };
-            const c = i().extend({
-                props: {
-                    shouldStart: Function,
-                    messageLocation: String,
-                    classes: Object,
-                    player: Object
-                },
-                i18n: {
-                    messages: r.s
-                },
-                computed: {
-                    localClasses() {
-                        var e, t, s, a, n, i;
-                        return {
-                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
-                            status: null !== (a = null === (s = this.classes) || void 0 === s ? void 0 : s.status) && void 0 !== a ? a : "status",
-                            action: null !== (i = null === (n = this.classes) || void 0 === n ? void 0 : n.action) && void 0 !== i ? i : "action"
-                        }
-                    },
-                    waitingForVIPText() {
-                        return this.$t("LOBBY.WAITING_FOR_VIP", {
-                            name: this.player.vipName
-                        })
-                    }
-                },
-                methods: {
-                    onSamePlayersClick() {
-                        return o(this, void 0, void 0, (function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "samePlayers"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }))
-                    },
-                    onNewPlayersClick() {
-                        return o(this, void 0, void 0, (function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "newPlayers"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }))
-                    },
-                    onCancelClick() {
-                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
-                            action: "cancel"
-                        }).catch(this.$handleEcastError)
-                    }
-                }
-            });
-            var l = (0, s(51900).Z)(c, a, [], !1, null, null, null);
-            l.options.__file = "src/apps/vue/components/PostGameActions.vue";
-            const u = l.exports
+            var o = (0, s(51900).Z)(r, n, [], !1, null, null, null);
+            o.options.__file = "src/apps/vue/components/Input.vue";
+            const c = o.exports
         },
         81988: (e, t, s) => {
             "use strict";
             s.r(t), s.d(t, {
                 default: () => fe
             });
-            var a = function() {
+            var n = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -570,9 +183,9 @@
                     }
                 }) : e._e()] : e._e()], 2)])
             };
-            a._withStripped = !0;
-            var n = s(2934),
-                i = s.n(n),
+            n._withStripped = !0;
+            var a = s(2934),
+                i = s.n(a),
                 r = function() {
                     var e = this,
                         t = e.$createElement,
@@ -644,16 +257,16 @@
             var o = function() {
                 var e = this,
                     t = e.$createElement,
-                    a = e._self._c || t;
-                return a("div", {
+                    n = e._self._c || t;
+                return n("div", {
                     staticClass: "choice",
                     class: {
                         chosen: e.chosen, correct: e.correct, disabled: e.disabled, incorrect: e.incorrect, progress: !!e.choice.percent
                     },
                     style: e.cssProps
-                }, [e.rank ? [a("div", {
+                }, [e.rank ? [n("div", {
                     staticClass: "rank"
-                }, [e._v(e._s(e.rank)), a("sup", [e._v(e._s(e.getOrdinal(e.rank)))])])] : e._e(), e._v(" "), e.removable ? [a("input", {
+                }, [e._v(e._s(e.rank)), n("sup", [e._v(e._s(e.getOrdinal(e.rank)))])])] : e._e(), e._v(" "), e.removable ? [n("input", {
                     attrs: {
                         id: e.choice.index,
                         disabled: e.disabled,
@@ -664,7 +277,7 @@
                             return e.$emit("choose")
                         }
                     }
-                }), e._v(" "), e.disabled ? e._e() : a("svg", {
+                }), e._v(" "), e.disabled ? e._e() : n("svg", {
                     directives: [{
                         name: "svg",
                         rawName: "v-svg",
@@ -672,7 +285,7 @@
                         expression: "require('../assets/x.inline.svg')"
                     }],
                     staticClass: "remove"
-                }), e._v(" "), e.chosen ? [e.correct ? a("svg", {
+                }), e._v(" "), e.chosen ? [e.correct ? n("svg", {
                     directives: [{
                         name: "svg",
                         rawName: "v-svg",
@@ -683,7 +296,7 @@
                     attrs: {
                         "aria-label": "correct answer"
                     }
-                }) : e._e(), e._v(" "), e.incorrect ? a("svg", {
+                }) : e._e(), e._v(" "), e.incorrect ? n("svg", {
                     directives: [{
                         name: "svg",
                         rawName: "v-svg",
@@ -694,7 +307,7 @@
                     attrs: {
                         "aria-label": "incorrect answer"
                     }
-                }) : e._e()] : e._e()] : [a("svg", {
+                }) : e._e()] : e._e()] : [n("svg", {
                     directives: [{
                         name: "svg",
                         rawName: "v-svg",
@@ -702,7 +315,7 @@
                         expression: "require('../assets/door.inline.svg')"
                     }],
                     staticClass: "door"
-                }), e._v(" "), a("input", {
+                }), e._v(" "), n("input", {
                     attrs: {
                         id: e.choice.index,
                         disabled: e.disabled,
@@ -714,16 +327,16 @@
                             return e.$emit("choose")
                         }
                     }
-                }), e._v(" "), e.choice.percent ? a("div", {
+                }), e._v(" "), e.choice.percent ? n("div", {
                     staticClass: "percent",
                     domProps: {
                         textContent: e._s(e.choice.percent + "%")
                     }
-                }) : e._e()], e._v(" "), a("label", {
+                }) : e._e()], e._v(" "), n("label", {
                     attrs: {
                         for: e.choice.index
                     }
-                }, [a("span", {
+                }, [n("span", {
                     directives: [{
                         name: "bb",
                         rawName: "v-bb",
@@ -759,10 +372,10 @@
                         getOrdinal: e => c(e)
                     }
                 });
-            var u = s(51900),
-                d = (0, u.Z)(l, o, [], !1, null, "09e8698c", null);
-            d.options.__file = "src/games/pp8/survey-bomb/views/ChoiceButton.vue";
-            const h = d.exports,
+            var d = s(51900),
+                h = (0, d.Z)(l, o, [], !1, null, "09e8698c", null);
+            h.options.__file = "src/games/pp8/survey-bomb/views/ChoiceButton.vue";
+            const u = h.exports,
                 p = {
                     en: {
                         SUBMIT_CHOOSE_ONE: "Choose a door",
@@ -773,11 +386,11 @@
                     de: {},
                     es: {}
                 };
-            var v = function(e, t, s, a) {
-                return new(s || (s = Promise))((function(n, i) {
+            var m = function(e, t, s, n) {
+                return new(s || (s = Promise))((function(a, i) {
                     function r(e) {
                         try {
-                            c(a.next(e))
+                            c(n.next(e))
                         } catch (e) {
                             i(e)
                         }
@@ -785,7 +398,7 @@
 
                     function o(e) {
                         try {
-                            c(a.throw(e))
+                            c(n.throw(e))
                         } catch (e) {
                             i(e)
                         }
@@ -793,16 +406,16 @@
 
                     function c(e) {
                         var t;
-                        e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
+                        e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
                             e(t)
                         }))).then(r, o)
                     }
-                    c((a = a.apply(e, t || [])).next())
+                    c((n = n.apply(e, t || [])).next())
                 }))
             };
-            const m = i().extend({
+            const v = i().extend({
                 components: {
-                    ChoiceButton: h
+                    ChoiceButton: u
                 },
                 props: {
                     player: Object
@@ -822,7 +435,7 @@
                     messages: p
                 },
                 created() {
-                    this.player.countGroupName && (this.pollAudienceInterval = window.setInterval((() => v(this, void 0, void 0, (function*() {
+                    this.player.countGroupName && (this.pollAudienceInterval = window.setInterval((() => m(this, void 0, void 0, (function*() {
                         yield this.pollAudience()
                     }))), 1e3))
                 },
@@ -834,7 +447,7 @@
                 },
                 methods: {
                     pollAudience() {
-                        return v(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             let e;
                             try {
                                 if (({
@@ -844,10 +457,10 @@
                                 return void console.warn(`failed to get countgroup ${this.player.countGroupName} during poll: ${e}`)
                             }
                             const t = Object.values(e).reduce(((e, t) => e + t), 0);
-                            Object.values(this.choices).forEach(((s, a) => {
-                                const n = Object.keys(e).find((e => e.endsWith(`:${s.index}`))),
-                                    r = e[n];
-                                i().set(this.choices[a], "percent", Math.round(r / t * 100))
+                            Object.values(this.choices).forEach(((s, n) => {
+                                const a = Object.keys(e).find((e => e.endsWith(`:${s.index}`))),
+                                    r = e[a];
+                                i().set(this.choices[n], "percent", Math.round(r / t * 100))
                             }))
                         }))
                     },
@@ -855,7 +468,7 @@
                         return !(!this.isSubmitting && !e.rank)
                     },
                     onChoose(e) {
-                        return v(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (this.chosenIndex = e, this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     choiceIndex: this.chosenIndex
@@ -866,7 +479,7 @@
                         }))
                     },
                     onSubmitChoices() {
-                        return v(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             switch (this.$ecast.role) {
                                 case "audience":
                                     yield this.onAudienceSubmit();
@@ -878,7 +491,7 @@
                         }))
                     },
                     onAudienceSubmit() {
-                        return v(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (this.player.countGroupName) {
                                 this.isSubmitting = !0;
                                 try {
@@ -890,7 +503,7 @@
                         }))
                     },
                     onPlayerSubmit() {
-                        return v(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) {
                                 this.isSubmitting = !0;
                                 try {
@@ -906,10 +519,10 @@
                     }
                 }
             });
-            var f = (0, u.Z)(m, r, [], !1, null, "74b7c7a9", null);
+            var f = (0, d.Z)(v, r, [], !1, null, "74b7c7a9", null);
             f.options.__file = "src/games/pp8/survey-bomb/views/Choices.vue";
-            const y = f.exports;
-            var _ = function() {
+            const b = f.exports;
+            var y = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -922,12 +535,12 @@
                     }
                 }) : e._e(), e._v(" "), s("div", {
                     staticClass: "dots"
-                }, e._l(e.steps, (function(t, a) {
+                }, e._l(e.steps, (function(t, n) {
                     return s("div", {
-                        key: a,
+                        key: n,
                         staticClass: "dot",
                         class: {
-                            active: e.player.stepIndex >= a
+                            active: e.player.stepIndex >= n
                         }
                     })
                 })), 0), e._v(" "), "avatar" === e.steps[e.player.stepIndex] ? s("div", {
@@ -936,9 +549,9 @@
                     staticClass: "instructions"
                 }, [e._v(e._s(e.$t("INSTRUCTION_AVATAR")))]), e._v(" "), s("div", {
                     staticClass: "avatars"
-                }, [e._l(e.player.avatars, (function(t, a) {
+                }, [e._l(e.player.avatars, (function(t, n) {
                     return [s("button", {
-                        key: "av" + a,
+                        key: "av" + n,
                         staticClass: "avatar",
                         class: {
                             selected: t.name === e.selectedAvatar.name
@@ -956,8 +569,8 @@
                             src: t.available ? e.avatarImages[t.name] && e.avatarImages[t.name].on : e.avatarImages[t.name] && e.avatarImages[t.name].off,
                             alt: e.avatarImages[t.name] && e.avatarImages[t.name].alt
                         }
-                    })]), e._v(" "), e.shouldEndAvatarRow(a + 1) ? s("div", {
-                        key: "break" + a,
+                    })]), e._v(" "), e.shouldEndAvatarRow(n + 1) ? s("div", {
+                        key: "break" + n,
                         staticClass: "row-break"
                     }) : e._e()]
                 }))], 2), e._v(" "), s("div", {
@@ -1024,9 +637,9 @@
                     }
                 })] : e._e()], 2)
             };
-            _._withStripped = !0;
+            y._withStripped = !0;
             var g = s(55507),
-                b = s(6305),
+                _ = s(6305),
                 x = s(13494),
                 w = s(65853),
                 C = function() {
@@ -1098,9 +711,9 @@
                     de: {},
                     es: {}
                 },
-                S = i().extend({
+                I = i().extend({
                     components: {
-                        ChoiceButton: h
+                        ChoiceButton: u
                     },
                     props: {
                         choices: Array,
@@ -1143,10 +756,10 @@
                         }
                     }
                 });
-            var I = (0, u.Z)(S, C, [], !1, null, "1a51ff57", null);
-            I.options.__file = "src/games/pp8/survey-bomb/views/SurveyForm.vue";
-            const T = I.exports;
-            var A = function() {
+            var S = (0, d.Z)(I, C, [], !1, null, "1a51ff57", null);
+            S.options.__file = "src/games/pp8/survey-bomb/views/SurveyForm.vue";
+            const T = S.exports;
+            var N = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -1180,9 +793,9 @@
                     staticClass: "arrow"
                 }), e._v("\n        " + e._s(e.$t("SWITCH_TEAMS")) + "\n    ")])])
             };
-            A._withStripped = !0;
-            var N = s(15516),
-                k = s(66296);
+            N._withStripped = !0;
+            var k = s(15516),
+                A = s(66296);
             const $ = i().extend({
                 props: {
                     avatar: Object,
@@ -1205,18 +818,18 @@
                 }),
                 methods: {
                     getArrowSrc() {
-                        return 0 === this.teamIndex ? k : N
+                        return 0 === this.teamIndex ? A : k
                     }
                 }
             });
-            var O = (0, u.Z)($, A, [], !1, null, "f57faf92", null);
-            O.options.__file = "src/games/pp8/survey-bomb/views/TeamSwitcher.vue";
-            const P = O.exports;
-            var R = function(e, t, s, a) {
-                return new(s || (s = Promise))((function(n, i) {
+            var R = (0, d.Z)($, N, [], !1, null, "f57faf92", null);
+            R.options.__file = "src/games/pp8/survey-bomb/views/TeamSwitcher.vue";
+            const O = R.exports;
+            var M = function(e, t, s, n) {
+                return new(s || (s = Promise))((function(a, i) {
                     function r(e) {
                         try {
-                            c(a.next(e))
+                            c(n.next(e))
                         } catch (e) {
                             i(e)
                         }
@@ -1224,7 +837,7 @@
 
                     function o(e) {
                         try {
-                            c(a.throw(e))
+                            c(n.throw(e))
                         } catch (e) {
                             i(e)
                         }
@@ -1232,19 +845,19 @@
 
                     function c(e) {
                         var t;
-                        e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
+                        e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
                             e(t)
                         }))).then(r, o)
                     }
-                    c((a = a.apply(e, t || [])).next())
+                    c((n = n.apply(e, t || [])).next())
                 }))
             };
-            const M = i().extend({
+            const P = i().extend({
                 components: {
                     LobbyActions: x.Z,
-                    Input: b.Z,
+                    Input: _.Z,
                     SurveyForm: T,
-                    TeamSwitcher: P
+                    TeamSwitcher: O
                 },
                 props: {
                     avatarImages: Object,
@@ -1303,7 +916,7 @@
                     }
                 },
                 mounted() {
-                    return R(this, void 0, void 0, (function*() {
+                    return M(this, void 0, void 0, (function*() {
                         this.player.streamerMode && this.player.vipName === this.info.name && (yield this.$showModal("Options", {
                             text: this.$t("STREAMER_MODAL_TEXT"),
                             subtext: `${this.$t("STREAMER_MODAL_SUBTEXT_ATTENTION")}[section]${this.$t("STREAMER_MODAL_SUBTEXT_RECOMMEND")}[/section][section]${this.$t("STREAMER_MODAL_SUBTEXT_BEST")}[/section][section]${this.$t("STREAMER_MODAL_SUBTEXT_GOOD")}[/section][section]${this.$t("STREAMER_MODAL_SUBTEXT_RESTART")}[/section]`,
@@ -1322,7 +935,7 @@
                         this.selectedAvatar = e
                     },
                     onSubmitAvatar() {
-                        return R(this, void 0, void 0, (function*() {
+                        return M(this, void 0, void 0, (function*() {
                             try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "avatar",
@@ -1334,7 +947,7 @@
                         }))
                     },
                     onSubmitNameSurvey(e) {
-                        return R(this, void 0, void 0, (function*() {
+                        return M(this, void 0, void 0, (function*() {
                             try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "rankNames",
@@ -1346,7 +959,7 @@
                         }))
                     },
                     onSubmitTeamName() {
-                        return R(this, void 0, void 0, (function*() {
+                        return M(this, void 0, void 0, (function*() {
                             if (this.player.textKey) {
                                 this.filterError = !1;
                                 try {
@@ -1359,7 +972,7 @@
                         }))
                     },
                     onSwitchTeams() {
-                        return R(this, void 0, void 0, (function*() {
+                        return M(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "switchTeams"
@@ -1371,26 +984,26 @@
                     }
                 }
             });
-            var L = (0, u.Z)(M, _, [], !1, null, "6f411366", null);
+            var L = (0, d.Z)(P, y, [], !1, null, "6f411366", null);
             L.options.__file = "src/games/pp8/survey-bomb/views/Lobby.vue";
-            const B = L.exports;
-            var D = function() {
+            const D = L.exports;
+            var U = function() {
                 var e = this,
                     t = e.$createElement,
-                    a = e._self._c || t;
-                return a("div", {
+                    n = e._self._c || t;
+                return n("div", {
                     staticClass: "header",
                     attrs: {
                         "aria-label": "name and torch section"
                     }
-                }, [e.name ? [a("div", {
+                }, [e.name ? [n("div", {
                     staticClass: "banner",
                     class: null != e.teamIndex ? "team-" + e.teamIndex : ""
-                }, [a("span", {
+                }, [n("span", {
                     staticClass: "name"
-                }, [e._v(e._s(e.name))])])] : e._e(), e._v(" "), null != e.torches ? a("div", {
+                }, [e._v(e._s(e.name))])])] : e._e(), e._v(" "), null != e.torches ? n("div", {
                     staticClass: "torches"
-                }, [0 === e.torches ? a("span", {
+                }, [0 === e.torches ? n("span", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1399,7 +1012,7 @@
                     }],
                     staticClass: "torch-warning"
                 }) : e._l(e.torches, (function(e, t) {
-                    return a("svg", {
+                    return n("svg", {
                         directives: [{
                             name: "svg",
                             rawName: "v-svg",
@@ -1411,8 +1024,8 @@
                     })
                 }))], 2) : e._e()], 2)
             };
-            D._withStripped = !0;
-            const G = i().extend({
+            U._withStripped = !0;
+            const H = i().extend({
                 props: {
                     name: String,
                     teamIndex: Number,
@@ -1431,10 +1044,10 @@
                 },
                 themeColor: "#000"
             });
-            var F = (0, u.Z)(G, D, [], !1, null, "5c609c11", null);
-            F.options.__file = "src/games/pp8/survey-bomb/views/NameHeader.vue";
-            const U = F.exports;
-            var j = function() {
+            var B = (0, d.Z)(H, U, [], !1, null, "5c609c11", null);
+            B.options.__file = "src/games/pp8/survey-bomb/views/NameHeader.vue";
+            const F = B.exports;
+            var Z = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -1450,23 +1063,23 @@
                     }
                 })], 1)
             };
-            j._withStripped = !0;
-            var Z = s(56623),
-                H = s(83933);
-            const K = i().extend({
+            Z._withStripped = !0;
+            var j = s(56623),
+                G = s(83933);
+            const q = i().extend({
                 components: {
-                    GalleryLink: Z.Z,
-                    PostGameActions: H.Z
+                    GalleryLink: j.Z,
+                    PostGameActions: G.Z
                 },
                 props: {
                     artifact: Object,
                     player: Object
                 }
             });
-            var Y = (0, u.Z)(K, j, [], !1, null, "dde521ea", null);
-            Y.options.__file = "src/games/pp8/survey-bomb/views/PostGame.vue";
-            const q = Y.exports;
-            var W = function() {
+            var K = (0, d.Z)(q, Z, [], !1, null, "dde521ea", null);
+            K.options.__file = "src/games/pp8/survey-bomb/views/PostGame.vue";
+            const X = K.exports;
+            var V = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -1495,12 +1108,12 @@
                     }
                 })]], 2)
             };
-            W._withStripped = !0;
-            var V = function(e, t, s, a) {
-                return new(s || (s = Promise))((function(n, i) {
+            V._withStripped = !0;
+            var W = function(e, t, s, n) {
+                return new(s || (s = Promise))((function(a, i) {
                     function r(e) {
                         try {
-                            c(a.next(e))
+                            c(n.next(e))
                         } catch (e) {
                             i(e)
                         }
@@ -1508,7 +1121,7 @@
 
                     function o(e) {
                         try {
-                            c(a.throw(e))
+                            c(n.throw(e))
                         } catch (e) {
                             i(e)
                         }
@@ -1516,14 +1129,14 @@
 
                     function c(e) {
                         var t;
-                        e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
+                        e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
                             e(t)
                         }))).then(r, o)
                     }
-                    c((a = a.apply(e, t || [])).next())
+                    c((n = n.apply(e, t || [])).next())
                 }))
             };
-            const X = i().extend({
+            const Y = i().extend({
                 components: {
                     SurveyForm: T
                 },
@@ -1548,7 +1161,7 @@
                 },
                 methods: {
                     onChooseAnswer(e) {
-                        return V(this, void 0, void 0, (function*() {
+                        return W(this, void 0, void 0, (function*() {
                             if (this.answers = e, this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     answers: this.answers
@@ -1559,7 +1172,7 @@
                         }))
                     },
                     onSubmitSurvey() {
-                        return V(this, void 0, void 0, (function*() {
+                        return W(this, void 0, void 0, (function*() {
                             switch (this.$ecast.role) {
                                 case "audience":
                                     this.onAudienceSubmit();
@@ -1577,7 +1190,7 @@
                         })))
                     },
                     onPlayerSubmit() {
-                        return V(this, void 0, void 0, (function*() {
+                        return W(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) {
                                 this.isSubmitting = !0;
                                 try {
@@ -1593,10 +1206,10 @@
                     }
                 }
             });
-            var J = (0, u.Z)(X, W, [], !1, null, "25ca941a", null);
+            var J = (0, d.Z)(Y, V, [], !1, null, "25ca941a", null);
             J.options.__file = "src/games/pp8/survey-bomb/views/Survey.vue";
-            const Q = J.exports;
-            var z = function() {
+            const z = J.exports;
+            var Q = function() {
                 var e = this,
                     t = e.$createElement,
                     s = e._self._c || t;
@@ -1664,20 +1277,20 @@
                     }
                 }) : e._e()])])
             };
-            z._withStripped = !0;
+            Q._withStripped = !0;
             var ee = function() {
                 var e = this,
                     t = e.$createElement,
-                    a = e._self._c || t;
-                return a("div", {
+                    n = e._self._c || t;
+                return n("div", {
                     staticClass: "info",
                     attrs: {
                         "aria-label": "team section"
                     }
-                }, [a("div", {
+                }, [n("div", {
                     staticClass: "torches"
                 }, e._l(e.torches, (function(e, t) {
-                    return a("svg", {
+                    return n("svg", {
                         directives: [{
                             name: "svg",
                             rawName: "v-svg",
@@ -1687,13 +1300,13 @@
                         key: "torch" + t,
                         staticClass: "torch"
                     })
-                })), 0), e._v(" "), a("img", {
+                })), 0), e._v(" "), n("img", {
                     staticClass: "ribbon",
                     attrs: {
                         src: s(77589)("./ribbon-team-" + e.teamIndex + ".png"),
                         alt: "team ribbon"
                     }
-                }), e._v(" "), a("span", {
+                }), e._v(" "), n("span", {
                     staticClass: "team"
                 }, [e._v(e._s(e.teamName))])])
             };
@@ -1705,12 +1318,12 @@
                     torches: Number
                 }
             });
-            var se = (0, u.Z)(te, ee, [], !1, null, "17ea6684", null);
+            var se = (0, d.Z)(te, ee, [], !1, null, "17ea6684", null);
             se.options.__file = "src/games/pp8/survey-bomb/views/TeamInfo.vue";
-            const ae = se.exports;
-            const ne = i().extend({
+            const ne = se.exports;
+            const ae = i().extend({
                 components: {
-                    TeamInfo: ae
+                    TeamInfo: ne
                 },
                 props: {
                     avatar: Object,
@@ -1799,7 +1412,7 @@
                         return !(!this.hasTeamData || null == this.info.teamIndex) && this.teams[e].finalChance
                     },
                     onSkip() {
-                        return e = this, t = void 0, a = function*() {
+                        return e = this, t = void 0, n = function*() {
                             if (this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "skip"
@@ -1807,10 +1420,10 @@
                             } catch (e) {
                                 this.$handleEcastError(e)
                             }
-                        }, new((s = void 0) || (s = Promise))((function(n, i) {
+                        }, new((s = void 0) || (s = Promise))((function(a, i) {
                             function r(e) {
                                 try {
-                                    c(a.next(e))
+                                    c(n.next(e))
                                 } catch (e) {
                                     i(e)
                                 }
@@ -1818,7 +1431,7 @@
 
                             function o(e) {
                                 try {
-                                    c(a.throw(e))
+                                    c(n.throw(e))
                                 } catch (e) {
                                     i(e)
                                 }
@@ -1826,17 +1439,17 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
+                                e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
                                     e(t)
                                 }))).then(r, o)
                             }
-                            c((a = a.apply(e, t || [])).next())
+                            c((n = n.apply(e, t || [])).next())
                         }));
-                        var e, t, s, a
+                        var e, t, s, n
                     }
                 }
             });
-            var ie = (0, u.Z)(ne, z, [], !1, null, "9c843cf8", null);
+            var ie = (0, d.Z)(ae, Q, [], !1, null, "9c843cf8", null);
             ie.options.__file = "src/games/pp8/survey-bomb/views/Waiting.vue";
             const re = ie.exports;
             var oe = function() {
@@ -1879,11 +1492,11 @@
             oe._withStripped = !0;
             var ce = s(23493),
                 le = s.n(ce),
-                ue = function(e, t, s, a) {
-                    return new(s || (s = Promise))((function(n, i) {
+                de = function(e, t, s, n) {
+                    return new(s || (s = Promise))((function(a, i) {
                         function r(e) {
                             try {
-                                c(a.next(e))
+                                c(n.next(e))
                             } catch (e) {
                                 i(e)
                             }
@@ -1891,7 +1504,7 @@
 
                         function o(e) {
                             try {
-                                c(a.throw(e))
+                                c(n.throw(e))
                             } catch (e) {
                                 i(e)
                             }
@@ -1899,16 +1512,16 @@
 
                         function c(e) {
                             var t;
-                            e.done ? n(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
+                            e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
                                 e(t)
                             }))).then(r, o)
                         }
-                        c((a = a.apply(e, t || [])).next())
+                        c((n = n.apply(e, t || [])).next())
                     }))
                 };
-            const de = i().extend({
+            const he = i().extend({
                 components: {
-                    ChoiceButton: h
+                    ChoiceButton: u
                 },
                 props: {
                     audience: Object
@@ -2005,7 +1618,7 @@
                         this.nextRule = this.getNextRule(), this.$storage.isSupported && this.$storage.set("pm-answers", JSON.stringify(this.answers))
                     },
                     _decrementPNCounter(e) {
-                        return ue(this, void 0, void 0, (function*() {
+                        return de(this, void 0, void 0, (function*() {
                             try {
                                 yield this.$ecast.decrementPNCounter(e)
                             } catch (t) {
@@ -2014,7 +1627,7 @@
                         }))
                     },
                     _incrementPNCounter(e) {
-                        return ue(this, void 0, void 0, (function*() {
+                        return de(this, void 0, void 0, (function*() {
                             try {
                                 yield this.$ecast.incrementPNCounter(e)
                             } catch (t) {
@@ -2024,16 +1637,16 @@
                     }
                 }
             });
-            var he = (0, u.Z)(de, oe, [], !1, null, "22597437", null);
-            he.options.__file = "src/games/pp8/survey-bomb/views/audience/Playalong.vue";
-            const pe = he.exports;
-            const ve = i().extend({
+            var ue = (0, d.Z)(he, oe, [], !1, null, "22597437", null);
+            ue.options.__file = "src/games/pp8/survey-bomb/views/audience/Playalong.vue";
+            const pe = ue.exports;
+            const me = i().extend({
                 components: {
-                    NameHeader: U,
-                    Choices: y,
-                    Lobby: B,
-                    PostGame: q,
-                    Survey: Q,
+                    NameHeader: F,
+                    Choices: b,
+                    Lobby: D,
+                    PostGame: X,
+                    Survey: z,
                     Waiting: re,
                     Playalong: pe
                 },
@@ -2082,6 +1695,7 @@
                             case "survey":
                             case "waiting":
                                 return "bg-game";
+                            case "postGame":
                             default:
                                 return "bg-fallback"
                         }
@@ -2099,7 +1713,7 @@
                 },
                 methods: {
                     setAvatarImages() {
-                        return e = this, t = void 0, n = function*() {
+                        return e = this, t = void 0, a = function*() {
                             this.avatarImages = {
                                 0: {
                                     alt: "armored adventurer with sword",
@@ -2172,10 +1786,10 @@
                                     on: (yield Promise.resolve().then(s.t.bind(s, 96582, 17))).default
                                 }
                             }
-                        }, new((a = void 0) || (a = Promise))((function(s, i) {
+                        }, new((n = void 0) || (n = Promise))((function(s, i) {
                             function r(e) {
                                 try {
-                                    c(n.next(e))
+                                    c(a.next(e))
                                 } catch (e) {
                                     i(e)
                                 }
@@ -2183,7 +1797,7 @@
 
                             function o(e) {
                                 try {
-                                    c(n.throw(e))
+                                    c(a.throw(e))
                                 } catch (e) {
                                     i(e)
                                 }
@@ -2191,13 +1805,13 @@
 
                             function c(e) {
                                 var t;
-                                e.done ? s(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
+                                e.done ? s(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
                                 }))).then(r, o)
                             }
-                            c((n = n.apply(e, t || [])).next())
+                            c((a = a.apply(e, t || [])).next())
                         }));
-                        var e, t, a, n
+                        var e, t, n, a
                     },
                     setAudienceTorches(e) {
                         this.audienceInfo.torches = Math.max(0, e), this.$storage.isSupported && this.$storage.set("pm-torches", JSON.stringify(this.audienceInfo.torches))
@@ -2211,15 +1825,16 @@
                             case "waiting":
                                 this.$setThemeColor("#5f2d60");
                                 break;
+                            case "postGame":
                             default:
                                 this.$setThemeColor("#0e5767")
                         }
                     }
                 }
             });
-            var me = (0, u.Z)(ve, a, [], !1, null, null, null);
-            me.options.__file = "src/games/pp8/survey-bomb/views/Main.vue";
-            const fe = me.exports
+            var ve = (0, d.Z)(me, n, [], !1, null, null, null);
+            ve.options.__file = "src/games/pp8/survey-bomb/views/Main.vue";
+            const fe = ve.exports
         },
         15516: e => {
             "use strict";
@@ -2370,27 +1985,27 @@
             e.exports = '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">\n    <path d="M13 1.5L1 13.5" stroke="#FF1515" stroke-width="2"/>\n    <path d="M13 13.5L1 1.5" stroke="#FF1515" stroke-width="2"/>\n</svg>\n'
         },
         77589: (e, t, s) => {
-            var a = {
+            var n = {
                 "./ribbon-team-0.png": 46739,
                 "./ribbon-team-1.png": 44846
             };
 
-            function n(e) {
+            function a(e) {
                 var t = i(e);
                 return s(t)
             }
 
             function i(e) {
-                if (!s.o(a, e)) {
+                if (!s.o(n, e)) {
                     var t = new Error("Cannot find module '" + e + "'");
                     throw t.code = "MODULE_NOT_FOUND", t
                 }
-                return a[e]
+                return n[e]
             }
-            n.keys = function() {
-                return Object.keys(a)
-            }, n.resolve = i, e.exports = n, n.id = 77589
+            a.keys = function() {
+                return Object.keys(n)
+            }, a.resolve = i, e.exports = a, a.id = 77589
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/1988.b3e1de23d3cb12925177.js.map
+//# sourceMappingURL=sourcemaps/9290.9c6980f3c10657d97cf5.js.map

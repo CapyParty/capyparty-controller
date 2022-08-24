@@ -1,114 +1,30 @@
 {
     "bannerAds": [
         {
-            "tags": [
-                "locale-fr"
-            ],
-            "start": "2020-04-08",
-            "text": "Acheter maintenant!",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/Quip2Int.png",
-            "href": "https://www.jackboxgames.com/quiplash-two-interlashional-french/?utm_source=jackboxtv&utm_campaign=jbgtvquipint&utm_content=jbgtvquipint"
+            "start": "2020-01-11",
+            "text": "Our main site!",
+            "src": "https://capyparty.xyz/banners/oursite.png",
+            "href": "https://capyparty.xyz/main"
         },
         {
-            "tags": [
-                "locale-it"
-            ],
-            "start": "2020-04-08",
-            "text": "Acquista ora!",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/Quip2Int.png",
-            "href": "https://www.jackboxgames.com/quiplash-two-interlashional-italian/?utm_source=jackboxtv&utm_campaign=jbgtvquipint&utm_content=jbgtvquipint"
+            "start": "2020-01-11",
+            "text": "Our first mod! Download now!",
+            "src": "https://capyparty.xyz/banners/blindlash2out.png"
         },
         {
-            "tags": [
-                "locale-de"
-            ],
-            "start": "2020-04-08",
-            "text": "Kaufe jetzt!",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/Quip2Int.png",
-            "href": "https://www.jackboxgames.com/quiplash-two-interlashional-german/?utm_source=jackboxtv&utm_campaign=jbgtvquipint&utm_content=jbgtvquipint"
+            "start": "2022-01-11",
+            "text": "CapyParty Discord",
+            "src": "https://capyparty.xyz/banners/discord.png",
+            "href": "https://discord.gg/v7Xzqjg5KQ"
         },
         {
-            "tags": [
-                "locale-es"
-            ],
-            "start": "2020-04-08",
-            "text": "¡Compralo ahora!",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/Quip2Int.png",
-            "href": "https://www.jackboxgames.com/quiplash-two-interlashional-spanish/?utm_source=jackboxtv&utm_campaign=jbgtvquipint&utm_content=jbgtvquipint"
-        },
-        {
-            "start": "2022-06-30",
-            "text": "ON SALE! $9.99",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/JBPS_ControllerBanner.png",
-            "href": "https://www.jackboxgames.com/the-jackbox-party-starter/?utm_source=jbgtvtjps&utm_medium=jbgtvtjps&utm_campaign=jbgtvtjps"
-        },
-        {
-            "start": "2021-08-13",
-            "end": "2022-09-09",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/duolingo.png",
-            "href": "https://www.jackboxgames.com/jackbox-party-starter-duolingo-plus/?utm_source=jbgtvduo&utm_medium=jbgtvduo&utm_campaign=jbgtvduo"
-        },
-        {
-            "start": "2021-08-02",
-            "end": "2022-08-15",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/banner-feedback.png",
-            "href": "https://docs.google.com/forms/d/e/1FAIpQLSfWL0mJBaG6KeTj-nF7y94PHOZv47U4M_xbioQS5hmEcDBGEg/viewform?usp=sf_link/?utm_source=jbgtvduo&utm_medium=jbgtvduo&utm_campaign=jbgtvduo"
-        },
-        {
-            "start": "2021-08-13",
-            "text": "ON SALE! $20.99",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP8 banner .png",
-            "href": "https://www.jackboxgames.com/party-pack-eight/?utm_source=jbgtvpp8&utm_medium=jbgtvpp8&utm_campaign=jbgtvpp8"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $19.49",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP7.png",
-            "href": "https://www.jackboxgames.com/party-pack-seven/?utm_source=jbgtv&utm_medium=jbgtvpp7&utm_campaign=jbgtvpp7"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $17.99",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/JPP6ControllerAd.png",
-            "href": "https://jackboxgames.com/party-pack-six/?utm_source=jackboxtv&utm_campaign=jbgtvpp6&utm_content=jbgtvpp6"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $16.49",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP5.png",
-            "href": "https://jackboxgames.com/party-pack-five/?utm_source=jackboxtv&utm_campaign=jbgtvpp5&utm_content=jbgtvpp5"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $12.49",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP4.png",
-            "href": "https://jackboxgames.com/party-pack-four/?utm_source=jackboxtv&utm_campaign=jbgtvpp4&utm_content=jbgtvpp4"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $18.74",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP3.png",
-            "href": "https://jackboxgames.com/party-pack-three/?utm_source=jackboxtv&utm_campaign=jbgtvpp3&utm_content=jbgtvpp3"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $4.99",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/D2.png",
-            "href": "https://jackboxgames.com/drawful-two/?utm_source=jackboxtv&utm_campaign=jbgtvdraw&utm_content=jbgtvdraw"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $11.25",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP2.png",
-            "href": "https://jackboxgames.com/party-pack-two/?utm_source=jackboxtv&utm_campaign=jbgtvpp2&utm_content=jbgtvpp2"
-        },
-        {
-            "start": "2021-07-23",
-            "text": "ON SALE! $11.25",
-            "src": "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP1.png",
-            "href": "https://jackboxgames.com/party-pack/?utm_source=jackboxtv&utm_campaign=jbgtvpp1&utm_content=jbgtvpp1"
+            "start": "2022-01-11",
+            "text": "Support the devs!",
+            "src": "https://capyparty.xyz/banners/buygames.png",
+            "href": "https://store.steampowered.com/search?developer=Jackbox%20Games%2C%20Inc."
         }
     ],
+
     "postGameBanners": {
         "quiplash3": {
             "copy": "Like This Game? Try Party Pack 6!",

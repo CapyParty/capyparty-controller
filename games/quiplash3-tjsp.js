@@ -1,126 +1,246 @@
 (self.webpackChunkjackbox_tv = self.webpackChunkjackbox_tv || []).push([
     ["games/quiplash3-tjsp"], {
+        3682: (e, t, a) => {
+            "use strict";
+            a.d(t, {
+                Z: () => u
+            });
+            var n, r, i = "function" == typeof Map ? new Map : (n = [], r = [], {
+                    has: function(e) {
+                        return n.indexOf(e) > -1
+                    },
+                    get: function(e) {
+                        return r[n.indexOf(e)]
+                    },
+                    set: function(e, t) {
+                        -1 === n.indexOf(e) && (n.push(e), r.push(t))
+                    },
+                    delete: function(e) {
+                        var t = n.indexOf(e);
+                        t > -1 && (n.splice(t, 1), r.splice(t, 1))
+                    }
+                }),
+                s = function(e) {
+                    return new Event(e, {
+                        bubbles: !0
+                    })
+                };
+            try {
+                new Event("test")
+            } catch (n) {
+                s = function(e) {
+                    var t = document.createEvent("Event");
+                    return t.initEvent(e, !0, !1), t
+                }
+            }
+
+            function o(e) {
+                var t = i.get(e);
+                t && t.destroy()
+            }
+
+            function l(e) {
+                var t = i.get(e);
+                t && t.update()
+            }
+            var c = null;
+            "undefined" == typeof window || "function" != typeof window.getComputedStyle ? ((c = function(e) {
+                return e
+            }).destroy = function(e) {
+                return e
+            }, c.update = function(e) {
+                return e
+            }) : ((c = function(e, t) {
+                return e && Array.prototype.forEach.call(e.length ? e : [e], (function(e) {
+                    return function(e) {
+                        if (e && e.nodeName && "TEXTAREA" === e.nodeName && !i.has(e)) {
+                            var t, a = null,
+                                n = null,
+                                r = null,
+                                o = function() {
+                                    e.clientWidth !== n && p()
+                                },
+                                l = function(t) {
+                                    window.removeEventListener("resize", o, !1), e.removeEventListener("input", p, !1), e.removeEventListener("keyup", p, !1), e.removeEventListener("autosize:destroy", l, !1), e.removeEventListener("autosize:update", p, !1), Object.keys(t).forEach((function(a) {
+                                        e.style[a] = t[a]
+                                    })), i.delete(e)
+                                }.bind(e, {
+                                    height: e.style.height,
+                                    resize: e.style.resize,
+                                    overflowY: e.style.overflowY,
+                                    overflowX: e.style.overflowX,
+                                    wordWrap: e.style.wordWrap
+                                });
+                            e.addEventListener("autosize:destroy", l, !1), "onpropertychange" in e && "oninput" in e && e.addEventListener("keyup", p, !1), window.addEventListener("resize", o, !1), e.addEventListener("input", p, !1), e.addEventListener("autosize:update", p, !1), e.style.overflowX = "hidden", e.style.wordWrap = "break-word", i.set(e, {
+                                destroy: l,
+                                update: p
+                            }), "vertical" === (t = window.getComputedStyle(e, null)).resize ? e.style.resize = "none" : "both" === t.resize && (e.style.resize = "horizontal"), a = "content-box" === t.boxSizing ? -(parseFloat(t.paddingTop) + parseFloat(t.paddingBottom)) : parseFloat(t.borderTopWidth) + parseFloat(t.borderBottomWidth), isNaN(a) && (a = 0), p()
+                        }
+
+                        function c(t) {
+                            var a = e.style.width;
+                            e.style.width = "0px", e.style.width = a, e.style.overflowY = t
+                        }
+
+                        function u() {
+                            if (0 !== e.scrollHeight) {
+                                var t = function(e) {
+                                        for (var t = []; e && e.parentNode && e.parentNode instanceof Element;) e.parentNode.scrollTop && t.push({
+                                            node: e.parentNode,
+                                            scrollTop: e.parentNode.scrollTop
+                                        }), e = e.parentNode;
+                                        return t
+                                    }(e),
+                                    r = document.documentElement && document.documentElement.scrollTop;
+                                e.style.height = "", e.style.height = e.scrollHeight + a + "px", n = e.clientWidth, t.forEach((function(e) {
+                                    e.node.scrollTop = e.scrollTop
+                                })), r && (document.documentElement.scrollTop = r)
+                            }
+                        }
+
+                        function p() {
+                            u();
+                            var t = Math.round(parseFloat(e.style.height)),
+                                a = window.getComputedStyle(e, null),
+                                n = "content-box" === a.boxSizing ? Math.round(parseFloat(a.height)) : e.offsetHeight;
+                            if (n < t ? "hidden" === a.overflowY && (c("scroll"), u(), n = "content-box" === a.boxSizing ? Math.round(parseFloat(window.getComputedStyle(e, null).height)) : e.offsetHeight) : "hidden" !== a.overflowY && (c("hidden"), u(), n = "content-box" === a.boxSizing ? Math.round(parseFloat(window.getComputedStyle(e, null).height)) : e.offsetHeight), r !== n) {
+                                r = n;
+                                var i = s("autosize:resized");
+                                try {
+                                    e.dispatchEvent(i)
+                                } catch (e) {}
+                            }
+                        }
+                    }(e)
+                })), e
+            }).destroy = function(e) {
+                return e && Array.prototype.forEach.call(e.length ? e : [e], o), e
+            }, c.update = function(e) {
+                return e && Array.prototype.forEach.call(e.length ? e : [e], l), e
+            });
+            const u = c
+        },
         48598: (e, t, a) => {
             "use strict";
             a.d(t, {
-                I: () => h
+                I: () => A
             });
-            const s = [169, 174, 8252, 8265, 8482, 8505, 8596, 8597, 8598, 8599, 8600, 8601, 8617, 8618, 9e3, 8986, 8987, 9167, 9193, 9194, 9195, 9196, 9197, 9198, 9199, 9200, 9201, 9202, 9203, 9209, 9210, 9410, 9642, 9643, 9654, 9664, 9723, 9724, 9725, 9726, 9728, 9729, 9730, 9731, 9732, 9742, 9745, 9748, 9749, 9752, 9757, 9760, 9762, 9763, 9766, 9770, 9774, 9775, 9784, 9785, 9786, 9792, 9794, 9800, 9801, 9802, 9803, 9804, 9805, 9806, 9807, 9808, 9809, 9810, 9811, 9824, 9827, 9829, 9830, 9832, 9851, 9854, 9855, 9874, 9875, 9876, 9877, 9878, 9879, 9881, 9883, 9884, 9888, 9823, 9889, 9895, 9898, 9899, 9904, 9905, 9917, 9918, 9924, 9925, 9928, 9934, 9935, 9937, 9939, 9940, 9961, 9962, 9968, 9969, 9970, 9971, 9972, 9973, 9974, 9975, 9976, 9977, 9978, 9981, 9986, 9989, 9992, 9993, 9994, 9995, 9996, 9997, 9999, 10002, 10004, 10006, 10013, 10017, 10024, 10035, 10036, 10052, 10055, 10060, 10062, 10067, 10068, 10069, 10071, 10083, 10084, 10085, 10133, 10134, 10135, 10145, 10160, 10175, 10548, 10549, 11013, 11014, 11015, 11035, 11036, 11088, 11093, 12336, 12349, 12951, 12953, 58634],
+            const n = [169, 174, 8252, 8265, 8482, 8505, 8596, 8597, 8598, 8599, 8600, 8601, 8617, 8618, 9e3, 8986, 8987, 9167, 9193, 9194, 9195, 9196, 9197, 9198, 9199, 9200, 9201, 9202, 9203, 9209, 9210, 9410, 9642, 9643, 9654, 9664, 9723, 9724, 9725, 9726, 9728, 9729, 9730, 9731, 9732, 9742, 9745, 9748, 9749, 9752, 9757, 9760, 9762, 9763, 9766, 9770, 9774, 9775, 9784, 9785, 9786, 9792, 9794, 9800, 9801, 9802, 9803, 9804, 9805, 9806, 9807, 9808, 9809, 9810, 9811, 9824, 9827, 9829, 9830, 9832, 9851, 9854, 9855, 9874, 9875, 9876, 9877, 9878, 9879, 9881, 9883, 9884, 9888, 9823, 9889, 9895, 9898, 9899, 9904, 9905, 9917, 9918, 9924, 9925, 9928, 9934, 9935, 9937, 9939, 9940, 9961, 9962, 9968, 9969, 9970, 9971, 9972, 9973, 9974, 9975, 9976, 9977, 9978, 9981, 9986, 9989, 9992, 9993, 9994, 9995, 9996, 9997, 9999, 10002, 10004, 10006, 10013, 10017, 10024, 10035, 10036, 10052, 10055, 10060, 10062, 10067, 10068, 10069, 10071, 10083, 10084, 10085, 10133, 10134, 10135, 10145, 10160, 10175, 10548, 10549, 11013, 11014, 11015, 11035, 11036, 11088, 11093, 12336, 12349, 12951, 12953, 58634],
                 r = [128104, 128105, 129489],
-                n = [127995, 127996, 127997, 127998, 127999, 129456, 129457, 129458, 129459],
-                i = 65039,
+                i = [127995, 127996, 127997, 127998, 127999, 129456, 129457, 129458, 129459],
+                s = 65039,
                 o = 8205,
                 l = (e, t) => {
                     const a = parseInt(e.charCodeAt(0).toString(16), 16),
-                        s = parseInt(t.charCodeAt(0).toString(16), 16);
-                    return parseInt((1024 * (a - 55296) + s - 56320 + 65536).toString(16), 16)
+                        n = parseInt(t.charCodeAt(0).toString(16), 16);
+                    return parseInt((1024 * (a - 55296) + n - 56320 + 65536).toString(16), 16)
                 },
                 c = e => {
                     const t = parseInt(e.charCodeAt(0).toString(16), 16);
-                    return s.includes(t)
+                    return n.includes(t)
                 },
                 u = (e, t) => !!e && parseInt(e.charCodeAt(0).toString(16), 16) === t,
                 p = e => /[\uD800-\uDB7F]/.test(e),
                 d = e => /[\u0023\u002A\u0030-\u0039]/.test(e),
-                A = e => {
+                h = e => {
                     const t = parseInt(e.toString(16), 16);
                     return t >= 127462 && t <= 127487
                 },
                 v = (e, t) => {
                     let a = "",
-                        s = !0;
-                    for (; s && t < e.length;) {
+                        n = !0;
+                    for (; n && t < e.length;) {
                         const r = e[t];
                         if (p(r)) {
-                            const i = l(r, e[t + 1]);
-                            n.includes(i) ? (a = a + r + e[t + 1], t += 2) : s = !1
-                        } else u(r, o) ? (a = a + r + e[t + 1] + e[t + 2], t += 3) : s = !1
+                            const s = l(r, e[t + 1]);
+                            i.includes(s) ? (a = a + r + e[t + 1], t += 2) : n = !1
+                        } else u(r, o) ? (a = a + r + e[t + 1] + e[t + 2], t += 3) : n = !1
                     }
                     return {
                         modifyingChars: a,
                         newPosition: t
                     }
                 },
-                h = (e, t) => {
+                A = (e, t) => {
                     if (!/[^\u00A1\u0020-\u0022\u0024-\u0029\u002B-\u002F\u003A-\u007E\u00BF-\u00FF’]/gi.test(e)) return t && e && e.length > t && (e = e.substring(0, t)), {
                         result: e,
                         charCount: e.length
                     };
                     const a = e.split("");
-                    let s = 0,
-                        h = "";
-                    for (let e = 0; e < a.length && (!t || s < t); e += 1) {
+                    let n = 0,
+                        A = "";
+                    for (let e = 0; e < a.length && (!t || n < t); e += 1) {
                         const t = a[e];
-                        if (/[\u00A1\u0020-\u0022\u0024-\u0029\u002B-\u002F\u003A-\u007E\u00BF-\u00FF’]/gi.test(t)) h += t, s += 1;
+                        if (/[\u00A1\u0020-\u0022\u0024-\u0029\u002B-\u002F\u003A-\u007E\u00BF-\u00FF’]/gi.test(t)) A += t, n += 1;
                         else {
                             if (c(t)) {
-                                if (h += t, u(t, 9977)) {
+                                if (A += t, u(t, 9977)) {
                                     e += 1;
                                     const {
                                         modifyingChars: t,
-                                        newPosition: s
+                                        newPosition: n
                                     } = v(a, e);
-                                    h += t, e = s - 1
+                                    A += t, e = n - 1
                                 }
-                                s += 1;
+                                n += 1;
                                 continue
                             }
                             if (u(t, 8220) || u(t, 8221)) {
-                                e += 1, h = `${h}"`, s += 1;
+                                e += 1, A = `${A}"`, n += 1;
                                 continue
                             }
                             if (p(t)) {
                                 const c = a[e + 1];
-                                h = h + t + c, e += 1;
+                                A = A + t + c, e += 1;
                                 const p = l(t, c);
                                 if (r.includes(p)) {
                                     const {
                                         modifyingChars: t,
                                         newPosition: r
                                     } = v(a, e + 1);
-                                    h += t, s += 1, e = r - 1;
+                                    A += t, n += 1, e = r - 1;
                                     continue
                                 }
-                                if (A(p)) {
+                                if (h(p)) {
                                     const t = l(a[e + 1], a[e + 2]);
-                                    A(t) && (h = h + a[e + 1] + a[e + 2], e += 1), s += 1;
+                                    h(t) && (A = A + a[e + 1] + a[e + 2], e += 1), n += 1;
                                     continue
                                 }
                                 if (127988 === p) {
                                     const t = a[e + 1];
-                                    u(t, o) && (h = h + t + a[e + 2] + a[e + 3], e += 3), s += 1;
+                                    u(t, o) && (A = A + t + a[e + 2] + a[e + 3], e += 3), n += 1;
                                     continue
                                 }
                                 if (127987 === p) {
                                     const t = a[e + 1];
-                                    u(t, i) && (e += 1, u(a[e + 1], o) && (h = h + t + a[e + 1] + a[e + 2] + a[e + 3], e += 3)), s += 1;
+                                    u(t, s) && (e += 1, u(a[e + 1], o) && (A = A + t + a[e + 1] + a[e + 2] + a[e + 3], e += 3)), n += 1;
                                     continue
                                 }
-                                n.includes(p) || (s += 1);
+                                i.includes(p) || (n += 1);
                                 continue
                             }
                             if (d(t)) {
                                 const r = a[e + 1];
-                                r && u(r, i) ? (h = h + t + a[e + 1] + a[e + 2], e += 2) : h += t, s += 1;
+                                r && u(r, s) ? (A = A + t + a[e + 1] + a[e + 2], e += 2) : A += t, n += 1;
                                 continue
-                            }(u(t, i) || u(t, o) || u(t, 8419)) && (h += t)
+                            }(u(t, s) || u(t, o) || u(t, 8419)) && (A += t)
                         }
                     }
                     return {
-                        result: h,
-                        charCount: s
+                        result: A,
+                        charCount: n
                     }
                 }
         },
         79278: (e, t, a) => {
             "use strict";
 
-            function s(e) {
-                return s = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+            function n(e) {
+                return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                     return typeof e
                 } : function(e) {
                     return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                }, s(e)
+                })(e)
             }
 
             function r(e, t, a) {
@@ -132,30 +252,30 @@
                 }) : e[t] = a, e
             }
 
-            function n(e, t) {
+            function i(e, t) {
                 var a = Object.keys(e);
                 if (Object.getOwnPropertySymbols) {
-                    var s = Object.getOwnPropertySymbols(e);
-                    t && (s = s.filter((function(t) {
+                    var n = Object.getOwnPropertySymbols(e);
+                    t && (n = n.filter((function(t) {
                         return Object.getOwnPropertyDescriptor(e, t).enumerable
-                    }))), a.push.apply(a, s)
+                    }))), a.push.apply(a, n)
                 }
                 return a
             }
 
-            function i(e) {
+            function s(e) {
                 for (var t = 1; t < arguments.length; t++) {
                     var a = null != arguments[t] ? arguments[t] : {};
-                    t % 2 ? n(Object(a), !0).forEach((function(t) {
+                    t % 2 ? i(Object(a), !0).forEach((function(t) {
                         r(e, t, a[t])
-                    })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a)) : n(Object(a)).forEach((function(t) {
+                    })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a)) : i(Object(a)).forEach((function(t) {
                         Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
                     }))
                 }
                 return e
             }
             a.d(t, {
-                ZP: () => G
+                ZP: () => w
             });
             var o = "_",
                 l = "function",
@@ -182,114 +302,114 @@
                     indexes: a
                 }
             }
-            var A = [],
+            var h = [],
                 v = "";
 
-            function h() {
+            function A() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : v,
-                    t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : A,
+                    t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : h,
                     a = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                 if (!p(t)) {
-                    if (s(t) !== l) throw new Error("Text-mask:conformToMask; The mask property must be an array.");
+                    if (n(t) !== l) throw new Error("Text-mask:conformToMask; The mask property must be an array.");
                     t = d(t = t(e, a)).maskWithoutCaretTraps
                 }
                 var r = a.guide,
-                    n = void 0 === r || r,
-                    i = a.previousConformedValue,
-                    c = void 0 === i ? v : i,
-                    h = a.placeholderChar,
-                    m = void 0 === h ? o : h,
-                    f = a.placeholder,
-                    _ = void 0 === f ? u(t, m) : f,
-                    T = a.currentCaretPosition,
+                    i = void 0 === r || r,
+                    s = a.previousConformedValue,
+                    c = void 0 === s ? v : s,
+                    A = a.placeholderChar,
+                    f = void 0 === A ? o : A,
+                    m = a.placeholder,
+                    T = void 0 === m ? u(t, f) : m,
+                    _ = a.currentCaretPosition,
                     y = a.keepCharPositions,
-                    E = !1 === n && void 0 !== c,
+                    E = !1 === i && void 0 !== c,
                     O = e.length,
-                    C = c.length,
-                    b = _.length,
-                    g = t.length,
-                    R = O - C,
+                    b = c.length,
+                    g = T.length,
+                    C = t.length,
+                    R = O - b,
                     I = R > 0,
-                    P = T + (I ? -R : 0),
-                    N = P + Math.abs(R);
+                    L = _ + (I ? -R : 0),
+                    N = L + Math.abs(R);
                 if (!0 === y && !I) {
-                    for (var L = v, S = P; S < N; S++) _[S] === m && (L += m);
-                    e = e.slice(0, P) + L + e.slice(P, O)
+                    for (var x = v, P = L; P < N; P++) T[P] === f && (x += f);
+                    e = e.slice(0, L) + x + e.slice(L, O)
                 }
-                for (var x = e.split(v).map((function(e, t) {
+                for (var S = e.split(v).map((function(e, t) {
                         return {
                             char: e,
-                            isNew: t >= P && t < N
+                            isNew: t >= L && t < N
                         }
-                    })), G = O - 1; G >= 0; G--) {
-                    var w = x[G].char;
-                    if (w !== m) {
-                        var V = G >= P && C === g;
-                        w === _[V ? G - R : G] && x.splice(G, 1)
+                    })), w = O - 1; w >= 0; w--) {
+                    var G = S[w].char;
+                    if (G !== f) {
+                        var V = w >= L && b === C;
+                        G === T[V ? w - R : w] && S.splice(w, 1)
                     }
                 }
                 var U = v,
-                    $ = !1;
-                e: for (var k = 0; k < b; k++) {
-                    var D = _[k];
-                    if (D === m) {
-                        if (x.length > 0)
-                            for (; x.length > 0;) {
-                                var B = x.shift(),
-                                    j = B.char,
-                                    M = B.isNew;
-                                if (j === m && !0 !== E) {
-                                    U += m;
+                    k = !1;
+                e: for (var $ = 0; $ < g; $++) {
+                    var D = T[$];
+                    if (D === f) {
+                        if (S.length > 0)
+                            for (; S.length > 0;) {
+                                var F = S.shift(),
+                                    M = F.char,
+                                    j = F.isNew;
+                                if (M === f && !0 !== E) {
+                                    U += f;
                                     continue e
                                 }
-                                if (t[k].test(j)) {
-                                    if (!0 === y && !1 !== M && c !== v && !1 !== n && I) {
-                                        for (var F = x.length, Y = null, H = 0; H < F; H++) {
-                                            var K = x[H];
-                                            if (K.char !== m && !1 === K.isNew) break;
-                                            if (K.char === m) {
-                                                Y = H;
+                                if (t[$].test(M)) {
+                                    if (!0 === y && !1 !== j && c !== v && !1 !== i && I) {
+                                        for (var B = S.length, H = null, z = 0; z < B; z++) {
+                                            var W = S[z];
+                                            if (W.char !== f && !1 === W.isNew) break;
+                                            if (W.char === f) {
+                                                H = z;
                                                 break
                                             }
                                         }
-                                        null !== Y ? (U += j, x.splice(Y, 1)) : k--
-                                    } else U += j;
+                                        null !== H ? (U += M, S.splice(H, 1)) : $--
+                                    } else U += M;
                                     continue e
                                 }
-                                $ = !0
-                            }!1 === E && (U += _.substr(k, b));
+                                k = !0
+                            }!1 === E && (U += T.substr($, g));
                         break
                     }
                     U += D
                 }
                 if (E && !1 === I) {
-                    for (var W = null, q = 0; q < U.length; q++) _[q] === m && (W = q);
-                    U = null !== W ? U.substr(0, W + 1) : v
+                    for (var K = null, q = 0; q < U.length; q++) T[q] === f && (K = q);
+                    U = null !== K ? U.substr(0, K + 1) : v
                 }
                 return {
                     conformedValue: U,
                     meta: {
-                        someCharsRejected: $
+                        someCharsRejected: k
                     }
                 }
             }
-            var m = {
+            var f = {
                     __nextCharOptional__: !0
                 },
-                f = {
+                m = {
                     "#": /\d/,
                     A: /[a-z]/i,
                     N: /[a-z0-9]/i,
-                    "?": m,
+                    "?": f,
                     X: /./
                 },
-                _ = function(e) {
+                T = function(e) {
                     return a = (t = e.toString().replace(/.(\/)[gmiyus]{0,6}$/, (function(e) {
                         return e.replace("/", "?/")
                     }))).lastIndexOf("/"), new RegExp(t.slice(1, a), t.slice(a + 1));
                     var t, a
                 },
-                T = function(e) {
+                _ = function(e) {
                     return e instanceof RegExp ? e : function(e) {
                         return new RegExp("/[".concat(function(e) {
                             return "[\\^$.|?*+()".indexOf(e) > -1 ? "\\".concat(e) : e
@@ -298,29 +418,29 @@
                 };
 
             function y(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f;
-                return e.map((function(e, a, s) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
+                return e.map((function(e, a, n) {
                     var r = t[e] || e,
-                        n = s[a - 1],
-                        i = t[n] || n;
-                    return r === m ? null : i === m ? _(T(r)) : r
+                        i = n[a - 1],
+                        s = t[i] || i;
+                    return r === f ? null : s === f ? T(_(r)) : r
                 })).filter(Boolean)
             }
 
             function E(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f;
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
                 return y(e.split(""), t)
             }
             var O = function(e) {
                     return e instanceof HTMLInputElement ? e : e.querySelector("input") || e
                 },
-                C = function(e) {
+                b = function(e) {
                     return "function" == typeof e
                 },
-                b = function(e) {
+                g = function(e) {
                     return "string" == typeof e
                 },
-                g = function() {
+                C = function() {
                     var e = new Map,
                         t = {
                             previousValue: "",
@@ -328,11 +448,11 @@
                         };
 
                     function a(a) {
-                        return e.get(a) || i({}, t)
+                        return e.get(a) || s({}, t)
                     }
                     return {
-                        partiallyUpdate: function(t, s) {
-                            e.set(t, i(i({}, a(t)), s))
+                        partiallyUpdate: function(t, n) {
+                            e.set(t, s(s({}, a(t)), n))
                         },
                         remove: function(t) {
                             e.delete(t)
@@ -351,415 +471,248 @@
             function I(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
                     a = e.value,
-                    s = g.get(e),
-                    r = s.previousValue,
-                    n = s.mask,
-                    i = a !== r,
+                    n = C.get(e),
+                    r = n.previousValue,
+                    i = n.mask,
+                    s = a !== r,
                     o = a.length > r.length,
-                    l = a && i && o;
-                if ((t || l) && n) {
-                    var c = h(a, n, {
+                    l = a && s && o;
+                if ((t || l) && i) {
+                    var c = A(a, i, {
                             guide: !1
                         }),
                         u = c.conformedValue;
                     e.value = u, R(e)
                 }
-                g.partiallyUpdate(e, {
+                C.partiallyUpdate(e, {
                     previousValue: a
                 })
             }
 
-            function P(e, t, a) {
-                var s;
-                s = Array.isArray(t) ? function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f,
-                        a = e.map((function(e) {
-                            return e instanceof RegExp ? e : "string" == typeof e ? e.split("") : null
-                        })).filter(Boolean).reduce((function(e, t) {
-                            return e.concat(t)
-                        }), []);
-                    return y(a, t)
-                }(t, a) : C(t) ? t : b(t) && t.length > 0 ? E(t, a) : t, g.partiallyUpdate(e, {
-                    mask: s
+            function L(e, t, a) {
+                var n;
+                n = Array.isArray(t) ? function(e) {
+                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
+                    return y(e.map((function(e) {
+                        return e instanceof RegExp ? e : "string" == typeof e ? e.split("") : null
+                    })).filter(Boolean).reduce((function(e, t) {
+                        return e.concat(t)
+                    }), []), t)
+                }(t, a) : b(t) ? t : g(t) && t.length > 0 ? E(t, a) : t, C.partiallyUpdate(e, {
+                    mask: n
                 })
             }
 
             function N(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f;
-                return null === e || Array.isArray(e) || "object" !== s(e) ? t : Object.keys(e).reduce((function(t, a) {
-                    var s = e[a];
-                    return null === s || s instanceof RegExp ? i(i({}, t), {}, r({}, a, s)) : t
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
+                return null === e || Array.isArray(e) || "object" !== n(e) ? t : Object.keys(e).reduce((function(t, a) {
+                    var n = e[a];
+                    return null === n || n instanceof RegExp ? s(s({}, t), {}, r({}, a, n)) : t
                 }), t)
             }
 
-            function L(e) {
+            function x(e) {
                 return (Array.isArray(e) ? e : [e]).filter((function(e) {
-                    return b(e) || e instanceof RegExp
+                    return g(e) || e instanceof RegExp
                 })).toString()
             }
 
-            function S() {
+            function P() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     t = N(e && e.placeholders);
                 return {
                     bind: function(e, a) {
-                        var s = a.value;
-                        P(e = O(e), s, t), I(e)
+                        var n = a.value;
+                        L(e = O(e), n, t), I(e)
                     },
                     componentUpdated: function(e, a) {
-                        var s = a.value,
+                        var n = a.value,
                             r = a.oldValue;
                         e = O(e);
-                        var n = C(s) || L(r) !== L(s);
-                        n && P(e, s, t), I(e, n)
+                        var i = b(n) || x(r) !== x(n);
+                        i && L(e, n, t), I(e, i)
                     },
                     unbind: function(e) {
-                        e = O(e), g.remove(e)
+                        e = O(e), C.remove(e)
                     }
                 }
             }
-            S();
-            var x = function(e, t) {
+            P();
+            var S = function(e, t) {
                 var a = E(t);
-                return b(e) || Number.isFinite(e) ? h("".concat(e), a, {
+                return g(e) || Number.isFinite(e) ? A("".concat(e), a, {
                     guide: !1
                 }).conformedValue : e
             };
-            const G = function(e) {
+            const w = function(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                e.directive("mask", S(t)), e.filter("VMask", x)
+                e.directive("mask", P(t)), e.filter("VMask", S)
             }
         },
-        13494: (e, t, a) => {
+        6305: (e, t, a) => {
             "use strict";
             a.d(t, {
-                Z: () => c
+                Z: () => l
             });
-            var s = function() {
+            var n = function() {
                 var e = this,
-                    t = e.$createElement,
-                    a = e._self._c || t;
-                return a("div", {
-                    staticClass: "lobby-actions",
-                    class: {
-                        vip: e.player.hasControls
-                    }
-                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : a("p", {
-                    class: e.localClasses.message,
+                    t = e.$createElement;
+                return (e._self._c || t)("input", {
+                    ref: "input",
+                    attrs: {
+                        enterkeyhint: "done"
+                    },
                     domProps: {
-                        textContent: e._s(e.joinedCountText)
-                    }
-                }), e._v(" "), e.player.hasControls ? ["waitingForMore" === e.player.status ? a("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? a("button", {
-                    class: e.localClasses.action,
-                    domProps: {
-                        textContent: e._s(e.startText || e.$t("LOBBY.BUTTON_START"))
+                        value: e.value
                     },
                     on: {
-                        click: e.onStartClick
+                        input: e.onInput
                     }
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? a("button", {
-                    class: e.localClasses.action,
-                    domProps: {
-                        textContent: e._s(e.cancelText || e.$t("LOBBY.BUTTON_CANCEL"))
-                    },
-                    on: {
-                        click: e.onCancelClick
-                    }
-                }) : e._e()] : e.player.gamepadStart ? ["waitingForMore" === e.player.status ? a("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? a("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.WAITING_FOR_GAMEPAD",
-                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? a("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.GAME_STARTING",
-                        expression: "'LOBBY.GAME_STARTING'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e()] : ["waitingForMore" === e.player.status ? a("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? a("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.waitingForVIPText))]) : e._e(), e._v(" "), "countdown" === e.player.status ? a("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.GAME_STARTING",
-                        expression: "'LOBBY.GAME_STARTING'"
-                    }],
-                    class: e.localClasses.status
-                }) : e._e()], e._v(" "), "bottom" === e.messageLocation ? a("p", {
-                    class: e.localClasses.message,
-                    domProps: {
-                        textContent: e._s(e.joinedCountText)
-                    }
-                }) : e._e()], 2)
+                })
             };
-            s._withStripped = !0;
+            n._withStripped = !0;
             var r = a(2934),
-                n = a.n(r),
-                i = a(65853);
-            const o = n().extend({
+                i = a.n(r);
+            const s = i().extend({
                 props: {
-                    cancelText: String,
-                    classes: Object,
-                    messageLocation: String,
-                    player: Object,
-                    shouldStart: Function,
-                    startText: String
+                    value: String
                 },
-                i18n: {
-                    messages: i.s
-                },
-                computed: {
-                    joinedCountText() {
-                        return this.$tc("LOBBY.JOINED_COUNT", this.player.joinedPlayers, {
-                            count: this.player.joinedPlayers,
-                            maxPlayers: this.player.maxPlayers
-                        })
-                    },
-                    localClasses() {
-                        var e, t, a, s, r, n;
-                        return {
-                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
-                            status: null !== (s = null === (a = this.classes) || void 0 === a ? void 0 : a.status) && void 0 !== s ? s : "status",
-                            action: null !== (n = null === (r = this.classes) || void 0 === r ? void 0 : r.action) && void 0 !== n ? n : "action"
-                        }
-                    },
-                    neededText() {
-                        return this.$tc("LOBBY.PLAYERS_NEEDED", this.player.minPlayers - this.player.joinedPlayers)
-                    },
-                    waitingForVIPText() {
-                        return this.$t("LOBBY.WAITING_FOR_VIP", {
-                            name: this.player.vipName
-                        })
+                watch: {
+                    value(e, t) {
+                        e !== t && (this.$refs.input.value = e)
                     }
                 },
                 methods: {
-                    onCancelClick() {
-                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
-                            action: "cancel"
-                        }).catch(this.$handleEcastError)
-                    },
-                    onStartClick() {
-                        return e = this, t = void 0, s = function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "start"
-                                }).catch(this.$handleEcastError)
-                            }
-                        }, new((a = void 0) || (a = Promise))((function(r, n) {
-                            function i(e) {
+                    onInput(e) {
+                        return t = this, a = void 0, r = function*() {
+                            const t = e.target;
+                            if (!(null == t ? void 0 : t.value)) return;
+                            const a = -1 === t.maxLength ? Number.MAX_SAFE_INTEGER : t.maxLength;
+                            t.value.length > a ? t.value = t.value.substring(0, a) : (this.$emit("input", t.value), yield i().nextTick(), t.value !== this.value && (t.value = this.value))
+                        }, new((n = void 0) || (n = Promise))((function(e, i) {
+                            function s(e) {
                                 try {
-                                    l(s.next(e))
+                                    l(r.next(e))
                                 } catch (e) {
-                                    n(e)
+                                    i(e)
                                 }
                             }
 
                             function o(e) {
                                 try {
-                                    l(s.throw(e))
+                                    l(r.throw(e))
                                 } catch (e) {
-                                    n(e)
+                                    i(e)
                                 }
                             }
 
-                            function l(e) {
-                                var t;
-                                e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
-                                    e(t)
-                                }))).then(i, o)
+                            function l(t) {
+                                var a;
+                                t.done ? e(t.value) : (a = t.value, a instanceof n ? a : new n((function(e) {
+                                    e(a)
+                                }))).then(s, o)
                             }
-                            l((s = s.apply(e, t || [])).next())
+                            l((r = r.apply(t, a || [])).next())
                         }));
-                        var e, t, a, s
+                        var t, a, n, r
                     }
                 }
             });
-            var l = (0, a(51900).Z)(o, s, [], !1, null, null, null);
-            l.options.__file = "src/apps/vue/components/LobbyActions.vue";
-            const c = l.exports
+            var o = (0, a(51900).Z)(s, n, [], !1, null, null, null);
+            o.options.__file = "src/apps/vue/components/Input.vue";
+            const l = o.exports
         },
-        83933: (e, t, a) => {
+        38266: (e, t, a) => {
             "use strict";
             a.d(t, {
-                Z: () => u
+                Z: () => c
             });
-            var s = function() {
+            var n = function() {
                 var e = this,
-                    t = e.$createElement,
-                    a = e._self._c || t;
-                return e.player && e.player.status ? a("div", {
-                    staticClass: "post-game-actions",
-                    class: {
-                        vip: e.player.hasControls
-                    }
-                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : a("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.PLAY_AGAIN",
-                        expression: "'POST_GAME.PLAY_AGAIN'"
-                    }],
-                    class: e.localClasses.message
-                }), e._v(" "), e.player.hasControls ? ["waiting" === e.player.status ? a("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.BUTTON_SAME_PLAYERS",
-                        expression: "'POST_GAME.BUTTON_SAME_PLAYERS'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onSamePlayersClick
-                    }
-                }) : e._e(), e._v(" "), "waiting" === e.player.status ? a("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.BUTTON_NEW_PLAYERS",
-                        expression: "'POST_GAME.BUTTON_NEW_PLAYERS'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onNewPlayersClick
-                    }
-                }) : e._e(), e._v(" "), "countdown" === e.player.status ? a("button", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.BUTTON_CANCEL",
-                        expression: "'LOBBY.BUTTON_CANCEL'"
-                    }],
-                    class: e.localClasses.action,
-                    on: {
-                        click: e.onCancelClick
-                    }
-                }) : e._e()] : e.player.gamepadStart ? [a("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "LOBBY.WAITING_FOR_GAMEPAD",
-                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
-                    }],
-                    class: e.localClasses.status
-                })] : [a("p", {
-                    class: e.localClasses.status
-                }, [e._v(e._s(e.waitingForVIPText))])], e._v(" "), "bottom" === e.messageLocation ? a("p", {
-                    directives: [{
-                        name: "t",
-                        rawName: "v-t",
-                        value: "POST_GAME.PLAY_AGAIN",
-                        expression: "'POST_GAME.PLAY_AGAIN'"
-                    }],
-                    class: e.localClasses.message
-                }) : e._e()], 2) : e._e()
-            };
-            s._withStripped = !0;
-            var r = a(2934),
-                n = a.n(r),
-                i = a(65853),
-                o = function(e, t, a, s) {
-                    return new(a || (a = Promise))((function(r, n) {
-                        function i(e) {
-                            try {
-                                l(s.next(e))
-                            } catch (e) {
-                                n(e)
-                            }
-                        }
-
-                        function o(e) {
-                            try {
-                                l(s.throw(e))
-                            } catch (e) {
-                                n(e)
-                            }
-                        }
-
-                        function l(e) {
-                            var t;
-                            e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
-                                e(t)
-                            }))).then(i, o)
-                        }
-                        l((s = s.apply(e, t || [])).next())
-                    }))
-                };
-            const l = n().extend({
-                props: {
-                    shouldStart: Function,
-                    messageLocation: String,
-                    classes: Object,
-                    player: Object
-                },
-                i18n: {
-                    messages: i.s
-                },
-                computed: {
-                    localClasses() {
-                        var e, t, a, s, r, n;
-                        return {
-                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
-                            status: null !== (s = null === (a = this.classes) || void 0 === a ? void 0 : a.status) && void 0 !== s ? s : "status",
-                            action: null !== (n = null === (r = this.classes) || void 0 === r ? void 0 : r.action) && void 0 !== n ? n : "action"
-                        }
+                    t = e.$createElement;
+                return (e._self._c || t)("textarea", {
+                    ref: "textarea",
+                    attrs: {
+                        enterkeyhint: "done"
                     },
-                    waitingForVIPText() {
-                        return this.$t("LOBBY.WAITING_FOR_VIP", {
-                            name: this.player.vipName
-                        })
+                    domProps: {
+                        value: e.value
+                    },
+                    on: {
+                        input: e.onInput,
+                        keydown: function(t) {
+                            return !t.type.indexOf("key") && e._k(t.keyCode, "enter", 13, t.key, "Enter") ? null : e.onKeydownEnter.apply(null, arguments)
+                        }
                     }
+                })
+            };
+            n._withStripped = !0;
+            var r = a(2934),
+                i = a.n(r),
+                s = a(3682);
+            const o = i().extend({
+                props: {
+                    autosize: Boolean,
+                    value: String
+                },
+                watch: {
+                    value(e, t) {
+                        e !== t && (this.$refs.textarea.value = e)
+                    }
+                },
+                mounted() {
+                    this.autosize && (0, s.Z)(this.$refs.textarea)
                 },
                 methods: {
-                    onSamePlayersClick() {
-                        return o(this, void 0, void 0, (function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "samePlayers"
-                                }).catch(this.$handleEcastError)
+                    onInput(e) {
+                        return t = this, a = void 0, r = function*() {
+                            const t = e.target;
+                            if (!(null == t ? void 0 : t.value)) return;
+                            t.value = t.value.replaceAll("\n", "");
+                            const a = -1 === t.maxLength ? Number.MAX_SAFE_INTEGER : t.maxLength;
+                            t.value.length > a ? t.value = t.value.substring(0, a) : (this.$emit("input", t.value), yield i().nextTick(), t.value !== this.value && (t.value = this.value))
+                        }, new((n = void 0) || (n = Promise))((function(e, i) {
+                            function s(e) {
+                                try {
+                                    l(r.next(e))
+                                } catch (e) {
+                                    i(e)
+                                }
                             }
-                        }))
-                    },
-                    onNewPlayersClick() {
-                        return o(this, void 0, void 0, (function*() {
-                            if (this.player.responseKey) {
-                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
-                                this.$ecast.updateObject(this.player.responseKey, {
-                                    action: "newPlayers"
-                                }).catch(this.$handleEcastError)
+
+                            function o(e) {
+                                try {
+                                    l(r.throw(e))
+                                } catch (e) {
+                                    i(e)
+                                }
                             }
-                        }))
+
+                            function l(t) {
+                                var a;
+                                t.done ? e(t.value) : (a = t.value, a instanceof n ? a : new n((function(e) {
+                                    e(a)
+                                }))).then(s, o)
+                            }
+                            l((r = r.apply(t, a || [])).next())
+                        }));
+                        var t, a, n, r
                     },
-                    onCancelClick() {
-                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
-                            action: "cancel"
-                        }).catch(this.$handleEcastError)
+                    onKeydownEnter(e) {
+                        this.$emit("keydown", e)
                     }
                 }
             });
-            var c = (0, a(51900).Z)(l, s, [], !1, null, null, null);
-            c.options.__file = "src/apps/vue/components/PostGameActions.vue";
-            const u = c.exports
+            var l = (0, a(51900).Z)(o, n, [], !1, null, null, null);
+            l.options.__file = "src/apps/vue/components/TextArea.vue";
+            const c = l.exports
         },
         64785: (e, t, a) => {
             "use strict";
             a.r(t), a.d(t, {
-                default: () => se
+                default: () => ne
             });
-            var s = function() {
+            var n = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -810,12 +763,7 @@
                     attrs: {
                         player: e.player
                     }
-                }) : e._e()] : e.audience ? ["postGame" === e.audience.kind ? a("PostGame", {
-                    attrs: {
-                        artifact: e.artifact,
-                        player: e.audience
-                    }
-                }) : "voting" === e.audience.kind ? a("Voting", {
+                }) : e._e()] : e.audience ? ["voting" === e.audience.kind ? a("Voting", {
                     attrs: {
                         player: e.audience
                     }
@@ -826,10 +774,10 @@
                     }
                 }) : e._e()] : e._e()], 2)])], 1)
             };
-            s._withStripped = !0;
+            n._withStripped = !0;
             var r = a(2934),
-                n = a.n(r),
-                i = a(65853),
+                i = a.n(r),
+                s = a(65853),
                 o = function() {
                     var e = this,
                         t = e.$createElement,
@@ -846,9 +794,9 @@
                         staticClass: "instructions"
                     }), e._v(" "), a("div", {
                         staticClass: "avatars"
-                    }, [e._l(e.player.avatars, (function(t, s) {
+                    }, [e._l(e.player.avatars, (function(t, n) {
                         return [a("button", {
-                            key: "av" + s,
+                            key: "av" + n,
                             staticClass: "avatar",
                             class: {
                                 selected: t.name === e.selectedAvatar.name
@@ -993,13 +941,13 @@
                             value: "UGC.EPISODES_SELECT",
                             expression: "'UGC.EPISODES_SELECT'"
                         }]
-                    }), e._v(" "), e._l(e.episodes, (function(t, s) {
+                    }), e._v(" "), e._l(e.episodes, (function(t, n) {
                         return a("button", {
                             key: t.remoteContentId || t.localContentId,
                             staticClass: "episode",
                             on: {
                                 click: function(t) {
-                                    return t.preventDefault(), e.onLoadSelection(s)
+                                    return t.preventDefault(), e.onLoadSelection(n)
                                 }
                             }
                         }, [e._v("\n            " + e._s(t.metadata.title) + "\n            "), t.remoteContentId ? a("span", {
@@ -1264,8 +1212,8 @@
                     }
                 }
             };
-            n().use(u.ZP);
-            const A = n().extend({
+            i().use(u.ZP);
+            const h = i().extend({
                 components: {
                     Input: p.Z
                 },
@@ -1302,24 +1250,24 @@
                 }
             });
             var v = a(51900),
-                h = (0, v.Z)(A, c, [], !1, null, "468e05a0", null);
-            h.options.__file = "src/games/tjsp/quiplash3/views/UGC/EpisodesModal.vue";
-            const m = h.exports;
-            var f = function(e, t, a, s) {
-                return new(a || (a = Promise))((function(r, n) {
-                    function i(e) {
+                A = (0, v.Z)(h, c, [], !1, null, "468e05a0", null);
+            A.options.__file = "src/games/tjsp/quiplash3/views/UGC/EpisodesModal.vue";
+            const f = A.exports;
+            var m = function(e, t, a, n) {
+                return new(a || (a = Promise))((function(r, i) {
+                    function s(e) {
                         try {
-                            l(s.next(e))
+                            l(n.next(e))
                         } catch (e) {
-                            n(e)
+                            i(e)
                         }
                     }
 
                     function o(e) {
                         try {
-                            l(s.throw(e))
+                            l(n.throw(e))
                         } catch (e) {
-                            n(e)
+                            i(e)
                         }
                     }
 
@@ -1327,12 +1275,12 @@
                         var t;
                         e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
                             e(t)
-                        }))).then(i, o)
+                        }))).then(s, o)
                     }
-                    l((s = s.apply(e, t || [])).next())
+                    l((n = n.apply(e, t || [])).next())
                 }))
             };
-            const _ = n().extend({
+            const T = i().extend({
                 components: {
                     LobbyActions: l.Z
                 },
@@ -1367,7 +1315,7 @@
                         window.location.href = `mailto:support@jackboxgames.com?subject=Report episode id ${this.player.formattedActiveContentId}`
                     },
                     onEpisodeUnload() {
-                        return f(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "ugc-unload"
@@ -1378,7 +1326,7 @@
                         }))
                     },
                     onEpisodeViewAuthor() {
-                        return f(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "ugc-view-author"
@@ -1389,9 +1337,9 @@
                         }))
                     },
                     onEpisodeViewMenu() {
-                        return f(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (!this.player.responseKey) return;
-                            const e = yield this.$showModal(m, {
+                            const e = yield this.$showModal(f, {
                                 episodes: this.player.history
                             });
                             if (e && "close" !== e.action) try {
@@ -1405,7 +1353,7 @@
                         }))
                     },
                     onSelectAvatar(e) {
-                        return f(this, void 0, void 0, (function*() {
+                        return m(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) {
                                 try {
                                     yield this.$ecast.updateObject(this.player.responseKey, {
@@ -1421,9 +1369,9 @@
                     }
                 }
             });
-            var T = (0, v.Z)(_, o, [], !1, null, "1e91a8ef", null);
-            T.options.__file = "src/games/tjsp/quiplash3/views/Lobby.vue";
-            const y = T.exports;
+            var _ = (0, v.Z)(T, o, [], !1, null, "1e91a8ef", null);
+            _.options.__file = "src/games/tjsp/quiplash3/views/Lobby.vue";
+            const y = _.exports;
             var E = function() {
                 var e = this,
                     t = e.$createElement,
@@ -1447,16 +1395,16 @@
                 })])
             };
             E._withStripped = !0;
-            const O = n().extend({
+            const O = i().extend({
                 props: {
                     avatar: Object,
                     name: String
                 }
             });
-            var C = (0, v.Z)(O, E, [], !1, null, "7c2ebeaf", null);
-            C.options.__file = "src/games/tjsp/quiplash3/views/NameHeader.vue";
-            const b = C.exports;
-            var g = function() {
+            var b = (0, v.Z)(O, E, [], !1, null, "7c2ebeaf", null);
+            b.options.__file = "src/games/tjsp/quiplash3/views/NameHeader.vue";
+            const g = b.exports;
+            var C = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -1472,10 +1420,10 @@
                     }
                 })], 1)
             };
-            g._withStripped = !0;
+            C._withStripped = !0;
             var R = a(56623),
                 I = a(83933);
-            const P = n().extend({
+            const L = i().extend({
                 components: {
                     GalleryLink: R.Z,
                     PostGameActions: I.Z
@@ -1485,62 +1433,62 @@
                     player: Object
                 }
             });
-            var N = (0, v.Z)(P, g, [], !1, null, "4c9fa129", null);
+            var N = (0, v.Z)(L, C, [], !1, null, "4c9fa129", null);
             N.options.__file = "src/games/tjsp/quiplash3/views/PostGame.vue";
-            const L = N.exports;
-            var S = function() {
+            const x = N.exports;
+            var P = function() {
                 var e = this,
                     t = e.$createElement,
-                    s = e._self._c || t;
-                return s("div", {
+                    n = e._self._c || t;
+                return n("div", {
                     staticClass: "ugc"
-                }, [s("div", {
+                }, [n("div", {
                     staticClass: "instruction",
                     domProps: {
                         textContent: e._s(e.instruction)
                     }
-                }), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("toggle-visibility") ? [s("div", {
+                }), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("toggle-visibility") ? [n("div", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
                         value: "UGC.INSTRUCTION.TOGGLE_VISIBILITY",
                         expression: "'UGC.INSTRUCTION.TOGGLE_VISIBILITY'"
                     }]
-                }), e._v(" "), s("button", {
+                }), e._v(" "), n("button", {
                     staticClass: "toggle-visibility controller",
                     on: {
                         click: function(t) {
                             return t.preventDefault(), e.onToggleVisibility("controller")
                         }
                     }
-                }, [e.player.controllerVisibility ? [s("img", {
+                }, [e.player.controllerVisibility ? [n("img", {
                     attrs: {
                         src: a(73816),
                         alt: e.$t("ALT.UGC.VISIBILITY_CONTROLLER_ON")
                     }
-                })] : [s("img", {
+                })] : [n("img", {
                     attrs: {
                         src: a(88348),
                         alt: e.$t("ALT.UGC.VISIBILITY_CONTROLLER_OFF")
                     }
-                })]], 2), e._v(" "), s("button", {
+                })]], 2), e._v(" "), n("button", {
                     staticClass: "toggle-visibility screen",
                     on: {
                         click: function(t) {
                             return t.preventDefault(), e.onToggleVisibility("screen")
                         }
                     }
-                }, [e.player.screenVisibility ? [s("img", {
+                }, [e.player.screenVisibility ? [n("img", {
                     attrs: {
                         src: a(97131),
                         alt: e.$t("ALT.UGC.VISIBILITY_SCREEN_ON")
                     }
-                })] : [s("img", {
+                })] : [n("img", {
                     attrs: {
                         src: a(57009),
                         alt: e.$t("ALT.UGC.VISIBILITY_SCREEN_OFF")
                     }
-                })]], 2)] : e._e(), e._v(" "), e.player.validActions.includes("new") ? [s("button", {
+                })]], 2)] : e._e(), e._v(" "), e.player.validActions.includes("new") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1553,9 +1501,9 @@
                             return t.preventDefault(), e.onAction("new")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("load") && e.player.episodes.length > 0 ? [s("div", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("load") && e.player.episodes.length > 0 ? [n("div", {
                     staticClass: "episodes-list"
-                }, [s("span", {
+                }, [n("span", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1563,44 +1511,44 @@
                         expression: "'UGC.PREVIOUS_EPISODES'"
                     }]
                 }), e._v(" "), e._l(e.player.episodes, (function(t, a) {
-                    return s("div", {
+                    return n("div", {
                         key: t.remoteContentId || t.localContentId
-                    }, [s("button", {
+                    }, [n("button", {
                         staticClass: "action-button",
                         on: {
                             click: function(t) {
                                 return t.preventDefault(), e.onEpisodeClick(a)
                             }
                         }
-                    }, [s("span", {
+                    }, [n("span", {
                         domProps: {
                             textContent: e._s(t.metadata.title)
                         }
-                    }), e._v(" "), null != t.remoteContentId ? s("span", {
+                    }), e._v(" "), null != t.remoteContentId ? n("span", {
                         staticClass: "id",
                         domProps: {
                             textContent: e._s(t.formattedRemoteContentId)
                         }
                     }) : e._e()])])
-                }))], 2)] : e._e()] : [s("div", {
+                }))], 2)] : e._e()] : [n("div", {
                     domProps: {
                         textContent: e._s(e.player.noActionsText)
                     }
-                })], e._v(" "), e.player.text ? s("div", {
+                })], e._v(" "), e.player.text ? n("div", {
                     staticClass: "prompt ugc-text",
                     attrs: {
                         id: "prompt",
                         "v-text": e.player.text
                     }
-                }) : e._e(), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("add") ? [s("div", {
+                }) : e._e(), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("add") ? [n("div", {
                     attrs: {
                         id: "prompt"
                     }
-                }, [null != e.promptCharacterCount ? s("div", {
+                }, [null != e.promptCharacterCount ? n("div", {
                     domProps: {
                         textContent: e._s(e.promptCharacterCount)
                     }
-                }) : e._e(), e._v(" "), s("input", {
+                }) : e._e(), e._v(" "), n("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -1618,15 +1566,15 @@
                     on: {
                         change: function(t) {
                             var a = e.isThriplash,
-                                s = t.target,
-                                r = !!s.checked;
+                                n = t.target,
+                                r = !!n.checked;
                             if (Array.isArray(a)) {
-                                var n = e._i(a, null);
-                                s.checked ? n < 0 && (e.isThriplash = a.concat([null])) : n > -1 && (e.isThriplash = a.slice(0, n).concat(a.slice(n + 1)))
+                                var i = e._i(a, null);
+                                n.checked ? i < 0 && (e.isThriplash = a.concat([null])) : i > -1 && (e.isThriplash = a.slice(0, i).concat(a.slice(i + 1)))
                             } else e.isThriplash = r
                         }
                     }
-                }), e._v(" "), s("TextArea", {
+                }), e._v(" "), n("TextArea", {
                     ref: "prompt",
                     staticClass: "prompt",
                     attrs: {
@@ -1649,7 +1597,7 @@
                         },
                         expression: "promptText"
                     }
-                }), e._v(" "), s("button", {
+                }), e._v(" "), n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1665,31 +1613,26 @@
                             return t.preventDefault(), e.createNewPrompt.apply(null, arguments)
                         }
                     }
-                }), e._v(" "), e.player.error ? s("div", {
-                    staticClass: "error",
-                    domProps: {
-                        textContent: e._s(e.player.error)
-                    }
-                }) : e._e()], 1)] : e._e(), e._v(" "), e.player.validActions.includes("title") ? [s("label", {
+                })], 1)] : e._e(), e._v(" "), e.player.validActions.includes("title") ? [n("label", {
                     attrs: {
                         for: "title"
                     }
-                }, [s("span", {
+                }, [n("span", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
                         value: "UGC.INSTRUCTION.CREATE_TITLE",
                         expression: "'UGC.INSTRUCTION.CREATE_TITLE'"
                     }]
-                })]), e._v(" "), s("div", {
+                })]), e._v(" "), n("div", {
                     attrs: {
                         id: "title"
                     }
-                }, [null != e.titleCharacterCount ? s("div", {
+                }, [null != e.titleCharacterCount ? n("div", {
                     domProps: {
                         textContent: e._s(e.titleCharacterCount)
                     }
-                }) : e._e(), e._v(" "), s("TextArea", {
+                }) : e._e(), e._v(" "), n("TextArea", {
                     ref: "title",
                     attrs: {
                         rows: "1",
@@ -1709,7 +1652,7 @@
                         },
                         expression: "titleText"
                     }
-                }), e._v(" "), s("button", {
+                }), e._v(" "), n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1722,7 +1665,7 @@
                             return t.preventDefault(), e.createNewEpisode.apply(null, arguments)
                         }
                     }
-                })], 1)] : e._e(), e._v(" "), e.player.validActions.includes("close") ? [s("button", {
+                })], 1)] : e._e(), e._v(" "), e.player.validActions.includes("close") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1735,7 +1678,7 @@
                             return t.preventDefault(), e.onAction("close")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("unlock") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("unlock") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1748,7 +1691,7 @@
                             return t.preventDefault(), e.onAction("unlock")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("done") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("done") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1761,7 +1704,7 @@
                             return t.preventDefault(), e.onAction("done")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("submit") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("submit") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1774,7 +1717,7 @@
                             return t.preventDefault(), e.showTermsOfService.apply(null, arguments)
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("play") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("play") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1787,7 +1730,7 @@
                             return t.preventDefault(), e.onAction("play")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("remove-content") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("remove-content") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1800,7 +1743,7 @@
                             return t.preventDefault(), e.confirmDeleteEpisode.apply(null, arguments)
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("exit") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("exit") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1813,7 +1756,7 @@
                             return t.preventDefault(), e.onAction("exit")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("episodes") ? [s("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("episodes") ? [n("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1826,16 +1769,16 @@
                             return t.preventDefault(), e.onAction("episodes")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("remove") ? [s("div", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("remove") ? [n("div", {
                     staticClass: "prompts-list"
-                }, [s("span", {
+                }, [n("span", {
                     domProps: {
                         textContent: e._s(e.promptsCount)
                     }
                 }), e._v(" "), e._l(e.player.prompts, (function(t, a) {
-                    return s("div", {
+                    return n("div", {
                         key: a
-                    }, [s("button", {
+                    }, [n("button", {
                         staticClass: "player-prompt",
                         class: {
                             other: t.author !== e.userId, thriplash: "thriplash" === t.type
@@ -1851,25 +1794,25 @@
                     })])
                 }))], 2)] : e._e()] : e._e()], 2)
             };
-            S._withStripped = !0;
-            var x = a(3682),
-                G = a(38266),
-                w = a(89446),
-                V = function(e, t, a, s) {
-                    return new(a || (a = Promise))((function(r, n) {
-                        function i(e) {
+            P._withStripped = !0;
+            var S = a(3682),
+                w = a(38266),
+                G = a(89446),
+                V = function(e, t, a, n) {
+                    return new(a || (a = Promise))((function(r, i) {
+                        function s(e) {
                             try {
-                                l(s.next(e))
+                                l(n.next(e))
                             } catch (e) {
-                                n(e)
+                                i(e)
                             }
                         }
 
                         function o(e) {
                             try {
-                                l(s.throw(e))
+                                l(n.throw(e))
                             } catch (e) {
-                                n(e)
+                                i(e)
                             }
                         }
 
@@ -1877,14 +1820,14 @@
                             var t;
                             e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
                                 e(t)
-                            }))).then(i, o)
+                            }))).then(s, o)
                         }
-                        l((s = s.apply(e, t || [])).next())
+                        l((n = n.apply(e, t || [])).next())
                     }))
                 };
-            const U = n().extend({
+            const U = i().extend({
                 components: {
-                    TextArea: G.Z
+                    TextArea: w.Z
                 },
                 props: {
                     player: Object
@@ -1913,8 +1856,8 @@
                             maxCount: t,
                             prompts: a
                         } = this.player;
-                        let s = `${e}/${t}`;
-                        return a.length < e && (s += ` ${this.$t("UGC.PROMPTS_COUNT_HIDDEN",{count:e-a.length})}`), s
+                        let n = `${e}/${t}`;
+                        return a.length < e && (n += ` ${this.$t("UGC.PROMPTS_COUNT_HIDDEN",{count:e-a.length})}`), n
                     },
                     titleCharacterCount() {
                         return this.player.maxTitleLength ? this.player.maxTitleLength - this.titleText.length : null
@@ -1924,7 +1867,7 @@
                     }
                 },
                 mounted() {
-                    (0, x.Z)([this.$refs.prompt, this.$refs.title])
+                    (0, S.Z)([this.$refs.prompt, this.$refs.title])
                 },
                 methods: {
                     confirmDeleteEpisode() {
@@ -2013,10 +1956,10 @@
                         }).catch(this.$handleEcastError)
                     },
                     onInputPrompt() {
-                        this.promptText = w.c.sanitizeInput(this.promptText)
+                        this.promptText = G.c.sanitizeInput(this.promptText)
                     },
                     onInputTitle() {
-                        this.titleText = w.c.sanitizeInput(this.titleText)
+                        this.titleText = G.c.sanitizeInput(this.titleText)
                     },
                     onPromptClick(e) {
                         this.$ecast.updateObject(this.player.responseKey, {
@@ -2032,9 +1975,9 @@
                     }
                 }
             });
-            var $ = (0, v.Z)(U, S, [], !1, null, null, null);
-            $.options.__file = "src/games/tjsp/quiplash3/views/UGC/Ugc.vue";
-            const k = $.exports;
+            var k = (0, v.Z)(U, P, [], !1, null, null, null);
+            k.options.__file = "src/games/tjsp/quiplash3/views/UGC/Ugc.vue";
+            const $ = k.exports;
             var D = function() {
                 var e = this,
                     t = e.$createElement,
@@ -2084,7 +2027,7 @@
                 }))], 2)
             };
             D._withStripped = !0;
-            const B = n().extend({
+            const F = i().extend({
                 props: {
                     player: Object
                 },
@@ -2108,12 +2051,12 @@
                                 this.isSubmitting = !1, this.selected = null, this.$handleEcastError(e)
                             }
                             this.hasSubmit = !0
-                        }, new((s = void 0) || (s = Promise))((function(e, n) {
-                            function i(e) {
+                        }, new((n = void 0) || (n = Promise))((function(e, i) {
+                            function s(e) {
                                 try {
                                     l(r.next(e))
                                 } catch (e) {
-                                    n(e)
+                                    i(e)
                                 }
                             }
 
@@ -2121,57 +2064,57 @@
                                 try {
                                     l(r.throw(e))
                                 } catch (e) {
-                                    n(e)
+                                    i(e)
                                 }
                             }
 
                             function l(t) {
                                 var a;
-                                t.done ? e(t.value) : (a = t.value, a instanceof s ? a : new s((function(e) {
+                                t.done ? e(t.value) : (a = t.value, a instanceof n ? a : new n((function(e) {
                                     e(a)
-                                }))).then(i, o)
+                                }))).then(s, o)
                             }
                             l((r = r.apply(t, a || [])).next())
                         }));
-                        var t, a, s, r
+                        var t, a, n, r
                     }
                 }
             });
-            var j = (0, v.Z)(B, D, [], !1, null, "22404244", null);
-            j.options.__file = "src/games/tjsp/quiplash3/views/Voting.vue";
-            const M = j.exports;
-            var F = function() {
+            var M = (0, v.Z)(F, D, [], !1, null, "22404244", null);
+            M.options.__file = "src/games/tjsp/quiplash3/views/Voting.vue";
+            const j = M.exports;
+            var B = function() {
                 var e = this,
                     t = e.$createElement,
-                    s = e._self._c || t;
-                return s("div", {
+                    n = e._self._c || t;
+                return n("div", {
                     staticClass: "waiting"
-                }, [s("div", {
+                }, [n("div", {
                     staticClass: "logo"
-                }, [1 === e.player.round ? s("img", {
+                }, [1 === e.player.round ? n("img", {
                     staticClass: "round",
                     attrs: {
                         alt: e.$t("ALT.LOGO_1"),
                         src: a(24374)
                     }
-                }) : 2 === e.player.round ? s("img", {
+                }) : 2 === e.player.round ? n("img", {
                     staticClass: "round",
                     attrs: {
                         alt: e.$t("ALT.LOGO_2"),
                         src: a(59865)
                     }
-                }) : 3 === e.player.round ? s("img", {
+                }) : 3 === e.player.round ? n("img", {
                     staticClass: "round",
                     attrs: {
                         alt: e.$t("ALT.LOGO_3"),
                         src: a(87692)
                     }
-                }) : s("img", {
+                }) : n("img", {
                     attrs: {
                         alt: e.$t("ALT.LOGO_GAME"),
                         src: a(52237)
                     }
-                })]), e._v(" "), e.player.message ? s("p", {
+                })]), e._v(" "), e.player.message ? n("p", {
                     directives: [{
                         name: "bb",
                         rawName: "v-bb",
@@ -2179,14 +2122,14 @@
                         expression: "player.message"
                     }],
                     staticClass: "message"
-                }) : e._e(), e._v(" "), s("GalleryLink", {
+                }) : e._e(), e._v(" "), n("GalleryLink", {
                     attrs: {
                         artifact: e.artifact
                     }
                 })], 1)
             };
-            F._withStripped = !0;
-            const Y = n().extend({
+            B._withStripped = !0;
+            const H = i().extend({
                 components: {
                     GalleryLink: R.Z
                 },
@@ -2198,10 +2141,10 @@
                     messages: d
                 }
             });
-            var H = (0, v.Z)(Y, F, [], !1, null, "442df3a6", null);
-            H.options.__file = "src/games/tjsp/quiplash3/views/Waiting.vue";
-            const K = H.exports;
-            var W = function() {
+            var z = (0, v.Z)(H, B, [], !1, null, "442df3a6", null);
+            z.options.__file = "src/games/tjsp/quiplash3/views/Waiting.vue";
+            const W = z.exports;
+            var K = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -2229,42 +2172,43 @@
                     attrs: {
                         for: "textarea"
                     }
-                }), e._v(" "), e._l(e.answers, (function(t, s) {
+                }), e._v(" "), e._l(e.answers, (function(t, n) {
                     return a("div", {
-                        key: "answer" + s,
+                        key: "answer" + n,
                         staticClass: "answer"
                     }, [a("div", {
                         staticClass: "character-counter"
-                    }, [e._v(e._s(e.answers[s].charCount) + "/" + e._s(e.player.maxLength))]), e._v(" "), a("TextArea", {
-                        ref: "answer" + s,
+                    }, [e._v(e._s(e.answers[n].charCount) + "/" + e._s(e.player.maxLength))]), e._v(" "), a("TextArea", {
+                        ref: "answer" + n,
                         refInFor: !0,
                         attrs: {
                             autocomplete: "off",
                             autocorrect: "off",
                             autosize: "",
                             disabled: e.isSubmitting,
-                            enterkeyhint: s === e.answers.length - 1 ? "done" : "next",
+                            enterkeyhint: n === e.answers.length - 1 ? "done" : "next",
                             placeholder: e.$t("WRITING.ANSWER_PLACEHOLDER"),
                             rows: "1",
                             spellcheck: "false"
                         },
                         on: {
                             input: function(t) {
-                                return e.onInput(t, s)
+                                return e.onInput(t, n)
                             },
                             keydown: function(t) {
-                                return !t.type.indexOf("key") && e._k(t.keyCode, "enter", 13, t.key, "Enter") ? null : (t.preventDefault(), e.focusNext(s))
+                                return !t.type.indexOf("key") && e._k(t.keyCode, "enter", 13, t.key, "Enter") ? null : (t.preventDefault(), e.focusNext(n))
                             }
                         },
                         model: {
-                            value: e.answers[s].text,
+                            value: e.answers[n].text,
                             callback: function(t) {
-                                e.$set(e.answers[s], "text", t)
+                                e.$set(e.answers[n], "text", t)
                             },
                             expression: "answers[idx].text"
                         }
                     })], 1)
                 })), e._v(" "), e.error ? a("span", {
+                    staticClass: "error",
                     domProps: {
                         textContent: e._s(e.error)
                     }
@@ -2307,24 +2251,24 @@
                     }
                 })])])
             };
-            W._withStripped = !0;
+            K._withStripped = !0;
             var q = a(55507),
                 Q = a(48598),
-                z = function(e, t, a, s) {
-                    return new(a || (a = Promise))((function(r, n) {
-                        function i(e) {
+                Y = function(e, t, a, n) {
+                    return new(a || (a = Promise))((function(r, i) {
+                        function s(e) {
                             try {
-                                l(s.next(e))
+                                l(n.next(e))
                             } catch (e) {
-                                n(e)
+                                i(e)
                             }
                         }
 
                         function o(e) {
                             try {
-                                l(s.throw(e))
+                                l(n.throw(e))
                             } catch (e) {
-                                n(e)
+                                i(e)
                             }
                         }
 
@@ -2332,14 +2276,14 @@
                             var t;
                             e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
                                 e(t)
-                            }))).then(i, o)
+                            }))).then(s, o)
                         }
-                        l((s = s.apply(e, t || [])).next())
+                        l((n = n.apply(e, t || [])).next())
                     }))
                 };
-            const Z = n().extend({
+            const Z = i().extend({
                 components: {
-                    TextArea: G.Z
+                    TextArea: w.Z
                 },
                 props: {
                     player: Object
@@ -2378,7 +2322,7 @@
                 },
                 methods: {
                     autoSubmit() {
-                        return z(this, void 0, void 0, (function*() {
+                        return Y(this, void 0, void 0, (function*() {
                             try {
                                 yield this.$ecast.updateText(this.player.textKey, this.answer)
                             } catch (e) {
@@ -2387,7 +2331,7 @@
                         }))
                     },
                     focusNext(e) {
-                        return z(this, void 0, void 0, (function*() {
+                        return Y(this, void 0, void 0, (function*() {
                             const t = this.$refs[`answer${e+1}`];
                             t ? this.$nextTick((() => {
                                 var e;
@@ -2400,17 +2344,17 @@
                         this.error && (this.error = "")
                     },
                     onInput(e, t) {
-                        return z(this, void 0, void 0, (function*() {
+                        return Y(this, void 0, void 0, (function*() {
                             this.resetError();
                             const {
                                 charCount: a,
-                                result: s
+                                result: n
                             } = (0, Q.I)(e, this.player.maxLength);
-                            this.answers[t].charCount = a, this.answers[t].text = s, yield this.autoSubmit()
+                            this.answers[t].charCount = a, this.answers[t].text = n, yield this.autoSubmit()
                         }))
                     },
                     onSubmit() {
-                        return z(this, void 0, void 0, (function*() {
+                        return Y(this, void 0, void 0, (function*() {
                             if (this.answer.length) {
                                 this.isSubmitting = !0;
                                 try {
@@ -2425,7 +2369,7 @@
                         }))
                     },
                     onSafetyQuip() {
-                        return z(this, void 0, void 0, (function*() {
+                        return Y(this, void 0, void 0, (function*() {
                             this.isSubmitting = !0;
                             try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
@@ -2438,20 +2382,20 @@
                     }
                 }
             });
-            var X = (0, v.Z)(Z, W, [], !1, null, "7d0e76b5", null);
+            var X = (0, v.Z)(Z, K, [], !1, null, "7d0e76b5", null);
             X.options.__file = "src/games/tjsp/quiplash3/views/Writing.vue";
             const J = X.exports,
                 ee = {
                     isWaiting: e => "waiting" === e.kind
                 };
-            const te = n().extend({
+            const te = i().extend({
                 components: {
-                    NameHeader: b,
+                    NameHeader: g,
                     Lobby: y,
-                    PostGame: L,
-                    Ugc: k,
-                    Voting: M,
-                    Waiting: K,
+                    PostGame: x,
+                    Ugc: $,
+                    Voting: j,
+                    Waiting: W,
                     Writing: J
                 },
                 ecastKeys: {
@@ -2484,7 +2428,7 @@
                 },
                 i18n: {
                     messages: d,
-                    sharedMessages: i.s
+                    sharedMessages: s.s
                 },
                 data: () => ({
                     avatarImages: {},
@@ -2621,12 +2565,12 @@
                                     selected: (yield Promise.resolve().then(a.t.bind(a, 88247, 17))).default
                                 }
                             }
-                        }, new((s = void 0) || (s = Promise))((function(a, n) {
-                            function i(e) {
+                        }, new((n = void 0) || (n = Promise))((function(a, i) {
+                            function s(e) {
                                 try {
                                     l(r.next(e))
                                 } catch (e) {
-                                    n(e)
+                                    i(e)
                                 }
                             }
 
@@ -2634,25 +2578,25 @@
                                 try {
                                     l(r.throw(e))
                                 } catch (e) {
-                                    n(e)
+                                    i(e)
                                 }
                             }
 
                             function l(e) {
                                 var t;
-                                e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
+                                e.done ? a(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
                                     e(t)
-                                }))).then(i, o)
+                                }))).then(s, o)
                             }
                             l((r = r.apply(e, t || [])).next())
                         }));
-                        var e, t, s, r
+                        var e, t, n, r
                     }
                 }
             });
-            var ae = (0, v.Z)(te, s, [], !1, null, null, null);
+            var ae = (0, v.Z)(te, n, [], !1, null, null, null);
             ae.options.__file = "src/games/tjsp/quiplash3/views/Main.vue";
-            const se = ae.exports
+            const ne = ae.exports
         },
         67294: (e, t, a) => {
             "use strict";
@@ -2816,4 +2760,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/2427.e0fd2a1d9918887747b8.js.map
+//# sourceMappingURL=sourcemaps/2427.7c257803be968a38cd84.js.map

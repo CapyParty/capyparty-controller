@@ -344,7 +344,7 @@
                     SUBMIT_JOIN_AUDIENCE: "JOIN AUDIENCE",
                     SUBMIT_RECONNECT: "RECONNECT",
                     SUBMIT_TWITCH_LOGIN: "LOGIN WITH TWITCH",
-                    TOS_WARNING: "By clicking {submit}, you agree to our [tos]Terms of Service[/tos]",
+                    TOS_WARNING: "By clicking {submit}, you agree to Jackbox Games' [tos]Terms of Service[/tos]",
                     LANGUAGE_NAME: "English",
                     SUPPORTED_LANGUAGES: ["English", "Français", "Italiano", "Deutsche", "Español"],
                     SUPPORTED_LOCALES: ["en", "fr", "it", "de", "es"],
@@ -445,7 +445,7 @@
                     STRING_MENU_LOGOUT: "LOGOUT",
                     STRING_MENU_MERCH: "MERCH",
                     STRING_MENU_PAST_GAMES: "PAST GAMES",
-                    STRING_MENU_MAILING_LIST: "MAILING LIST",
+                    STRING_MENU_MAILING_LIST: "OUR MAIN SITE",
                     ERROR_UNSUPPORTED_BROWSER: "This game is not supported on this browser. View '?' or HELP to see a list of compatible browsers.",
                     ERROR_UNSUPPORTED_WEBSOCKETS: "WebSockets are not supported on your browser.",
                     ERROR_ROOM_FULL: "The game is full",
@@ -1167,7 +1167,7 @@
                     staticClass: "indicator"
                 }) : e._e()])]), e._v(" "), s("li", [s("a", {
                     attrs: {
-                        href: "https://jackboxgames.us7.list-manage.com/subscribe?u=a181fa3b606c035e1cee11b76&id=eb7f0081d6",
+                        href: "https://capyparty.xyz/main",
                         target: "_blank"
                     },
                     on: {
@@ -1182,7 +1182,7 @@
                     attrs: {
                         "aria-label": "facebook",
                         target: "_blank",
-                        href: "https://www.facebook.com/JackboxGames"
+                        href: "https://discord.gg/eqrTgjszuq"
                     },
                     on: {
                         click: function(t) {
@@ -1192,25 +1192,13 @@
                 }), e._v(" "), s("a", {
                     staticClass: "twitter",
                     attrs: {
-                        "aria-label": "twitter",
+                        "aria-label": "github-square",
                         target: "_blank",
-                        href: "https://twitter.com/jackboxgames"
+                        href: "https://github.com/CapyParty/capyparty-controller"
                     },
                     on: {
                         click: function(t) {
                             return e.onLinkClick("twitter")
-                        }
-                    }
-                }), e._v(" "), s("a", {
-                    staticClass: "instagram",
-                    attrs: {
-                        "aria-label": "instagram",
-                        target: "_blank",
-                        href: "https://www.instagram.com/playjackboxgames"
-                    },
-                    on: {
-                        click: function(t) {
-                            return e.onLinkClick("instagram")
                         }
                     }
                 })]), e._v(" "), s("li", {
@@ -1227,7 +1215,7 @@
                     messages: U
                 },
                 data: () => ({
-                    version: "4.2.10"
+                    version: "4.2.2-Capy"
                 }),
                 computed: {
                     isTwitchAuthenticated() {
@@ -1985,18 +1973,16 @@
                             value: t
                         })
                     },
-                    trackConnectEvent(e) {
-                        if (!this.room) return;
-                        const t = {
+                    trackConnectEvent() {
+                        this.room && (this.$analytics.trackEvent({
                             category: "SignIn",
                             action: "roomJoined",
                             label: this.room.appTag
-                        };
-                        this.$analytics.trackEvent(t, !0), this.$analytics.segmentTrack(`${t.category}:${t.action}`, e), this.twitch.user && this.$analytics.trackEvent({
+                        }), this.twitch.user && this.$analytics.trackEvent({
                             category: "SignIn",
                             action: "twitchUserRoomJoined",
                             label: this.room.appTag
-                        })
+                        }))
                     },
                     onCodeInput() {
                         this.code = this.code.replace(/\s/g, ""), this.code = this.code.trim().toUpperCase(), this.code.length < this.codeLength ? this.room = null : this.getRoomInfo()
@@ -2118,7 +2104,7 @@
                             const i = new T.WSClient(t);
                             try {
                                 const a = yield i.connect();
-                                this.$ecast = i, this.$syncEcast(), this.$setSentryTag("role", this.$ecast.role), this.$debug.setup(this.$ecast, this.room), this.trackConnectEvent(t), this.$storage.isSupported && (this.$storage.set("name", t.name), this.$storage.set("roomCode", this.code), this.$storage.set("reconnect", `${a.id}:${e}:${a.secret}`)), yield class {
+                                this.$ecast = i, this.$syncEcast(), this.$setSentryTag("role", this.$ecast.role), this.$debug.setup(this.$ecast, this.room), this.trackConnectEvent(), this.$storage.isSupported && (this.$storage.set("name", t.name), this.$storage.set("roomCode", this.code), this.$storage.set("reconnect", `${a.id}:${e}:${a.secret}`)), yield class {
                                     static load(e) {
                                         return b(this, void 0, void 0, (function*() {
                                             (0, A.c)("[GameLoader] load", e);
@@ -2127,7 +2113,7 @@
                                             const i = "vue" === t.app ? () => b(this, void 0, void 0, (function*() {
                                                 return s.e(2104).then(s.bind(s, 52104))
                                             })) : () => b(this, void 0, void 0, (function*() {
-                                                return Promise.all([s.e(7416), s.e(524), s.e(972)]).then(s.bind(s, 10972))
+                                                return Promise.all([s.e(6498), s.e(524), s.e(972)]).then(s.bind(s, 10972))
                                             }));
                                             try {
                                                 const s = yield i();
@@ -2301,4 +2287,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/4948.dfd3194b05ee1d71d42f.js.map
+//# sourceMappingURL=sourcemaps/4948.2ce9df2f7021b25b9f77.js.map

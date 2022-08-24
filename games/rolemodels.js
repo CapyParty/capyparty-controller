@@ -346,7 +346,12 @@
                         }, t.playerInfo.playerColor && (t.background = t.playerInfo.playerColor)), "MakeSingleChoice" === t.state && t.choices && t.choices.length > 0 && "CENSOR ANSWERS" === t.choices[t.choices.length - 1].text && (t.choices[t.choices.length - 1].className = "censorAnswers"), t.isAudience ? t.playerInfo.username = "AUDIENCE" : t.playerInfo.hidden = !0, t
                     },
                     getGameLayout(e) {
-                        return "Sortable" === e ? this.setLayout(y) : -1
+                        switch (e) {
+                            case "Sortable":
+                                return this.setLayout(y);
+                            default:
+                                return -1
+                        }
                     },
                     formatSessionMessage(e) {
                         const t = e;
@@ -361,4 +366,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/7088.10a47485e46ca8e375c8.js.map
+//# sourceMappingURL=sourcemaps/7088.35a708f56c71a06e6619.js.map

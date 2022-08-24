@@ -1,4 +1,4 @@
-/*! For license information please see 524.a26284982c6b5ef9f14e.js.LICENSE.txt */
+/*! For license information please see 524.8bc57255d3be2f8648b8.js.LICENSE.txt */
 (self.webpackChunkjackbox_tv = self.webpackChunkjackbox_tv || []).push([
     [524], {
         63574: function(t, e, n) {
@@ -1885,8 +1885,8 @@
             }(n(13469), n(72316))
         },
         70989: (t, e, n) => {
-            var r, i;
-            r = [n(13469), n(72316), e], void 0 === (i = function(t, e, n) {
+            var r, i, o;
+            i = [n(13469), n(72316), e], void 0 === (o = "function" == typeof(r = function(t, e, n) {
                 e.Stickit = n, n._handlers = [], n.addHandler = function(e) {
                     e = t.map(t.flatten([e]), (function(e) {
                         return t.defaults({}, e, {
@@ -2222,11 +2222,11 @@
                         })) : r.data("stickit-bind-val")
                     }
                 }]), n
-            }.apply(e, r)) || (t.exports = i)
+            }) ? r.apply(e, i) : r) || (t.exports = o)
         },
         72316: (t, e, n) => {
             var r, i, o;
-            o = "object" == typeof self && self.self === self && self || "object" == typeof n.g && n.g.global === n.g && n.g, r = [n(13469), n(19755), e], i = function(t, e, n) {
+            o = "object" == typeof self && self.self === self && self || "object" == typeof n.g && n.g.global === n.g && n.g, r = [n(13469), n(19755), e], void 0 === (i = function(t, e, n) {
                 o.Backbone = function(t, e, n, r) {
                     var i = t.Backbone,
                         o = Array.prototype.slice;
@@ -3126,7 +3126,7 @@
                         };
                     return e
                 }(o, n, t, e)
-            }.apply(e, r), void 0 === i || (t.exports = i)
+            }.apply(e, r)) || (t.exports = i)
         },
         96077: (t, e, n) => {
             var r = n(70111);
@@ -5115,29 +5115,6 @@
                 charAt: o(!0)
             }
         },
-        54986: (t, e, n) => {
-            var r = n(88113);
-            t.exports = /Version\/10(?:\.\d+){1,2}(?: [\w./]+)?(?: Mobile\/\w+)? Safari\//.test(r)
-        },
-        76650: (t, e, n) => {
-            var r = n(17466),
-                i = n(38415),
-                o = n(84488),
-                s = Math.ceil,
-                a = function(t) {
-                    return function(e, n, a) {
-                        var c, l, u = String(o(e)),
-                            h = u.length,
-                            f = void 0 === a ? " " : String(a),
-                            d = r(n);
-                        return d <= h || "" == f ? u : (c = d - h, (l = i.call(f, s(c / f.length))).length > c && (l = l.slice(0, c)), t ? u + l : l + u)
-                    }
-                };
-            t.exports = {
-                start: a(!1),
-                end: a(!0)
-            }
-        },
         33197: t => {
             "use strict";
             var e = 2147483647,
@@ -5155,64 +5132,49 @@
                     return o(r + 36 * t / (t + 38))
                 },
                 l = function(t) {
-                    var n = [];
-                    t = function(t) {
-                        for (var e = [], n = 0, r = t.length; n < r;) {
-                            var i = t.charCodeAt(n++);
-                            if (i >= 55296 && i <= 56319 && n < r) {
-                                var o = t.charCodeAt(n++);
-                                56320 == (64512 & o) ? e.push(((1023 & i) << 10) + (1023 & o) + 65536) : (e.push(i), n--)
-                            } else e.push(i)
-                        }
-                        return e
-                    }(t);
-                    var r, l, u = t.length,
+                    var n, r, l = [],
+                        u = (t = function(t) {
+                            for (var e = [], n = 0, r = t.length; n < r;) {
+                                var i = t.charCodeAt(n++);
+                                if (i >= 55296 && i <= 56319 && n < r) {
+                                    var o = t.charCodeAt(n++);
+                                    56320 == (64512 & o) ? e.push(((1023 & i) << 10) + (1023 & o) + 65536) : (e.push(i), n--)
+                                } else e.push(i)
+                            }
+                            return e
+                        }(t)).length,
                         h = 128,
                         f = 0,
                         d = 72;
-                    for (r = 0; r < t.length; r++)(l = t[r]) < 128 && n.push(s(l));
-                    var p = n.length,
+                    for (n = 0; n < t.length; n++)(r = t[n]) < 128 && l.push(s(r));
+                    var p = l.length,
                         g = p;
-                    for (p && n.push("-"); g < u;) {
+                    for (p && l.push("-"); g < u;) {
                         var v = e;
-                        for (r = 0; r < t.length; r++)(l = t[r]) >= h && l < v && (v = l);
+                        for (n = 0; n < t.length; n++)(r = t[n]) >= h && r < v && (v = r);
                         var m = g + 1;
                         if (v - h > o((e - f) / m)) throw RangeError(i);
-                        for (f += (v - h) * m, h = v, r = 0; r < t.length; r++) {
-                            if ((l = t[r]) < h && ++f > e) throw RangeError(i);
-                            if (l == h) {
+                        for (f += (v - h) * m, h = v, n = 0; n < t.length; n++) {
+                            if ((r = t[n]) < h && ++f > e) throw RangeError(i);
+                            if (r == h) {
                                 for (var y = f, w = 36;; w += 36) {
                                     var b = w <= d ? 1 : w >= d + 26 ? 26 : w - d;
                                     if (y < b) break;
                                     var x = y - b,
                                         _ = 36 - b;
-                                    n.push(s(a(b + x % _))), y = o(x / _)
+                                    l.push(s(a(b + x % _))), y = o(x / _)
                                 }
-                                n.push(s(a(y))), d = c(f, m, g == p), f = 0, ++g
+                                l.push(s(a(y))), d = c(f, m, g == p), f = 0, ++g
                             }
                         }++f, ++h
                     }
-                    return n.join("")
+                    return l.join("")
                 };
             t.exports = function(t) {
                 var e, i, o = [],
                     s = t.toLowerCase().replace(r, ".").split(".");
                 for (e = 0; e < s.length; e++) i = s[e], o.push(n.test(i) ? "xn--" + l(i) : i);
                 return o.join(".")
-            }
-        },
-        38415: (t, e, n) => {
-            "use strict";
-            var r = n(99958),
-                i = n(84488);
-            t.exports = function(t) {
-                var e = String(i(this)),
-                    n = "",
-                    o = r(t);
-                if (o < 0 || o == 1 / 0) throw RangeError("Wrong number of repetitions");
-                for (; o > 0;
-                    (o >>>= 1) && (e += e)) 1 & o && (n += e);
-                return n
             }
         },
         76091: (t, e, n) => {
@@ -6115,11 +6077,11 @@
                     var n, r, a = [],
                         l = s(e.length);
                     for (r = 0; r < l; r++) r in e && a.push(e[r]);
-                    for (a = c(a, function(t) {
+                    for (n = (a = c(a, function(t) {
                             return function(e, n) {
                                 return void 0 === n ? -1 : void 0 === e ? 1 : void 0 !== t ? +t(e, n) || 0 : String(e) > String(n) ? 1 : -1
                             }
-                        }(t)), n = a.length, r = 0; r < n;) e[r] = a[r++];
+                        }(t))).length, r = 0; r < n;) e[r] = a[r++];
                     for (; r < l;) delete e[r++];
                     return e
                 }
@@ -8357,20 +8319,6 @@
                 forced: n(54986)
             }, {
                 padEnd: function(t) {
-                    return i(this, t, arguments.length > 1 ? arguments[1] : void 0)
-                }
-            })
-        },
-        83112: (t, e, n) => {
-            "use strict";
-            var r = n(82109),
-                i = n(76650).start;
-            r({
-                target: "String",
-                proto: !0,
-                forced: n(54986)
-            }, {
-                padStart: function(t) {
                     return i(this, t, arguments.length > 1 ? arguments[1] : void 0)
                 }
             })
@@ -10872,7 +10820,7 @@
                             } else
                                 for (; e = t[r++];) n += i(e);
                             return n
-                        }, r = at.selectors = {
+                        }, (r = at.selectors = {
                             cacheLength: 50,
                             createPseudo: lt,
                             match: Y,
@@ -11069,7 +11017,7 @@
                                     return t
                                 }))
                             }
-                        }, r.pseudos.nth = r.pseudos.eq, {
+                        }).pseudos.nth = r.pseudos.eq, {
                             radio: !0,
                             checkbox: !0,
                             file: !0,
@@ -11193,7 +11141,7 @@
                             a = k[t + " "];
                         if (!a) {
                             for (e || (e = s(t)), n = e.length; n--;)(a = Ct(e[n]))[b] ? i.push(a) : o.push(a);
-                            a = k(t, function(t, e) {
+                            (a = k(t, function(t, e) {
                                 var n = e.length > 0,
                                     i = t.length > 0,
                                     o = function(o, s, a, c, u) {
@@ -11227,7 +11175,7 @@
                                         return u && (_ = C, l = x), w
                                     };
                                 return n ? lt(o) : o
-                            }(o, i)), a.selector = t
+                            }(o, i))).selector = t
                         }
                         return a
                     }, c = at.select = function(t, e, n, i) {
@@ -11907,9 +11855,9 @@
                     }
                     if (null == r && null == i ? (i = n, r = n = void 0) : null == i && ("string" == typeof n ? (i = r, r = void 0) : (i = r, r = n, n = void 0)), !1 === i) i = kt;
                     else if (!i) return t;
-                    return 1 === o && (s = i, i = function(t) {
+                    return 1 === o && (s = i, (i = function(t) {
                         return C().off(t), s.apply(this, arguments)
-                    }, i.guid = s.guid || (s.guid = C.guid++)), t.each((function() {
+                    }).guid = s.guid || (s.guid = C.guid++)), t.each((function() {
                         C.event.add(this, e, i, r, n)
                     }))
                 }
@@ -13571,9 +13519,9 @@
                 var Xe = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
                 C.proxy = function(t, e) {
                     var n, r, i;
-                    if ("string" == typeof e && (n = t[e], e = t, t = n), m(t)) return r = a.call(arguments, 2), i = function() {
+                    if ("string" == typeof e && (n = t[e], e = t, t = n), m(t)) return r = a.call(arguments, 2), (i = function() {
                         return t.apply(e || this, r.concat(a.call(arguments)))
-                    }, i.guid = t.guid = t.guid || C.guid++, i
+                    }).guid = t.guid = t.guid || C.guid++, i
                 }, C.holdReady = function(t) {
                     t ? C.readyWait++ : C.ready(!0)
                 }, C.isArray = Array.isArray, C.parseJSON = JSON.parse, C.nodeName = R, C.isFunction = m, C.isWindow = y, C.camelCase = X, C.type = _, C.now = Date.now, C.isNumeric = function(t) {
@@ -16254,4 +16202,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/524.a26284982c6b5ef9f14e.js.map
+//# sourceMappingURL=sourcemaps/524.8bc57255d3be2f8648b8.js.map

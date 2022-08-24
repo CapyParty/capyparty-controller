@@ -82,7 +82,7 @@
                         action: "SlideBannerClicked",
                         label: this.getCampaign(),
                         value: 0
-                    }, !0), this.model.get("url") && window.open(this.model.get("url"), "_blank")
+                    }), this.model.get("url") && window.open(this.model.get("url"), "_blank")
                 },
                 onRender() {
                     this.stickit()
@@ -95,7 +95,7 @@
                         action: "SlideBannerOn",
                         label: this.getCampaign(),
                         value: 0
-                    }, !0)
+                    })
                 },
                 getCampaign() {
                     const e = this.model.get("url");
@@ -176,7 +176,7 @@
             const w = c().View.extend({
                 appId: "legacymain",
                 appTag: "legacymain",
-                appVersion: "4.2.10",
+                appVersion: "4.2.2",
                 template: null,
                 initialize(e) {
                     this.mergeOptions(e, ["appId", "appTag"]), u.app.analytics.setApplication({
@@ -383,7 +383,7 @@
                             } else if ("Gameplay_AnswerQuestion" === o)
                                 if ("Gameplay_AnswerQuestion" === a) {
                                     if (!n.question) return void t.showScreen("#state-done-answering");
-                                    if (t.currentAnswerQuestionId !== n.question.id && (i()("#quiplash-answer-input").val(""), i()("#quiplash-answer-field").show(), i()("#quiplash-submit-alert").hide(), i()("#state-answer-question #question-text").html(n.question.prompt.replace(/<BLANK>/gi, "________"))), n.showError) {
+                                    if (t.currentAnswerQuestionId !== n.question.id && (i()("#quiplash-answer-input").val(""), i()("#quiplash-answer-field").show(), i()("#quiplash-submit-alert").hide(), i()("#state-answer-question #question-text").html("There was a prompt but it is hidden!")), n.showError) {
                                         const e = i()("#quiplash-submit-alert");
                                         i()("#quiplash-submit-alert").html("You entered the same thing as someone else! Try again."), e.addClass("alert-info"), e.removeClass("alert-danger"), e.show()
                                     }
@@ -530,4 +530,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/6656.48c2461b617150d59994.js.map
+//# sourceMappingURL=sourcemaps/6656.0366843a7cd750a6b3db.js.map

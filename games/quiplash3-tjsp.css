@@ -223,11 +223,6 @@
     display: block
 }
 
-.ugc .error {
-    margin: 5px 0;
-    text-align: center
-}
-
 .ugc .instruction {
     margin-bottom: 10px;
     font-weight: bold

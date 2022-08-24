@@ -82,7 +82,7 @@
                         action: "SlideBannerClicked",
                         label: this.getCampaign(),
                         value: 0
-                    }, !0), this.model.get("url") && window.open(this.model.get("url"), "_blank")
+                    }), this.model.get("url") && window.open(this.model.get("url"), "_blank")
                 },
                 onRender() {
                     this.stickit()
@@ -95,7 +95,7 @@
                         action: "SlideBannerOn",
                         label: this.getCampaign(),
                         value: 0
-                    }, !0)
+                    })
                 },
                 getCampaign() {
                     const t = this.model.get("url");
@@ -2529,7 +2529,7 @@
             const j = d().View.extend({
                 appId: "main",
                 appTag: "main",
-                appVersion: "4.2.10",
+                appVersion: "4.2.2",
                 currentState: null,
                 currentLayout: null,
                 template: a().template(D.Z),
@@ -3995,4 +3995,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/4340.02af42ec731c1fd1fce0.js.map
+//# sourceMappingURL=sourcemaps/4340.f5d6017f3986d277824c.js.map

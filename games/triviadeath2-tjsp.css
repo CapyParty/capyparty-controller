@@ -1,15 +1,3 @@
-.artifact-link {
-    display: inline-block;
-    width: 100%
-}
-
-.artifact-link.no-content {
-    padding-bottom: 50%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat
-}
-
 .choices[data-v-72482f88] {
     display: flex;
     flex-direction: column
@@ -267,13 +255,13 @@
 }
 
 .drawing #stage #doodle.mirror {
-    background-image: url("triviadeath2-tjsp/drawing__stage__doodle_mirror.jpg")
+    background-image: url("triviadeath2-tjsp/drawing_#stage_#doodle_mirror.jpg")
 }
 
 .drawing #stage #doodle.tattoo {
     width: clamp(200px, min(90vw, 64vh), 512px);
     height: clamp(250px, min(112.5vw, 80vh), 640px);
-    background-image: url("triviadeath2-tjsp/drawing__stage__doodle_tattoo.jpg")
+    background-image: url("triviadeath2-tjsp/drawing_#stage_#doodle_tattoo.jpg")
 }
 
 .drawing #stage #doodle.tattoo canvas {
@@ -401,6 +389,44 @@
 
 .lobby .lobby-actions[data-v-2f536c28] .message,
 .lobby .lobby-actions[data-v-2f536c28] .status {
+    position: relative;
+    top: -10px;
+    left: calc(-50vw + 50%);
+    width: 100vw;
+    padding: 10px 15px;
+    background-color: #fff;
+    font-size: 2.4rem;
+    line-height: 2.4rem
+}
+
+.artifact-link {
+    display: inline-block;
+    width: 100%
+}
+
+.artifact-link.no-content {
+    padding-bottom: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.post-game-actions[data-v-458a030c] button {
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #000;
+    font-family: "Lost and Forelorn";
+    font-size: 3.2rem
+}
+
+.post-game-actions[data-v-458a030c] button:active {
+    background-color: #fff;
+    color: #000
+}
+
+.post-game-actions[data-v-458a030c] .message {
     position: relative;
     top: -10px;
     left: calc(-50vw + 50%);
@@ -857,55 +883,55 @@
 
 @keyframes rainbow-shadow {
     0% {
-        text-shadow: 0px 0px transparent, 6px 9px red, 6px -1px orange, 6px 4px orange, 12px -7px yellow, -1px -7px yellow, 3px 11px green, -11px 0px green, 10px 12px blue, -11px 5px blue, 4px 3px purple, -10px 12px purple, -10px -9px red
+        text-shadow: 0px 0px transparent, 4px 1px red, -1px -8px orange, -7px 5px orange, 2px 9px yellow, 7px -8px yellow, -6px 9px green, 10px 5px green, -8px 9px blue, 10px 6px blue, -9px -9px purple, 8px 9px purple, -4px -10px red
     }
 
     8.3333333333% {
-        text-shadow: 0px 0px transparent, 0px 2px orange, -7px 7px orange, -8px 6px yellow, 3px -9px yellow, -10px -3px green, -4px 0px green, 4px 11px blue, 5px -11px blue, 9px 4px purple, 7px -11px purple, -8px 1px red, -9px -6px red
+        text-shadow: 0px 0px transparent, 10px 12px orange, -7px 0px orange, 8px -4px yellow, -6px -4px yellow, 1px 10px green, -8px 1px green, -5px -6px blue, 9px 10px blue, -5px -3px purple, -7px 9px purple, -4px 12px red, 10px -4px red
     }
 
     16.6666666667% {
-        text-shadow: 0px 0px transparent, -3px -9px orange, 2px 11px yellow, -2px -5px yellow, -3px 5px green, 4px -10px green, 1px 9px blue, -1px 11px blue, -6px 3px purple, -11px 10px purple, 2px -4px red, -6px -4px red, -1px 1px orange
+        text-shadow: 0px 0px transparent, 8px -7px orange, -5px 9px yellow, -6px 12px yellow, 5px 3px green, 12px -1px green, 9px -7px blue, -10px -4px blue, 3px 4px purple, -5px -2px purple, -6px 12px red, -11px 7px red, -4px -9px orange
     }
 
     25% {
-        text-shadow: 0px 0px transparent, 10px 9px yellow, -3px 0px yellow, 9px 1px green, 9px -7px green, -11px -8px blue, 11px 10px blue, -11px 2px purple, 8px -5px purple, 5px -1px red, 1px 4px red, 10px 0px orange, 12px 9px orange
+        text-shadow: 0px 0px transparent, -1px 8px yellow, 4px 11px yellow, -3px -10px green, 9px -11px green, 7px 10px blue, -5px -8px blue, -2px -10px purple, -5px 10px purple, -5px -6px red, 5px -6px red, -11px -3px orange, 1px -5px orange
     }
 
     33.3333333333% {
-        text-shadow: 0px 0px transparent, -9px 6px yellow, 11px 12px green, -11px 4px green, 5px 4px blue, 8px 2px blue, 5px 11px purple, 7px 1px purple, 1px 7px red, -11px -1px red, 2px -5px orange, 8px -5px orange, 11px 12px yellow
+        text-shadow: 0px 0px transparent, 1px -8px yellow, 5px -7px green, 12px -9px green, 10px 10px blue, 10px 9px blue, -5px -6px purple, -6px 11px purple, 2px -4px red, -10px -9px red, 1px 7px orange, 7px 6px orange, 8px 4px yellow
     }
 
     41.6666666667% {
-        text-shadow: 0px 0px transparent, -9px 1px green, 9px -4px green, 3px 4px blue, -9px 8px blue, 10px 5px purple, 12px 0px purple, -3px 7px red, 10px 0px red, -2px -10px orange, -3px -3px orange, 9px 11px yellow, 7px 5px yellow
+        text-shadow: 0px 0px transparent, 11px 8px green, 4px -8px green, -8px -6px blue, 9px 8px blue, -6px -4px purple, -5px -3px purple, 9px -6px red, -1px 9px red, 11px 11px orange, -4px -6px orange, 1px 0px yellow, 9px -8px yellow
     }
 
     50% {
-        text-shadow: 0px 0px transparent, 3px 0px green, 11px 3px blue, -3px -8px blue, 9px 0px purple, 5px -6px purple, -10px 9px red, 3px 4px red, 12px -1px orange, -4px -2px orange, 5px 1px yellow, 2px -5px yellow, -7px 9px green
+        text-shadow: 0px 0px transparent, 11px -11px green, 7px 6px blue, -1px 5px blue, -2px 12px purple, -10px -10px purple, 9px 4px red, -9px 10px red, -3px -3px orange, 2px 0px orange, -7px -1px yellow, -4px 10px yellow, 8px 3px green
     }
 
     58.3333333333% {
-        text-shadow: 0px 0px transparent, 8px 8px blue, 2px 10px blue, 8px -3px purple, -7px 6px purple, 2px 0px red, -9px 10px red, -10px 9px orange, -4px 5px orange, 7px -5px yellow, -6px -7px yellow, 5px -3px green, -7px 6px green
+        text-shadow: 0px 0px transparent, 4px 9px blue, 5px 1px blue, -4px 11px purple, -3px 10px purple, 12px -5px red, 9px 0px red, 7px -9px orange, -3px 1px orange, -7px 8px yellow, 6px 2px yellow, -4px 10px green, -8px 3px green
     }
 
     66.6666666667% {
-        text-shadow: 0px 0px transparent, 12px -11px blue, -10px 6px purple, 4px 0px purple, -9px -10px red, 1px 6px red, 5px 7px orange, -3px -3px orange, -5px 4px yellow, 11px 1px yellow, -9px 6px green, 6px 1px green, 11px -10px blue
+        text-shadow: 0px 0px transparent, -1px 12px blue, 9px -11px purple, 8px -9px purple, -1px 6px red, -7px -2px red, -10px 12px orange, 5px -6px orange, 0px 4px yellow, 1px 4px yellow, -6px -2px green, -6px -10px green, -8px 7px blue
     }
 
     75% {
-        text-shadow: 0px 0px transparent, 1px -2px purple, 6px -8px purple, 11px 6px red, 2px 7px red, -8px 9px orange, 7px 8px orange, 9px -3px yellow, 3px 3px yellow, -6px 4px green, 5px -2px green, -10px -9px blue, -4px 10px blue
+        text-shadow: 0px 0px transparent, 9px -6px purple, 8px -9px purple, 1px 9px red, -2px 8px red, 6px 9px orange, 10px -5px orange, 1px -11px yellow, 6px 11px yellow, 8px 2px green, 6px -11px green, -3px -4px blue, -3px -10px blue
     }
 
     83.3333333333% {
-        text-shadow: 0px 0px transparent, 8px -1px purple, -6px 7px red, -5px -8px red, 4px -2px orange, -8px 0px orange, 12px 9px yellow, -3px -6px yellow, -8px -5px green, -7px 12px green, 0px -9px blue, -5px 6px blue, -2px 3px purple
+        text-shadow: 0px 0px transparent, 7px -11px purple, -7px 9px red, -7px 12px red, 0px 12px orange, 12px 4px orange, 1px -11px yellow, 5px -7px yellow, -2px -5px green, 8px 10px green, 9px -5px blue, -4px 12px blue, 2px -9px purple
     }
 
     91.6666666667% {
-        text-shadow: 0px 0px transparent, 3px 12px red, 12px 3px red, -2px -8px orange, 2px -10px orange, -3px -4px yellow, -1px -4px yellow, 0px -9px green, 0px -7px green, 5px 5px blue, -3px 8px blue, 2px -7px purple, 1px 3px purple
+        text-shadow: 0px 0px transparent, 5px 6px red, 8px 3px red, -4px 4px orange, -1px 0px orange, 5px -3px yellow, -8px 5px yellow, 7px 2px green, -7px 10px green, 3px 2px blue, 10px -4px blue, 11px -11px purple, 7px -8px purple
     }
 
     100% {
-        text-shadow: 0px 0px transparent, 7px -6px red, 6px 11px orange, 3px 0px orange, 0px 3px yellow, -10px -3px yellow, -2px -8px green, -8px 3px green, -3px 5px blue, -5px 7px blue, -9px 0px purple, 6px 11px purple, -2px -6px red
+        text-shadow: 0px 0px transparent, 11px 12px red, 10px 7px orange, 7px 8px orange, 2px 1px yellow, 10px -9px yellow, -9px 12px green, -1px 6px green, -5px 5px blue, 10px 4px blue, 6px -10px purple, 7px -7px purple, -7px -1px red
     }
 }
 
@@ -1327,4 +1353,4 @@
     flex: 1 1 auto
 }
 
-/*# sourceMappingURL=sourcemaps/3632.css.map*/
+/*# sourceMappingURL=sourcemaps/6068.css.map*/
