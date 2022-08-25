@@ -1,246 +1,126 @@
 (self.webpackChunkjackbox_tv = self.webpackChunkjackbox_tv || []).push([
     ["games/quiplash3-tjsp"], {
-        3682: (e, t, a) => {
-            "use strict";
-            a.d(t, {
-                Z: () => u
-            });
-            var n, r, i = "function" == typeof Map ? new Map : (n = [], r = [], {
-                    has: function(e) {
-                        return n.indexOf(e) > -1
-                    },
-                    get: function(e) {
-                        return r[n.indexOf(e)]
-                    },
-                    set: function(e, t) {
-                        -1 === n.indexOf(e) && (n.push(e), r.push(t))
-                    },
-                    delete: function(e) {
-                        var t = n.indexOf(e);
-                        t > -1 && (n.splice(t, 1), r.splice(t, 1))
-                    }
-                }),
-                s = function(e) {
-                    return new Event(e, {
-                        bubbles: !0
-                    })
-                };
-            try {
-                new Event("test")
-            } catch (n) {
-                s = function(e) {
-                    var t = document.createEvent("Event");
-                    return t.initEvent(e, !0, !1), t
-                }
-            }
-
-            function o(e) {
-                var t = i.get(e);
-                t && t.destroy()
-            }
-
-            function l(e) {
-                var t = i.get(e);
-                t && t.update()
-            }
-            var c = null;
-            "undefined" == typeof window || "function" != typeof window.getComputedStyle ? ((c = function(e) {
-                return e
-            }).destroy = function(e) {
-                return e
-            }, c.update = function(e) {
-                return e
-            }) : ((c = function(e, t) {
-                return e && Array.prototype.forEach.call(e.length ? e : [e], (function(e) {
-                    return function(e) {
-                        if (e && e.nodeName && "TEXTAREA" === e.nodeName && !i.has(e)) {
-                            var t, a = null,
-                                n = null,
-                                r = null,
-                                o = function() {
-                                    e.clientWidth !== n && p()
-                                },
-                                l = function(t) {
-                                    window.removeEventListener("resize", o, !1), e.removeEventListener("input", p, !1), e.removeEventListener("keyup", p, !1), e.removeEventListener("autosize:destroy", l, !1), e.removeEventListener("autosize:update", p, !1), Object.keys(t).forEach((function(a) {
-                                        e.style[a] = t[a]
-                                    })), i.delete(e)
-                                }.bind(e, {
-                                    height: e.style.height,
-                                    resize: e.style.resize,
-                                    overflowY: e.style.overflowY,
-                                    overflowX: e.style.overflowX,
-                                    wordWrap: e.style.wordWrap
-                                });
-                            e.addEventListener("autosize:destroy", l, !1), "onpropertychange" in e && "oninput" in e && e.addEventListener("keyup", p, !1), window.addEventListener("resize", o, !1), e.addEventListener("input", p, !1), e.addEventListener("autosize:update", p, !1), e.style.overflowX = "hidden", e.style.wordWrap = "break-word", i.set(e, {
-                                destroy: l,
-                                update: p
-                            }), "vertical" === (t = window.getComputedStyle(e, null)).resize ? e.style.resize = "none" : "both" === t.resize && (e.style.resize = "horizontal"), a = "content-box" === t.boxSizing ? -(parseFloat(t.paddingTop) + parseFloat(t.paddingBottom)) : parseFloat(t.borderTopWidth) + parseFloat(t.borderBottomWidth), isNaN(a) && (a = 0), p()
-                        }
-
-                        function c(t) {
-                            var a = e.style.width;
-                            e.style.width = "0px", e.style.width = a, e.style.overflowY = t
-                        }
-
-                        function u() {
-                            if (0 !== e.scrollHeight) {
-                                var t = function(e) {
-                                        for (var t = []; e && e.parentNode && e.parentNode instanceof Element;) e.parentNode.scrollTop && t.push({
-                                            node: e.parentNode,
-                                            scrollTop: e.parentNode.scrollTop
-                                        }), e = e.parentNode;
-                                        return t
-                                    }(e),
-                                    r = document.documentElement && document.documentElement.scrollTop;
-                                e.style.height = "", e.style.height = e.scrollHeight + a + "px", n = e.clientWidth, t.forEach((function(e) {
-                                    e.node.scrollTop = e.scrollTop
-                                })), r && (document.documentElement.scrollTop = r)
-                            }
-                        }
-
-                        function p() {
-                            u();
-                            var t = Math.round(parseFloat(e.style.height)),
-                                a = window.getComputedStyle(e, null),
-                                n = "content-box" === a.boxSizing ? Math.round(parseFloat(a.height)) : e.offsetHeight;
-                            if (n < t ? "hidden" === a.overflowY && (c("scroll"), u(), n = "content-box" === a.boxSizing ? Math.round(parseFloat(window.getComputedStyle(e, null).height)) : e.offsetHeight) : "hidden" !== a.overflowY && (c("hidden"), u(), n = "content-box" === a.boxSizing ? Math.round(parseFloat(window.getComputedStyle(e, null).height)) : e.offsetHeight), r !== n) {
-                                r = n;
-                                var i = s("autosize:resized");
-                                try {
-                                    e.dispatchEvent(i)
-                                } catch (e) {}
-                            }
-                        }
-                    }(e)
-                })), e
-            }).destroy = function(e) {
-                return e && Array.prototype.forEach.call(e.length ? e : [e], o), e
-            }, c.update = function(e) {
-                return e && Array.prototype.forEach.call(e.length ? e : [e], l), e
-            });
-            const u = c
-        },
         48598: (e, t, a) => {
             "use strict";
             a.d(t, {
-                I: () => A
+                I: () => h
             });
-            const n = [169, 174, 8252, 8265, 8482, 8505, 8596, 8597, 8598, 8599, 8600, 8601, 8617, 8618, 9e3, 8986, 8987, 9167, 9193, 9194, 9195, 9196, 9197, 9198, 9199, 9200, 9201, 9202, 9203, 9209, 9210, 9410, 9642, 9643, 9654, 9664, 9723, 9724, 9725, 9726, 9728, 9729, 9730, 9731, 9732, 9742, 9745, 9748, 9749, 9752, 9757, 9760, 9762, 9763, 9766, 9770, 9774, 9775, 9784, 9785, 9786, 9792, 9794, 9800, 9801, 9802, 9803, 9804, 9805, 9806, 9807, 9808, 9809, 9810, 9811, 9824, 9827, 9829, 9830, 9832, 9851, 9854, 9855, 9874, 9875, 9876, 9877, 9878, 9879, 9881, 9883, 9884, 9888, 9823, 9889, 9895, 9898, 9899, 9904, 9905, 9917, 9918, 9924, 9925, 9928, 9934, 9935, 9937, 9939, 9940, 9961, 9962, 9968, 9969, 9970, 9971, 9972, 9973, 9974, 9975, 9976, 9977, 9978, 9981, 9986, 9989, 9992, 9993, 9994, 9995, 9996, 9997, 9999, 10002, 10004, 10006, 10013, 10017, 10024, 10035, 10036, 10052, 10055, 10060, 10062, 10067, 10068, 10069, 10071, 10083, 10084, 10085, 10133, 10134, 10135, 10145, 10160, 10175, 10548, 10549, 11013, 11014, 11015, 11035, 11036, 11088, 11093, 12336, 12349, 12951, 12953, 58634],
+            const s = [169, 174, 8252, 8265, 8482, 8505, 8596, 8597, 8598, 8599, 8600, 8601, 8617, 8618, 9e3, 8986, 8987, 9167, 9193, 9194, 9195, 9196, 9197, 9198, 9199, 9200, 9201, 9202, 9203, 9209, 9210, 9410, 9642, 9643, 9654, 9664, 9723, 9724, 9725, 9726, 9728, 9729, 9730, 9731, 9732, 9742, 9745, 9748, 9749, 9752, 9757, 9760, 9762, 9763, 9766, 9770, 9774, 9775, 9784, 9785, 9786, 9792, 9794, 9800, 9801, 9802, 9803, 9804, 9805, 9806, 9807, 9808, 9809, 9810, 9811, 9824, 9827, 9829, 9830, 9832, 9851, 9854, 9855, 9874, 9875, 9876, 9877, 9878, 9879, 9881, 9883, 9884, 9888, 9823, 9889, 9895, 9898, 9899, 9904, 9905, 9917, 9918, 9924, 9925, 9928, 9934, 9935, 9937, 9939, 9940, 9961, 9962, 9968, 9969, 9970, 9971, 9972, 9973, 9974, 9975, 9976, 9977, 9978, 9981, 9986, 9989, 9992, 9993, 9994, 9995, 9996, 9997, 9999, 10002, 10004, 10006, 10013, 10017, 10024, 10035, 10036, 10052, 10055, 10060, 10062, 10067, 10068, 10069, 10071, 10083, 10084, 10085, 10133, 10134, 10135, 10145, 10160, 10175, 10548, 10549, 11013, 11014, 11015, 11035, 11036, 11088, 11093, 12336, 12349, 12951, 12953, 58634],
                 r = [128104, 128105, 129489],
-                i = [127995, 127996, 127997, 127998, 127999, 129456, 129457, 129458, 129459],
-                s = 65039,
+                n = [127995, 127996, 127997, 127998, 127999, 129456, 129457, 129458, 129459],
+                i = 65039,
                 o = 8205,
                 l = (e, t) => {
                     const a = parseInt(e.charCodeAt(0).toString(16), 16),
-                        n = parseInt(t.charCodeAt(0).toString(16), 16);
-                    return parseInt((1024 * (a - 55296) + n - 56320 + 65536).toString(16), 16)
+                        s = parseInt(t.charCodeAt(0).toString(16), 16);
+                    return parseInt((1024 * (a - 55296) + s - 56320 + 65536).toString(16), 16)
                 },
                 c = e => {
                     const t = parseInt(e.charCodeAt(0).toString(16), 16);
-                    return n.includes(t)
+                    return s.includes(t)
                 },
                 u = (e, t) => !!e && parseInt(e.charCodeAt(0).toString(16), 16) === t,
                 p = e => /[\uD800-\uDB7F]/.test(e),
                 d = e => /[\u0023\u002A\u0030-\u0039]/.test(e),
-                h = e => {
+                A = e => {
                     const t = parseInt(e.toString(16), 16);
                     return t >= 127462 && t <= 127487
                 },
                 v = (e, t) => {
                     let a = "",
-                        n = !0;
-                    for (; n && t < e.length;) {
+                        s = !0;
+                    for (; s && t < e.length;) {
                         const r = e[t];
                         if (p(r)) {
-                            const s = l(r, e[t + 1]);
-                            i.includes(s) ? (a = a + r + e[t + 1], t += 2) : n = !1
-                        } else u(r, o) ? (a = a + r + e[t + 1] + e[t + 2], t += 3) : n = !1
+                            const i = l(r, e[t + 1]);
+                            n.includes(i) ? (a = a + r + e[t + 1], t += 2) : s = !1
+                        } else u(r, o) ? (a = a + r + e[t + 1] + e[t + 2], t += 3) : s = !1
                     }
                     return {
                         modifyingChars: a,
                         newPosition: t
                     }
                 },
-                A = (e, t) => {
+                h = (e, t) => {
                     if (!/[^\u00A1\u0020-\u0022\u0024-\u0029\u002B-\u002F\u003A-\u007E\u00BF-\u00FF’]/gi.test(e)) return t && e && e.length > t && (e = e.substring(0, t)), {
                         result: e,
                         charCount: e.length
                     };
                     const a = e.split("");
-                    let n = 0,
-                        A = "";
-                    for (let e = 0; e < a.length && (!t || n < t); e += 1) {
+                    let s = 0,
+                        h = "";
+                    for (let e = 0; e < a.length && (!t || s < t); e += 1) {
                         const t = a[e];
-                        if (/[\u00A1\u0020-\u0022\u0024-\u0029\u002B-\u002F\u003A-\u007E\u00BF-\u00FF’]/gi.test(t)) A += t, n += 1;
+                        if (/[\u00A1\u0020-\u0022\u0024-\u0029\u002B-\u002F\u003A-\u007E\u00BF-\u00FF’]/gi.test(t)) h += t, s += 1;
                         else {
                             if (c(t)) {
-                                if (A += t, u(t, 9977)) {
+                                if (h += t, u(t, 9977)) {
                                     e += 1;
                                     const {
                                         modifyingChars: t,
-                                        newPosition: n
+                                        newPosition: s
                                     } = v(a, e);
-                                    A += t, e = n - 1
+                                    h += t, e = s - 1
                                 }
-                                n += 1;
+                                s += 1;
                                 continue
                             }
                             if (u(t, 8220) || u(t, 8221)) {
-                                e += 1, A = `${A}"`, n += 1;
+                                e += 1, h = `${h}"`, s += 1;
                                 continue
                             }
                             if (p(t)) {
                                 const c = a[e + 1];
-                                A = A + t + c, e += 1;
+                                h = h + t + c, e += 1;
                                 const p = l(t, c);
                                 if (r.includes(p)) {
                                     const {
                                         modifyingChars: t,
                                         newPosition: r
                                     } = v(a, e + 1);
-                                    A += t, n += 1, e = r - 1;
+                                    h += t, s += 1, e = r - 1;
                                     continue
                                 }
-                                if (h(p)) {
+                                if (A(p)) {
                                     const t = l(a[e + 1], a[e + 2]);
-                                    h(t) && (A = A + a[e + 1] + a[e + 2], e += 1), n += 1;
+                                    A(t) && (h = h + a[e + 1] + a[e + 2], e += 1), s += 1;
                                     continue
                                 }
                                 if (127988 === p) {
                                     const t = a[e + 1];
-                                    u(t, o) && (A = A + t + a[e + 2] + a[e + 3], e += 3), n += 1;
+                                    u(t, o) && (h = h + t + a[e + 2] + a[e + 3], e += 3), s += 1;
                                     continue
                                 }
                                 if (127987 === p) {
                                     const t = a[e + 1];
-                                    u(t, s) && (e += 1, u(a[e + 1], o) && (A = A + t + a[e + 1] + a[e + 2] + a[e + 3], e += 3)), n += 1;
+                                    u(t, i) && (e += 1, u(a[e + 1], o) && (h = h + t + a[e + 1] + a[e + 2] + a[e + 3], e += 3)), s += 1;
                                     continue
                                 }
-                                i.includes(p) || (n += 1);
+                                n.includes(p) || (s += 1);
                                 continue
                             }
                             if (d(t)) {
                                 const r = a[e + 1];
-                                r && u(r, s) ? (A = A + t + a[e + 1] + a[e + 2], e += 2) : A += t, n += 1;
+                                r && u(r, i) ? (h = h + t + a[e + 1] + a[e + 2], e += 2) : h += t, s += 1;
                                 continue
-                            }(u(t, s) || u(t, o) || u(t, 8419)) && (A += t)
+                            }(u(t, i) || u(t, o) || u(t, 8419)) && (h += t)
                         }
                     }
                     return {
-                        result: A,
-                        charCount: n
+                        result: h,
+                        charCount: s
                     }
                 }
         },
         79278: (e, t, a) => {
             "use strict";
 
-            function n(e) {
-                return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+            function s(e) {
+                return s = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                     return typeof e
                 } : function(e) {
                     return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
-                })(e)
+                }, s(e)
             }
 
             function r(e, t, a) {
@@ -252,30 +132,30 @@
                 }) : e[t] = a, e
             }
 
-            function i(e, t) {
+            function n(e, t) {
                 var a = Object.keys(e);
                 if (Object.getOwnPropertySymbols) {
-                    var n = Object.getOwnPropertySymbols(e);
-                    t && (n = n.filter((function(t) {
+                    var s = Object.getOwnPropertySymbols(e);
+                    t && (s = s.filter((function(t) {
                         return Object.getOwnPropertyDescriptor(e, t).enumerable
-                    }))), a.push.apply(a, n)
+                    }))), a.push.apply(a, s)
                 }
                 return a
             }
 
-            function s(e) {
+            function i(e) {
                 for (var t = 1; t < arguments.length; t++) {
                     var a = null != arguments[t] ? arguments[t] : {};
-                    t % 2 ? i(Object(a), !0).forEach((function(t) {
+                    t % 2 ? n(Object(a), !0).forEach((function(t) {
                         r(e, t, a[t])
-                    })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a)) : i(Object(a)).forEach((function(t) {
+                    })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(a)) : n(Object(a)).forEach((function(t) {
                         Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(a, t))
                     }))
                 }
                 return e
             }
             a.d(t, {
-                ZP: () => w
+                ZP: () => G
             });
             var o = "_",
                 l = "function",
@@ -302,114 +182,114 @@
                     indexes: a
                 }
             }
-            var h = [],
+            var A = [],
                 v = "";
 
-            function A() {
+            function h() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : v,
-                    t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : h,
+                    t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : A,
                     a = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                 if (!p(t)) {
-                    if (n(t) !== l) throw new Error("Text-mask:conformToMask; The mask property must be an array.");
+                    if (s(t) !== l) throw new Error("Text-mask:conformToMask; The mask property must be an array.");
                     t = d(t = t(e, a)).maskWithoutCaretTraps
                 }
                 var r = a.guide,
-                    i = void 0 === r || r,
-                    s = a.previousConformedValue,
-                    c = void 0 === s ? v : s,
-                    A = a.placeholderChar,
-                    f = void 0 === A ? o : A,
-                    m = a.placeholder,
-                    T = void 0 === m ? u(t, f) : m,
-                    _ = a.currentCaretPosition,
+                    n = void 0 === r || r,
+                    i = a.previousConformedValue,
+                    c = void 0 === i ? v : i,
+                    h = a.placeholderChar,
+                    m = void 0 === h ? o : h,
+                    f = a.placeholder,
+                    _ = void 0 === f ? u(t, m) : f,
+                    T = a.currentCaretPosition,
                     y = a.keepCharPositions,
-                    E = !1 === i && void 0 !== c,
+                    E = !1 === n && void 0 !== c,
                     O = e.length,
-                    b = c.length,
-                    g = T.length,
-                    C = t.length,
-                    R = O - b,
+                    C = c.length,
+                    b = _.length,
+                    g = t.length,
+                    R = O - C,
                     I = R > 0,
-                    L = _ + (I ? -R : 0),
-                    N = L + Math.abs(R);
+                    P = T + (I ? -R : 0),
+                    N = P + Math.abs(R);
                 if (!0 === y && !I) {
-                    for (var x = v, P = L; P < N; P++) T[P] === f && (x += f);
-                    e = e.slice(0, L) + x + e.slice(L, O)
+                    for (var L = v, S = P; S < N; S++) _[S] === m && (L += m);
+                    e = e.slice(0, P) + L + e.slice(P, O)
                 }
-                for (var S = e.split(v).map((function(e, t) {
+                for (var x = e.split(v).map((function(e, t) {
                         return {
                             char: e,
-                            isNew: t >= L && t < N
+                            isNew: t >= P && t < N
                         }
-                    })), w = O - 1; w >= 0; w--) {
-                    var G = S[w].char;
-                    if (G !== f) {
-                        var V = w >= L && b === C;
-                        G === T[V ? w - R : w] && S.splice(w, 1)
+                    })), G = O - 1; G >= 0; G--) {
+                    var w = x[G].char;
+                    if (w !== m) {
+                        var V = G >= P && C === g;
+                        w === _[V ? G - R : G] && x.splice(G, 1)
                     }
                 }
                 var U = v,
-                    k = !1;
-                e: for (var $ = 0; $ < g; $++) {
-                    var D = T[$];
-                    if (D === f) {
-                        if (S.length > 0)
-                            for (; S.length > 0;) {
-                                var F = S.shift(),
-                                    M = F.char,
-                                    j = F.isNew;
-                                if (M === f && !0 !== E) {
-                                    U += f;
+                    $ = !1;
+                e: for (var k = 0; k < b; k++) {
+                    var D = _[k];
+                    if (D === m) {
+                        if (x.length > 0)
+                            for (; x.length > 0;) {
+                                var B = x.shift(),
+                                    j = B.char,
+                                    M = B.isNew;
+                                if (j === m && !0 !== E) {
+                                    U += m;
                                     continue e
                                 }
-                                if (t[$].test(M)) {
-                                    if (!0 === y && !1 !== j && c !== v && !1 !== i && I) {
-                                        for (var B = S.length, H = null, z = 0; z < B; z++) {
-                                            var W = S[z];
-                                            if (W.char !== f && !1 === W.isNew) break;
-                                            if (W.char === f) {
-                                                H = z;
+                                if (t[k].test(j)) {
+                                    if (!0 === y && !1 !== M && c !== v && !1 !== n && I) {
+                                        for (var F = x.length, Y = null, H = 0; H < F; H++) {
+                                            var K = x[H];
+                                            if (K.char !== m && !1 === K.isNew) break;
+                                            if (K.char === m) {
+                                                Y = H;
                                                 break
                                             }
                                         }
-                                        null !== H ? (U += M, S.splice(H, 1)) : $--
-                                    } else U += M;
+                                        null !== Y ? (U += j, x.splice(Y, 1)) : k--
+                                    } else U += j;
                                     continue e
                                 }
-                                k = !0
-                            }!1 === E && (U += T.substr($, g));
+                                $ = !0
+                            }!1 === E && (U += _.substr(k, b));
                         break
                     }
                     U += D
                 }
                 if (E && !1 === I) {
-                    for (var K = null, q = 0; q < U.length; q++) T[q] === f && (K = q);
-                    U = null !== K ? U.substr(0, K + 1) : v
+                    for (var W = null, q = 0; q < U.length; q++) _[q] === m && (W = q);
+                    U = null !== W ? U.substr(0, W + 1) : v
                 }
                 return {
                     conformedValue: U,
                     meta: {
-                        someCharsRejected: k
+                        someCharsRejected: $
                     }
                 }
             }
-            var f = {
+            var m = {
                     __nextCharOptional__: !0
                 },
-                m = {
+                f = {
                     "#": /\d/,
                     A: /[a-z]/i,
                     N: /[a-z0-9]/i,
-                    "?": f,
+                    "?": m,
                     X: /./
                 },
-                T = function(e) {
+                _ = function(e) {
                     return a = (t = e.toString().replace(/.(\/)[gmiyus]{0,6}$/, (function(e) {
                         return e.replace("/", "?/")
                     }))).lastIndexOf("/"), new RegExp(t.slice(1, a), t.slice(a + 1));
                     var t, a
                 },
-                _ = function(e) {
+                T = function(e) {
                     return e instanceof RegExp ? e : function(e) {
                         return new RegExp("/[".concat(function(e) {
                             return "[\\^$.|?*+()".indexOf(e) > -1 ? "\\".concat(e) : e
@@ -418,29 +298,29 @@
                 };
 
             function y(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
-                return e.map((function(e, a, n) {
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f;
+                return e.map((function(e, a, s) {
                     var r = t[e] || e,
-                        i = n[a - 1],
-                        s = t[i] || i;
-                    return r === f ? null : s === f ? T(_(r)) : r
+                        n = s[a - 1],
+                        i = t[n] || n;
+                    return r === m ? null : i === m ? _(T(r)) : r
                 })).filter(Boolean)
             }
 
             function E(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f;
                 return y(e.split(""), t)
             }
             var O = function(e) {
                     return e instanceof HTMLInputElement ? e : e.querySelector("input") || e
                 },
-                b = function(e) {
+                C = function(e) {
                     return "function" == typeof e
                 },
-                g = function(e) {
+                b = function(e) {
                     return "string" == typeof e
                 },
-                C = function() {
+                g = function() {
                     var e = new Map,
                         t = {
                             previousValue: "",
@@ -448,11 +328,11 @@
                         };
 
                     function a(a) {
-                        return e.get(a) || s({}, t)
+                        return e.get(a) || i({}, t)
                     }
                     return {
-                        partiallyUpdate: function(t, n) {
-                            e.set(t, s(s({}, a(t)), n))
+                        partiallyUpdate: function(t, s) {
+                            e.set(t, i(i({}, a(t)), s))
                         },
                         remove: function(t) {
                             e.delete(t)
@@ -471,248 +351,415 @@
             function I(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
                     a = e.value,
-                    n = C.get(e),
-                    r = n.previousValue,
-                    i = n.mask,
-                    s = a !== r,
+                    s = g.get(e),
+                    r = s.previousValue,
+                    n = s.mask,
+                    i = a !== r,
                     o = a.length > r.length,
-                    l = a && s && o;
-                if ((t || l) && i) {
-                    var c = A(a, i, {
+                    l = a && i && o;
+                if ((t || l) && n) {
+                    var c = h(a, n, {
                             guide: !1
                         }),
                         u = c.conformedValue;
                     e.value = u, R(e)
                 }
-                C.partiallyUpdate(e, {
+                g.partiallyUpdate(e, {
                     previousValue: a
                 })
             }
 
-            function L(e, t, a) {
-                var n;
-                n = Array.isArray(t) ? function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
-                    return y(e.map((function(e) {
-                        return e instanceof RegExp ? e : "string" == typeof e ? e.split("") : null
-                    })).filter(Boolean).reduce((function(e, t) {
-                        return e.concat(t)
-                    }), []), t)
-                }(t, a) : b(t) ? t : g(t) && t.length > 0 ? E(t, a) : t, C.partiallyUpdate(e, {
-                    mask: n
+            function P(e, t, a) {
+                var s;
+                s = Array.isArray(t) ? function(e) {
+                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f,
+                        a = e.map((function(e) {
+                            return e instanceof RegExp ? e : "string" == typeof e ? e.split("") : null
+                        })).filter(Boolean).reduce((function(e, t) {
+                            return e.concat(t)
+                        }), []);
+                    return y(a, t)
+                }(t, a) : C(t) ? t : b(t) && t.length > 0 ? E(t, a) : t, g.partiallyUpdate(e, {
+                    mask: s
                 })
             }
 
             function N(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : m;
-                return null === e || Array.isArray(e) || "object" !== n(e) ? t : Object.keys(e).reduce((function(t, a) {
-                    var n = e[a];
-                    return null === n || n instanceof RegExp ? s(s({}, t), {}, r({}, a, n)) : t
+                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : f;
+                return null === e || Array.isArray(e) || "object" !== s(e) ? t : Object.keys(e).reduce((function(t, a) {
+                    var s = e[a];
+                    return null === s || s instanceof RegExp ? i(i({}, t), {}, r({}, a, s)) : t
                 }), t)
             }
 
-            function x(e) {
+            function L(e) {
                 return (Array.isArray(e) ? e : [e]).filter((function(e) {
-                    return g(e) || e instanceof RegExp
+                    return b(e) || e instanceof RegExp
                 })).toString()
             }
 
-            function P() {
+            function S() {
                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     t = N(e && e.placeholders);
                 return {
                     bind: function(e, a) {
-                        var n = a.value;
-                        L(e = O(e), n, t), I(e)
+                        var s = a.value;
+                        P(e = O(e), s, t), I(e)
                     },
                     componentUpdated: function(e, a) {
-                        var n = a.value,
+                        var s = a.value,
                             r = a.oldValue;
                         e = O(e);
-                        var i = b(n) || x(r) !== x(n);
-                        i && L(e, n, t), I(e, i)
+                        var n = C(s) || L(r) !== L(s);
+                        n && P(e, s, t), I(e, n)
                     },
                     unbind: function(e) {
-                        e = O(e), C.remove(e)
+                        e = O(e), g.remove(e)
                     }
                 }
             }
-            P();
-            var S = function(e, t) {
+            S();
+            var x = function(e, t) {
                 var a = E(t);
-                return g(e) || Number.isFinite(e) ? A("".concat(e), a, {
+                return b(e) || Number.isFinite(e) ? h("".concat(e), a, {
                     guide: !1
                 }).conformedValue : e
             };
-            const w = function(e) {
+            const G = function(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                e.directive("mask", P(t)), e.filter("VMask", S)
+                e.directive("mask", S(t)), e.filter("VMask", x)
             }
         },
-        6305: (e, t, a) => {
-            "use strict";
-            a.d(t, {
-                Z: () => l
-            });
-            var n = function() {
-                var e = this,
-                    t = e.$createElement;
-                return (e._self._c || t)("input", {
-                    ref: "input",
-                    attrs: {
-                        enterkeyhint: "done"
-                    },
-                    domProps: {
-                        value: e.value
-                    },
-                    on: {
-                        input: e.onInput
-                    }
-                })
-            };
-            n._withStripped = !0;
-            var r = a(2934),
-                i = a.n(r);
-            const s = i().extend({
-                props: {
-                    value: String
-                },
-                watch: {
-                    value(e, t) {
-                        e !== t && (this.$refs.input.value = e)
-                    }
-                },
-                methods: {
-                    onInput(e) {
-                        return t = this, a = void 0, r = function*() {
-                            const t = e.target;
-                            if (!(null == t ? void 0 : t.value)) return;
-                            const a = -1 === t.maxLength ? Number.MAX_SAFE_INTEGER : t.maxLength;
-                            t.value.length > a ? t.value = t.value.substring(0, a) : (this.$emit("input", t.value), yield i().nextTick(), t.value !== this.value && (t.value = this.value))
-                        }, new((n = void 0) || (n = Promise))((function(e, i) {
-                            function s(e) {
-                                try {
-                                    l(r.next(e))
-                                } catch (e) {
-                                    i(e)
-                                }
-                            }
-
-                            function o(e) {
-                                try {
-                                    l(r.throw(e))
-                                } catch (e) {
-                                    i(e)
-                                }
-                            }
-
-                            function l(t) {
-                                var a;
-                                t.done ? e(t.value) : (a = t.value, a instanceof n ? a : new n((function(e) {
-                                    e(a)
-                                }))).then(s, o)
-                            }
-                            l((r = r.apply(t, a || [])).next())
-                        }));
-                        var t, a, n, r
-                    }
-                }
-            });
-            var o = (0, a(51900).Z)(s, n, [], !1, null, null, null);
-            o.options.__file = "src/apps/vue/components/Input.vue";
-            const l = o.exports
-        },
-        38266: (e, t, a) => {
+        13494: (e, t, a) => {
             "use strict";
             a.d(t, {
                 Z: () => c
             });
-            var n = function() {
+            var s = function() {
                 var e = this,
-                    t = e.$createElement;
-                return (e._self._c || t)("textarea", {
-                    ref: "textarea",
-                    attrs: {
-                        enterkeyhint: "done"
-                    },
+                    t = e.$createElement,
+                    a = e._self._c || t;
+                return a("div", {
+                    staticClass: "lobby-actions",
+                    class: {
+                        vip: e.player.hasControls
+                    }
+                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : a("p", {
+                    class: e.localClasses.message,
                     domProps: {
-                        value: e.value
+                        textContent: e._s(e.joinedCountText)
+                    }
+                }), e._v(" "), e.player.hasControls ? ["waitingForMore" === e.player.status ? a("p", {
+                    class: e.localClasses.status
+                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? a("button", {
+                    class: e.localClasses.action,
+                    domProps: {
+                        textContent: e._s(e.startText || e.$t("LOBBY.BUTTON_START"))
                     },
                     on: {
-                        input: e.onInput,
-                        keydown: function(t) {
-                            return !t.type.indexOf("key") && e._k(t.keyCode, "enter", 13, t.key, "Enter") ? null : e.onKeydownEnter.apply(null, arguments)
-                        }
+                        click: e.onStartClick
                     }
-                })
+                }) : e._e(), e._v(" "), "countdown" === e.player.status ? a("button", {
+                    class: e.localClasses.action,
+                    domProps: {
+                        textContent: e._s(e.cancelText || e.$t("LOBBY.BUTTON_CANCEL"))
+                    },
+                    on: {
+                        click: e.onCancelClick
+                    }
+                }) : e._e()] : e.player.gamepadStart ? ["waitingForMore" === e.player.status ? a("p", {
+                    class: e.localClasses.status
+                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? a("p", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "LOBBY.WAITING_FOR_GAMEPAD",
+                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
+                    }],
+                    class: e.localClasses.status
+                }) : e._e(), e._v(" "), "countdown" === e.player.status ? a("p", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "LOBBY.GAME_STARTING",
+                        expression: "'LOBBY.GAME_STARTING'"
+                    }],
+                    class: e.localClasses.status
+                }) : e._e()] : ["waitingForMore" === e.player.status ? a("p", {
+                    class: e.localClasses.status
+                }, [e._v(e._s(e.neededText))]) : e._e(), e._v(" "), "canStart" === e.player.status ? a("p", {
+                    class: e.localClasses.status
+                }, [e._v(e._s(e.waitingForVIPText))]) : e._e(), e._v(" "), "countdown" === e.player.status ? a("p", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "LOBBY.GAME_STARTING",
+                        expression: "'LOBBY.GAME_STARTING'"
+                    }],
+                    class: e.localClasses.status
+                }) : e._e()], e._v(" "), "bottom" === e.messageLocation ? a("p", {
+                    class: e.localClasses.message,
+                    domProps: {
+                        textContent: e._s(e.joinedCountText)
+                    }
+                }) : e._e()], 2)
             };
-            n._withStripped = !0;
+            s._withStripped = !0;
             var r = a(2934),
-                i = a.n(r),
-                s = a(3682);
-            const o = i().extend({
+                n = a.n(r),
+                i = a(65853);
+            const o = n().extend({
                 props: {
-                    autosize: Boolean,
-                    value: String
+                    cancelText: String,
+                    classes: Object,
+                    messageLocation: String,
+                    player: Object,
+                    shouldStart: Function,
+                    startText: String
                 },
-                watch: {
-                    value(e, t) {
-                        e !== t && (this.$refs.textarea.value = e)
+                i18n: {
+                    messages: i.s
+                },
+                computed: {
+                    joinedCountText() {
+                        return this.$tc("LOBBY.JOINED_COUNT", this.player.joinedPlayers, {
+                            count: this.player.joinedPlayers,
+                            maxPlayers: this.player.maxPlayers
+                        })
+                    },
+                    localClasses() {
+                        var e, t, a, s, r, n;
+                        return {
+                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
+                            status: null !== (s = null === (a = this.classes) || void 0 === a ? void 0 : a.status) && void 0 !== s ? s : "status",
+                            action: null !== (n = null === (r = this.classes) || void 0 === r ? void 0 : r.action) && void 0 !== n ? n : "action"
+                        }
+                    },
+                    neededText() {
+                        return this.$tc("LOBBY.PLAYERS_NEEDED", this.player.minPlayers - this.player.joinedPlayers)
+                    },
+                    waitingForVIPText() {
+                        return this.$t("LOBBY.WAITING_FOR_VIP", {
+                            name: this.player.vipName
+                        })
                     }
-                },
-                mounted() {
-                    this.autosize && (0, s.Z)(this.$refs.textarea)
                 },
                 methods: {
-                    onInput(e) {
-                        return t = this, a = void 0, r = function*() {
-                            const t = e.target;
-                            if (!(null == t ? void 0 : t.value)) return;
-                            t.value = t.value.replaceAll("\n", "");
-                            const a = -1 === t.maxLength ? Number.MAX_SAFE_INTEGER : t.maxLength;
-                            t.value.length > a ? t.value = t.value.substring(0, a) : (this.$emit("input", t.value), yield i().nextTick(), t.value !== this.value && (t.value = this.value))
-                        }, new((n = void 0) || (n = Promise))((function(e, i) {
-                            function s(e) {
+                    onCancelClick() {
+                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
+                            action: "cancel"
+                        }).catch(this.$handleEcastError)
+                    },
+                    onStartClick() {
+                        return e = this, t = void 0, s = function*() {
+                            if (this.player.responseKey) {
+                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
+                                this.$ecast.updateObject(this.player.responseKey, {
+                                    action: "start"
+                                }).catch(this.$handleEcastError)
+                            }
+                        }, new((a = void 0) || (a = Promise))((function(r, n) {
+                            function i(e) {
                                 try {
-                                    l(r.next(e))
+                                    l(s.next(e))
                                 } catch (e) {
-                                    i(e)
+                                    n(e)
                                 }
                             }
 
                             function o(e) {
                                 try {
-                                    l(r.throw(e))
+                                    l(s.throw(e))
                                 } catch (e) {
-                                    i(e)
+                                    n(e)
                                 }
                             }
 
-                            function l(t) {
-                                var a;
-                                t.done ? e(t.value) : (a = t.value, a instanceof n ? a : new n((function(e) {
-                                    e(a)
-                                }))).then(s, o)
+                            function l(e) {
+                                var t;
+                                e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
+                                    e(t)
+                                }))).then(i, o)
                             }
-                            l((r = r.apply(t, a || [])).next())
+                            l((s = s.apply(e, t || [])).next())
                         }));
-                        var t, a, n, r
-                    },
-                    onKeydownEnter(e) {
-                        this.$emit("keydown", e)
+                        var e, t, a, s
                     }
                 }
             });
-            var l = (0, a(51900).Z)(o, n, [], !1, null, null, null);
-            l.options.__file = "src/apps/vue/components/TextArea.vue";
+            var l = (0, a(51900).Z)(o, s, [], !1, null, null, null);
+            l.options.__file = "src/apps/vue/components/LobbyActions.vue";
             const c = l.exports
+        },
+        83933: (e, t, a) => {
+            "use strict";
+            a.d(t, {
+                Z: () => u
+            });
+            var s = function() {
+                var e = this,
+                    t = e.$createElement,
+                    a = e._self._c || t;
+                return e.player && e.player.status ? a("div", {
+                    staticClass: "post-game-actions",
+                    class: {
+                        vip: e.player.hasControls
+                    }
+                }, [e.messageLocation && "top" !== e.messageLocation ? e._e() : a("p", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "POST_GAME.PLAY_AGAIN",
+                        expression: "'POST_GAME.PLAY_AGAIN'"
+                    }],
+                    class: e.localClasses.message
+                }), e._v(" "), e.player.hasControls ? ["waiting" === e.player.status ? a("button", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "POST_GAME.BUTTON_SAME_PLAYERS",
+                        expression: "'POST_GAME.BUTTON_SAME_PLAYERS'"
+                    }],
+                    class: e.localClasses.action,
+                    on: {
+                        click: e.onSamePlayersClick
+                    }
+                }) : e._e(), e._v(" "), "waiting" === e.player.status ? a("button", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "POST_GAME.BUTTON_NEW_PLAYERS",
+                        expression: "'POST_GAME.BUTTON_NEW_PLAYERS'"
+                    }],
+                    class: e.localClasses.action,
+                    on: {
+                        click: e.onNewPlayersClick
+                    }
+                }) : e._e(), e._v(" "), "countdown" === e.player.status ? a("button", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "LOBBY.BUTTON_CANCEL",
+                        expression: "'LOBBY.BUTTON_CANCEL'"
+                    }],
+                    class: e.localClasses.action,
+                    on: {
+                        click: e.onCancelClick
+                    }
+                }) : e._e()] : e.player.gamepadStart ? [a("p", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "LOBBY.WAITING_FOR_GAMEPAD",
+                        expression: "'LOBBY.WAITING_FOR_GAMEPAD'"
+                    }],
+                    class: e.localClasses.status
+                })] : [a("p", {
+                    class: e.localClasses.status
+                }, [e._v(e._s(e.waitingForVIPText))])], e._v(" "), "bottom" === e.messageLocation ? a("p", {
+                    directives: [{
+                        name: "t",
+                        rawName: "v-t",
+                        value: "POST_GAME.PLAY_AGAIN",
+                        expression: "'POST_GAME.PLAY_AGAIN'"
+                    }],
+                    class: e.localClasses.message
+                }) : e._e()], 2) : e._e()
+            };
+            s._withStripped = !0;
+            var r = a(2934),
+                n = a.n(r),
+                i = a(65853),
+                o = function(e, t, a, s) {
+                    return new(a || (a = Promise))((function(r, n) {
+                        function i(e) {
+                            try {
+                                l(s.next(e))
+                            } catch (e) {
+                                n(e)
+                            }
+                        }
+
+                        function o(e) {
+                            try {
+                                l(s.throw(e))
+                            } catch (e) {
+                                n(e)
+                            }
+                        }
+
+                        function l(e) {
+                            var t;
+                            e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
+                                e(t)
+                            }))).then(i, o)
+                        }
+                        l((s = s.apply(e, t || [])).next())
+                    }))
+                };
+            const l = n().extend({
+                props: {
+                    shouldStart: Function,
+                    messageLocation: String,
+                    classes: Object,
+                    player: Object
+                },
+                i18n: {
+                    messages: i.s
+                },
+                computed: {
+                    localClasses() {
+                        var e, t, a, s, r, n;
+                        return {
+                            message: null !== (t = null === (e = this.classes) || void 0 === e ? void 0 : e.message) && void 0 !== t ? t : "message",
+                            status: null !== (s = null === (a = this.classes) || void 0 === a ? void 0 : a.status) && void 0 !== s ? s : "status",
+                            action: null !== (n = null === (r = this.classes) || void 0 === r ? void 0 : r.action) && void 0 !== n ? n : "action"
+                        }
+                    },
+                    waitingForVIPText() {
+                        return this.$t("LOBBY.WAITING_FOR_VIP", {
+                            name: this.player.vipName
+                        })
+                    }
+                },
+                methods: {
+                    onSamePlayersClick() {
+                        return o(this, void 0, void 0, (function*() {
+                            if (this.player.responseKey) {
+                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
+                                this.$ecast.updateObject(this.player.responseKey, {
+                                    action: "samePlayers"
+                                }).catch(this.$handleEcastError)
+                            }
+                        }))
+                    },
+                    onNewPlayersClick() {
+                        return o(this, void 0, void 0, (function*() {
+                            if (this.player.responseKey) {
+                                if (this.shouldStart && !(yield Promise.resolve(this.shouldStart()))) return;
+                                this.$ecast.updateObject(this.player.responseKey, {
+                                    action: "newPlayers"
+                                }).catch(this.$handleEcastError)
+                            }
+                        }))
+                    },
+                    onCancelClick() {
+                        this.player.responseKey && this.$ecast.updateObject(this.player.responseKey, {
+                            action: "cancel"
+                        }).catch(this.$handleEcastError)
+                    }
+                }
+            });
+            var c = (0, a(51900).Z)(l, s, [], !1, null, null, null);
+            c.options.__file = "src/apps/vue/components/PostGameActions.vue";
+            const u = c.exports
         },
         64785: (e, t, a) => {
             "use strict";
             a.r(t), a.d(t, {
-                default: () => ne
+                default: () => se
             });
-            var n = function() {
+            var s = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -763,7 +810,12 @@
                     attrs: {
                         player: e.player
                     }
-                }) : e._e()] : e.audience ? ["voting" === e.audience.kind ? a("Voting", {
+                }) : e._e()] : e.audience ? ["postGame" === e.audience.kind ? a("PostGame", {
+                    attrs: {
+                        artifact: e.artifact,
+                        player: e.audience
+                    }
+                }) : "voting" === e.audience.kind ? a("Voting", {
                     attrs: {
                         player: e.audience
                     }
@@ -774,10 +826,10 @@
                     }
                 }) : e._e()] : e._e()], 2)])], 1)
             };
-            n._withStripped = !0;
+            s._withStripped = !0;
             var r = a(2934),
-                i = a.n(r),
-                s = a(65853),
+                n = a.n(r),
+                i = a(65853),
                 o = function() {
                     var e = this,
                         t = e.$createElement,
@@ -794,9 +846,9 @@
                         staticClass: "instructions"
                     }), e._v(" "), a("div", {
                         staticClass: "avatars"
-                    }, [e._l(e.player.avatars, (function(t, n) {
+                    }, [e._l(e.player.avatars, (function(t, s) {
                         return [a("button", {
-                            key: "av" + n,
+                            key: "av" + s,
                             staticClass: "avatar",
                             class: {
                                 selected: t.name === e.selectedAvatar.name
@@ -941,13 +993,13 @@
                             value: "UGC.EPISODES_SELECT",
                             expression: "'UGC.EPISODES_SELECT'"
                         }]
-                    }), e._v(" "), e._l(e.episodes, (function(t, n) {
+                    }), e._v(" "), e._l(e.episodes, (function(t, s) {
                         return a("button", {
                             key: t.remoteContentId || t.localContentId,
                             staticClass: "episode",
                             on: {
                                 click: function(t) {
-                                    return t.preventDefault(), e.onLoadSelection(n)
+                                    return t.preventDefault(), e.onLoadSelection(s)
                                 }
                             }
                         }, [e._v("\n            " + e._s(t.metadata.title) + "\n            "), t.remoteContentId ? a("span", {
@@ -1212,8 +1264,8 @@
                     }
                 }
             };
-            i().use(u.ZP);
-            const h = i().extend({
+            n().use(u.ZP);
+            const A = n().extend({
                 components: {
                     Input: p.Z
                 },
@@ -1250,24 +1302,24 @@
                 }
             });
             var v = a(51900),
-                A = (0, v.Z)(h, c, [], !1, null, "468e05a0", null);
-            A.options.__file = "src/games/tjsp/quiplash3/views/UGC/EpisodesModal.vue";
-            const f = A.exports;
-            var m = function(e, t, a, n) {
-                return new(a || (a = Promise))((function(r, i) {
-                    function s(e) {
+                h = (0, v.Z)(A, c, [], !1, null, "468e05a0", null);
+            h.options.__file = "src/games/tjsp/quiplash3/views/UGC/EpisodesModal.vue";
+            const m = h.exports;
+            var f = function(e, t, a, s) {
+                return new(a || (a = Promise))((function(r, n) {
+                    function i(e) {
                         try {
-                            l(n.next(e))
+                            l(s.next(e))
                         } catch (e) {
-                            i(e)
+                            n(e)
                         }
                     }
 
                     function o(e) {
                         try {
-                            l(n.throw(e))
+                            l(s.throw(e))
                         } catch (e) {
-                            i(e)
+                            n(e)
                         }
                     }
 
@@ -1275,12 +1327,12 @@
                         var t;
                         e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
                             e(t)
-                        }))).then(s, o)
+                        }))).then(i, o)
                     }
-                    l((n = n.apply(e, t || [])).next())
+                    l((s = s.apply(e, t || [])).next())
                 }))
             };
-            const T = i().extend({
+            const _ = n().extend({
                 components: {
                     LobbyActions: l.Z
                 },
@@ -1315,7 +1367,7 @@
                         window.location.href = `mailto:support@jackboxgames.com?subject=Report episode id ${this.player.formattedActiveContentId}`
                     },
                     onEpisodeUnload() {
-                        return m(this, void 0, void 0, (function*() {
+                        return f(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "ugc-unload"
@@ -1326,7 +1378,7 @@
                         }))
                     },
                     onEpisodeViewAuthor() {
-                        return m(this, void 0, void 0, (function*() {
+                        return f(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
                                     action: "ugc-view-author"
@@ -1337,9 +1389,9 @@
                         }))
                     },
                     onEpisodeViewMenu() {
-                        return m(this, void 0, void 0, (function*() {
+                        return f(this, void 0, void 0, (function*() {
                             if (!this.player.responseKey) return;
-                            const e = yield this.$showModal(f, {
+                            const e = yield this.$showModal(m, {
                                 episodes: this.player.history
                             });
                             if (e && "close" !== e.action) try {
@@ -1353,7 +1405,7 @@
                         }))
                     },
                     onSelectAvatar(e) {
-                        return m(this, void 0, void 0, (function*() {
+                        return f(this, void 0, void 0, (function*() {
                             if (this.player.responseKey) {
                                 try {
                                     yield this.$ecast.updateObject(this.player.responseKey, {
@@ -1369,9 +1421,9 @@
                     }
                 }
             });
-            var _ = (0, v.Z)(T, o, [], !1, null, "1e91a8ef", null);
-            _.options.__file = "src/games/tjsp/quiplash3/views/Lobby.vue";
-            const y = _.exports;
+            var T = (0, v.Z)(_, o, [], !1, null, "1e91a8ef", null);
+            T.options.__file = "src/games/tjsp/quiplash3/views/Lobby.vue";
+            const y = T.exports;
             var E = function() {
                 var e = this,
                     t = e.$createElement,
@@ -1395,16 +1447,16 @@
                 })])
             };
             E._withStripped = !0;
-            const O = i().extend({
+            const O = n().extend({
                 props: {
                     avatar: Object,
                     name: String
                 }
             });
-            var b = (0, v.Z)(O, E, [], !1, null, "7c2ebeaf", null);
-            b.options.__file = "src/games/tjsp/quiplash3/views/NameHeader.vue";
-            const g = b.exports;
-            var C = function() {
+            var C = (0, v.Z)(O, E, [], !1, null, "7c2ebeaf", null);
+            C.options.__file = "src/games/tjsp/quiplash3/views/NameHeader.vue";
+            const b = C.exports;
+            var g = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -1420,10 +1472,10 @@
                     }
                 })], 1)
             };
-            C._withStripped = !0;
+            g._withStripped = !0;
             var R = a(56623),
                 I = a(83933);
-            const L = i().extend({
+            const P = n().extend({
                 components: {
                     GalleryLink: R.Z,
                     PostGameActions: I.Z
@@ -1433,62 +1485,62 @@
                     player: Object
                 }
             });
-            var N = (0, v.Z)(L, C, [], !1, null, "4c9fa129", null);
+            var N = (0, v.Z)(P, g, [], !1, null, "4c9fa129", null);
             N.options.__file = "src/games/tjsp/quiplash3/views/PostGame.vue";
-            const x = N.exports;
-            var P = function() {
+            const L = N.exports;
+            var S = function() {
                 var e = this,
                     t = e.$createElement,
-                    n = e._self._c || t;
-                return n("div", {
+                    s = e._self._c || t;
+                return s("div", {
                     staticClass: "ugc"
-                }, [n("div", {
+                }, [s("div", {
                     staticClass: "instruction",
                     domProps: {
                         textContent: e._s(e.instruction)
                     }
-                }), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("toggle-visibility") ? [n("div", {
+                }), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("toggle-visibility") ? [s("div", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
                         value: "UGC.INSTRUCTION.TOGGLE_VISIBILITY",
                         expression: "'UGC.INSTRUCTION.TOGGLE_VISIBILITY'"
                     }]
-                }), e._v(" "), n("button", {
+                }), e._v(" "), s("button", {
                     staticClass: "toggle-visibility controller",
                     on: {
                         click: function(t) {
                             return t.preventDefault(), e.onToggleVisibility("controller")
                         }
                     }
-                }, [e.player.controllerVisibility ? [n("img", {
+                }, [e.player.controllerVisibility ? [s("img", {
                     attrs: {
                         src: a(73816),
                         alt: e.$t("ALT.UGC.VISIBILITY_CONTROLLER_ON")
                     }
-                })] : [n("img", {
+                })] : [s("img", {
                     attrs: {
                         src: a(88348),
                         alt: e.$t("ALT.UGC.VISIBILITY_CONTROLLER_OFF")
                     }
-                })]], 2), e._v(" "), n("button", {
+                })]], 2), e._v(" "), s("button", {
                     staticClass: "toggle-visibility screen",
                     on: {
                         click: function(t) {
                             return t.preventDefault(), e.onToggleVisibility("screen")
                         }
                     }
-                }, [e.player.screenVisibility ? [n("img", {
+                }, [e.player.screenVisibility ? [s("img", {
                     attrs: {
                         src: a(97131),
                         alt: e.$t("ALT.UGC.VISIBILITY_SCREEN_ON")
                     }
-                })] : [n("img", {
+                })] : [s("img", {
                     attrs: {
                         src: a(57009),
                         alt: e.$t("ALT.UGC.VISIBILITY_SCREEN_OFF")
                     }
-                })]], 2)] : e._e(), e._v(" "), e.player.validActions.includes("new") ? [n("button", {
+                })]], 2)] : e._e(), e._v(" "), e.player.validActions.includes("new") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1501,9 +1553,9 @@
                             return t.preventDefault(), e.onAction("new")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("load") && e.player.episodes.length > 0 ? [n("div", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("load") && e.player.episodes.length > 0 ? [s("div", {
                     staticClass: "episodes-list"
-                }, [n("span", {
+                }, [s("span", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1511,44 +1563,44 @@
                         expression: "'UGC.PREVIOUS_EPISODES'"
                     }]
                 }), e._v(" "), e._l(e.player.episodes, (function(t, a) {
-                    return n("div", {
+                    return s("div", {
                         key: t.remoteContentId || t.localContentId
-                    }, [n("button", {
+                    }, [s("button", {
                         staticClass: "action-button",
                         on: {
                             click: function(t) {
                                 return t.preventDefault(), e.onEpisodeClick(a)
                             }
                         }
-                    }, [n("span", {
+                    }, [s("span", {
                         domProps: {
                             textContent: e._s(t.metadata.title)
                         }
-                    }), e._v(" "), null != t.remoteContentId ? n("span", {
+                    }), e._v(" "), null != t.remoteContentId ? s("span", {
                         staticClass: "id",
                         domProps: {
                             textContent: e._s(t.formattedRemoteContentId)
                         }
                     }) : e._e()])])
-                }))], 2)] : e._e()] : [n("div", {
+                }))], 2)] : e._e()] : [s("div", {
                     domProps: {
                         textContent: e._s(e.player.noActionsText)
                     }
-                })], e._v(" "), e.player.text ? n("div", {
+                })], e._v(" "), e.player.text ? s("div", {
                     staticClass: "prompt ugc-text",
                     attrs: {
                         id: "prompt",
                         "v-text": e.player.text
                     }
-                }) : e._e(), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("add") ? [n("div", {
+                }) : e._e(), e._v(" "), e.player.validActions.length > 0 ? [e.player.validActions.includes("add") ? [s("div", {
                     attrs: {
                         id: "prompt"
                     }
-                }, [null != e.promptCharacterCount ? n("div", {
+                }, [null != e.promptCharacterCount ? s("div", {
                     domProps: {
                         textContent: e._s(e.promptCharacterCount)
                     }
-                }) : e._e(), e._v(" "), n("input", {
+                }) : e._e(), e._v(" "), s("input", {
                     directives: [{
                         name: "model",
                         rawName: "v-model",
@@ -1566,15 +1618,15 @@
                     on: {
                         change: function(t) {
                             var a = e.isThriplash,
-                                n = t.target,
-                                r = !!n.checked;
+                                s = t.target,
+                                r = !!s.checked;
                             if (Array.isArray(a)) {
-                                var i = e._i(a, null);
-                                n.checked ? i < 0 && (e.isThriplash = a.concat([null])) : i > -1 && (e.isThriplash = a.slice(0, i).concat(a.slice(i + 1)))
+                                var n = e._i(a, null);
+                                s.checked ? n < 0 && (e.isThriplash = a.concat([null])) : n > -1 && (e.isThriplash = a.slice(0, n).concat(a.slice(n + 1)))
                             } else e.isThriplash = r
                         }
                     }
-                }), e._v(" "), n("TextArea", {
+                }), e._v(" "), s("TextArea", {
                     ref: "prompt",
                     staticClass: "prompt",
                     attrs: {
@@ -1597,7 +1649,7 @@
                         },
                         expression: "promptText"
                     }
-                }), e._v(" "), n("button", {
+                }), e._v(" "), s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1613,26 +1665,31 @@
                             return t.preventDefault(), e.createNewPrompt.apply(null, arguments)
                         }
                     }
-                })], 1)] : e._e(), e._v(" "), e.player.validActions.includes("title") ? [n("label", {
+                }), e._v(" "), e.player.error ? s("div", {
+                    staticClass: "error",
+                    domProps: {
+                        textContent: e._s(e.player.error)
+                    }
+                }) : e._e()], 1)] : e._e(), e._v(" "), e.player.validActions.includes("title") ? [s("label", {
                     attrs: {
                         for: "title"
                     }
-                }, [n("span", {
+                }, [s("span", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
                         value: "UGC.INSTRUCTION.CREATE_TITLE",
                         expression: "'UGC.INSTRUCTION.CREATE_TITLE'"
                     }]
-                })]), e._v(" "), n("div", {
+                })]), e._v(" "), s("div", {
                     attrs: {
                         id: "title"
                     }
-                }, [null != e.titleCharacterCount ? n("div", {
+                }, [null != e.titleCharacterCount ? s("div", {
                     domProps: {
                         textContent: e._s(e.titleCharacterCount)
                     }
-                }) : e._e(), e._v(" "), n("TextArea", {
+                }) : e._e(), e._v(" "), s("TextArea", {
                     ref: "title",
                     attrs: {
                         rows: "1",
@@ -1652,7 +1709,7 @@
                         },
                         expression: "titleText"
                     }
-                }), e._v(" "), n("button", {
+                }), e._v(" "), s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1665,7 +1722,7 @@
                             return t.preventDefault(), e.createNewEpisode.apply(null, arguments)
                         }
                     }
-                })], 1)] : e._e(), e._v(" "), e.player.validActions.includes("close") ? [n("button", {
+                })], 1)] : e._e(), e._v(" "), e.player.validActions.includes("close") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1678,7 +1735,7 @@
                             return t.preventDefault(), e.onAction("close")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("unlock") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("unlock") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1691,7 +1748,7 @@
                             return t.preventDefault(), e.onAction("unlock")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("done") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("done") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1704,7 +1761,7 @@
                             return t.preventDefault(), e.onAction("done")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("submit") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("submit") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1717,7 +1774,7 @@
                             return t.preventDefault(), e.showTermsOfService.apply(null, arguments)
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("play") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("play") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1730,7 +1787,7 @@
                             return t.preventDefault(), e.onAction("play")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("remove-content") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("remove-content") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1743,7 +1800,7 @@
                             return t.preventDefault(), e.confirmDeleteEpisode.apply(null, arguments)
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("exit") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("exit") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1756,7 +1813,7 @@
                             return t.preventDefault(), e.onAction("exit")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("episodes") ? [n("button", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("episodes") ? [s("button", {
                     directives: [{
                         name: "t",
                         rawName: "v-t",
@@ -1769,16 +1826,16 @@
                             return t.preventDefault(), e.onAction("episodes")
                         }
                     }
-                })] : e._e(), e._v(" "), e.player.validActions.includes("remove") ? [n("div", {
+                })] : e._e(), e._v(" "), e.player.validActions.includes("remove") ? [s("div", {
                     staticClass: "prompts-list"
-                }, [n("span", {
+                }, [s("span", {
                     domProps: {
                         textContent: e._s(e.promptsCount)
                     }
                 }), e._v(" "), e._l(e.player.prompts, (function(t, a) {
-                    return n("div", {
+                    return s("div", {
                         key: a
-                    }, [n("button", {
+                    }, [s("button", {
                         staticClass: "player-prompt",
                         class: {
                             other: t.author !== e.userId, thriplash: "thriplash" === t.type
@@ -1794,25 +1851,25 @@
                     })])
                 }))], 2)] : e._e()] : e._e()], 2)
             };
-            P._withStripped = !0;
-            var S = a(3682),
-                w = a(38266),
-                G = a(89446),
-                V = function(e, t, a, n) {
-                    return new(a || (a = Promise))((function(r, i) {
-                        function s(e) {
+            S._withStripped = !0;
+            var x = a(3682),
+                G = a(38266),
+                w = a(89446),
+                V = function(e, t, a, s) {
+                    return new(a || (a = Promise))((function(r, n) {
+                        function i(e) {
                             try {
-                                l(n.next(e))
+                                l(s.next(e))
                             } catch (e) {
-                                i(e)
+                                n(e)
                             }
                         }
 
                         function o(e) {
                             try {
-                                l(n.throw(e))
+                                l(s.throw(e))
                             } catch (e) {
-                                i(e)
+                                n(e)
                             }
                         }
 
@@ -1820,14 +1877,14 @@
                             var t;
                             e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
                                 e(t)
-                            }))).then(s, o)
+                            }))).then(i, o)
                         }
-                        l((n = n.apply(e, t || [])).next())
+                        l((s = s.apply(e, t || [])).next())
                     }))
                 };
-            const U = i().extend({
+            const U = n().extend({
                 components: {
-                    TextArea: w.Z
+                    TextArea: G.Z
                 },
                 props: {
                     player: Object
@@ -1856,8 +1913,8 @@
                             maxCount: t,
                             prompts: a
                         } = this.player;
-                        let n = `${e}/${t}`;
-                        return a.length < e && (n += ` ${this.$t("UGC.PROMPTS_COUNT_HIDDEN",{count:e-a.length})}`), n
+                        let s = `${e}/${t}`;
+                        return a.length < e && (s += ` ${this.$t("UGC.PROMPTS_COUNT_HIDDEN",{count:e-a.length})}`), s
                     },
                     titleCharacterCount() {
                         return this.player.maxTitleLength ? this.player.maxTitleLength - this.titleText.length : null
@@ -1867,7 +1924,7 @@
                     }
                 },
                 mounted() {
-                    (0, S.Z)([this.$refs.prompt, this.$refs.title])
+                    (0, x.Z)([this.$refs.prompt, this.$refs.title])
                 },
                 methods: {
                     confirmDeleteEpisode() {
@@ -1956,10 +2013,10 @@
                         }).catch(this.$handleEcastError)
                     },
                     onInputPrompt() {
-                        this.promptText = G.c.sanitizeInput(this.promptText)
+                        this.promptText = w.c.sanitizeInput(this.promptText)
                     },
                     onInputTitle() {
-                        this.titleText = G.c.sanitizeInput(this.titleText)
+                        this.titleText = w.c.sanitizeInput(this.titleText)
                     },
                     onPromptClick(e) {
                         this.$ecast.updateObject(this.player.responseKey, {
@@ -1975,9 +2032,9 @@
                     }
                 }
             });
-            var k = (0, v.Z)(U, P, [], !1, null, null, null);
-            k.options.__file = "src/games/tjsp/quiplash3/views/UGC/Ugc.vue";
-            const $ = k.exports;
+            var $ = (0, v.Z)(U, S, [], !1, null, null, null);
+            $.options.__file = "src/games/tjsp/quiplash3/views/UGC/Ugc.vue";
+            const k = $.exports;
             var D = function() {
                 var e = this,
                     t = e.$createElement,
@@ -2027,7 +2084,7 @@
                 }))], 2)
             };
             D._withStripped = !0;
-            const F = i().extend({
+            const B = n().extend({
                 props: {
                     player: Object
                 },
@@ -2051,12 +2108,12 @@
                                 this.isSubmitting = !1, this.selected = null, this.$handleEcastError(e)
                             }
                             this.hasSubmit = !0
-                        }, new((n = void 0) || (n = Promise))((function(e, i) {
-                            function s(e) {
+                        }, new((s = void 0) || (s = Promise))((function(e, n) {
+                            function i(e) {
                                 try {
                                     l(r.next(e))
                                 } catch (e) {
-                                    i(e)
+                                    n(e)
                                 }
                             }
 
@@ -2064,57 +2121,57 @@
                                 try {
                                     l(r.throw(e))
                                 } catch (e) {
-                                    i(e)
+                                    n(e)
                                 }
                             }
 
                             function l(t) {
                                 var a;
-                                t.done ? e(t.value) : (a = t.value, a instanceof n ? a : new n((function(e) {
+                                t.done ? e(t.value) : (a = t.value, a instanceof s ? a : new s((function(e) {
                                     e(a)
-                                }))).then(s, o)
+                                }))).then(i, o)
                             }
                             l((r = r.apply(t, a || [])).next())
                         }));
-                        var t, a, n, r
+                        var t, a, s, r
                     }
                 }
             });
-            var M = (0, v.Z)(F, D, [], !1, null, "22404244", null);
-            M.options.__file = "src/games/tjsp/quiplash3/views/Voting.vue";
-            const j = M.exports;
-            var B = function() {
+            var j = (0, v.Z)(B, D, [], !1, null, "22404244", null);
+            j.options.__file = "src/games/tjsp/quiplash3/views/Voting.vue";
+            const M = j.exports;
+            var F = function() {
                 var e = this,
                     t = e.$createElement,
-                    n = e._self._c || t;
-                return n("div", {
+                    s = e._self._c || t;
+                return s("div", {
                     staticClass: "waiting"
-                }, [n("div", {
+                }, [s("div", {
                     staticClass: "logo"
-                }, [1 === e.player.round ? n("img", {
+                }, [1 === e.player.round ? s("img", {
                     staticClass: "round",
                     attrs: {
                         alt: e.$t("ALT.LOGO_1"),
                         src: a(24374)
                     }
-                }) : 2 === e.player.round ? n("img", {
+                }) : 2 === e.player.round ? s("img", {
                     staticClass: "round",
                     attrs: {
                         alt: e.$t("ALT.LOGO_2"),
                         src: a(59865)
                     }
-                }) : 3 === e.player.round ? n("img", {
+                }) : 3 === e.player.round ? s("img", {
                     staticClass: "round",
                     attrs: {
                         alt: e.$t("ALT.LOGO_3"),
                         src: a(87692)
                     }
-                }) : n("img", {
+                }) : s("img", {
                     attrs: {
                         alt: e.$t("ALT.LOGO_GAME"),
                         src: a(52237)
                     }
-                })]), e._v(" "), e.player.message ? n("p", {
+                })]), e._v(" "), e.player.message ? s("p", {
                     directives: [{
                         name: "bb",
                         rawName: "v-bb",
@@ -2122,14 +2179,14 @@
                         expression: "player.message"
                     }],
                     staticClass: "message"
-                }) : e._e(), e._v(" "), n("GalleryLink", {
+                }) : e._e(), e._v(" "), s("GalleryLink", {
                     attrs: {
                         artifact: e.artifact
                     }
                 })], 1)
             };
-            B._withStripped = !0;
-            const H = i().extend({
+            F._withStripped = !0;
+            const Y = n().extend({
                 components: {
                     GalleryLink: R.Z
                 },
@@ -2141,10 +2198,10 @@
                     messages: d
                 }
             });
-            var z = (0, v.Z)(H, B, [], !1, null, "442df3a6", null);
-            z.options.__file = "src/games/tjsp/quiplash3/views/Waiting.vue";
-            const W = z.exports;
-            var K = function() {
+            var H = (0, v.Z)(Y, F, [], !1, null, "442df3a6", null);
+            H.options.__file = "src/games/tjsp/quiplash3/views/Waiting.vue";
+            const K = H.exports;
+            var W = function() {
                 var e = this,
                     t = e.$createElement,
                     a = e._self._c || t;
@@ -2172,43 +2229,42 @@
                     attrs: {
                         for: "textarea"
                     }
-                }), e._v(" "), e._l(e.answers, (function(t, n) {
+                }), e._v(" "), e._l(e.answers, (function(t, s) {
                     return a("div", {
-                        key: "answer" + n,
+                        key: "answer" + s,
                         staticClass: "answer"
                     }, [a("div", {
                         staticClass: "character-counter"
-                    }, [e._v(e._s(e.answers[n].charCount) + "/" + e._s(e.player.maxLength))]), e._v(" "), a("TextArea", {
-                        ref: "answer" + n,
+                    }, [e._v(e._s(e.answers[s].charCount) + "/" + e._s(e.player.maxLength))]), e._v(" "), a("TextArea", {
+                        ref: "answer" + s,
                         refInFor: !0,
                         attrs: {
                             autocomplete: "off",
                             autocorrect: "off",
                             autosize: "",
                             disabled: e.isSubmitting,
-                            enterkeyhint: n === e.answers.length - 1 ? "done" : "next",
+                            enterkeyhint: s === e.answers.length - 1 ? "done" : "next",
                             placeholder: e.$t("WRITING.ANSWER_PLACEHOLDER"),
                             rows: "1",
                             spellcheck: "false"
                         },
                         on: {
                             input: function(t) {
-                                return e.onInput(t, n)
+                                return e.onInput(t, s)
                             },
                             keydown: function(t) {
-                                return !t.type.indexOf("key") && e._k(t.keyCode, "enter", 13, t.key, "Enter") ? null : (t.preventDefault(), e.focusNext(n))
+                                return !t.type.indexOf("key") && e._k(t.keyCode, "enter", 13, t.key, "Enter") ? null : (t.preventDefault(), e.focusNext(s))
                             }
                         },
                         model: {
-                            value: e.answers[n].text,
+                            value: e.answers[s].text,
                             callback: function(t) {
-                                e.$set(e.answers[n], "text", t)
+                                e.$set(e.answers[s], "text", t)
                             },
                             expression: "answers[idx].text"
                         }
                     })], 1)
                 })), e._v(" "), e.error ? a("span", {
-                    staticClass: "error",
                     domProps: {
                         textContent: e._s(e.error)
                     }
@@ -2251,24 +2307,24 @@
                     }
                 })])])
             };
-            K._withStripped = !0;
+            W._withStripped = !0;
             var q = a(55507),
                 Q = a(48598),
-                Y = function(e, t, a, n) {
-                    return new(a || (a = Promise))((function(r, i) {
-                        function s(e) {
+                z = function(e, t, a, s) {
+                    return new(a || (a = Promise))((function(r, n) {
+                        function i(e) {
                             try {
-                                l(n.next(e))
+                                l(s.next(e))
                             } catch (e) {
-                                i(e)
+                                n(e)
                             }
                         }
 
                         function o(e) {
                             try {
-                                l(n.throw(e))
+                                l(s.throw(e))
                             } catch (e) {
-                                i(e)
+                                n(e)
                             }
                         }
 
@@ -2276,14 +2332,14 @@
                             var t;
                             e.done ? r(e.value) : (t = e.value, t instanceof a ? t : new a((function(e) {
                                 e(t)
-                            }))).then(s, o)
+                            }))).then(i, o)
                         }
-                        l((n = n.apply(e, t || [])).next())
+                        l((s = s.apply(e, t || [])).next())
                     }))
                 };
-            const Z = i().extend({
+            const Z = n().extend({
                 components: {
-                    TextArea: w.Z
+                    TextArea: G.Z
                 },
                 props: {
                     player: Object
@@ -2322,7 +2378,7 @@
                 },
                 methods: {
                     autoSubmit() {
-                        return Y(this, void 0, void 0, (function*() {
+                        return z(this, void 0, void 0, (function*() {
                             try {
                                 yield this.$ecast.updateText(this.player.textKey, this.answer)
                             } catch (e) {
@@ -2331,7 +2387,7 @@
                         }))
                     },
                     focusNext(e) {
-                        return Y(this, void 0, void 0, (function*() {
+                        return z(this, void 0, void 0, (function*() {
                             const t = this.$refs[`answer${e+1}`];
                             t ? this.$nextTick((() => {
                                 var e;
@@ -2344,17 +2400,17 @@
                         this.error && (this.error = "")
                     },
                     onInput(e, t) {
-                        return Y(this, void 0, void 0, (function*() {
+                        return z(this, void 0, void 0, (function*() {
                             this.resetError();
                             const {
                                 charCount: a,
-                                result: n
+                                result: s
                             } = (0, Q.I)(e, this.player.maxLength);
-                            this.answers[t].charCount = a, this.answers[t].text = n, yield this.autoSubmit()
+                            this.answers[t].charCount = a, this.answers[t].text = s, yield this.autoSubmit()
                         }))
                     },
                     onSubmit() {
-                        return Y(this, void 0, void 0, (function*() {
+                        return z(this, void 0, void 0, (function*() {
                             if (this.answer.length) {
                                 this.isSubmitting = !0;
                                 try {
@@ -2369,7 +2425,7 @@
                         }))
                     },
                     onSafetyQuip() {
-                        return Y(this, void 0, void 0, (function*() {
+                        return z(this, void 0, void 0, (function*() {
                             this.isSubmitting = !0;
                             try {
                                 yield this.$ecast.updateObject(this.player.responseKey, {
@@ -2382,20 +2438,20 @@
                     }
                 }
             });
-            var X = (0, v.Z)(Z, K, [], !1, null, "7d0e76b5", null);
+            var X = (0, v.Z)(Z, W, [], !1, null, "7d0e76b5", null);
             X.options.__file = "src/games/tjsp/quiplash3/views/Writing.vue";
             const J = X.exports,
                 ee = {
                     isWaiting: e => "waiting" === e.kind
                 };
-            const te = i().extend({
+            const te = n().extend({
                 components: {
-                    NameHeader: g,
+                    NameHeader: b,
                     Lobby: y,
-                    PostGame: x,
-                    Ugc: $,
-                    Voting: j,
-                    Waiting: W,
+                    PostGame: L,
+                    Ugc: k,
+                    Voting: M,
+                    Waiting: K,
                     Writing: J
                 },
                 ecastKeys: {
@@ -2428,7 +2484,7 @@
                 },
                 i18n: {
                     messages: d,
-                    sharedMessages: s.s
+                    sharedMessages: i.s
                 },
                 data: () => ({
                     avatarImages: {},
@@ -2565,12 +2621,12 @@
                                     selected: (yield Promise.resolve().then(a.t.bind(a, 88247, 17))).default
                                 }
                             }
-                        }, new((n = void 0) || (n = Promise))((function(a, i) {
-                            function s(e) {
+                        }, new((s = void 0) || (s = Promise))((function(a, n) {
+                            function i(e) {
                                 try {
                                     l(r.next(e))
                                 } catch (e) {
-                                    i(e)
+                                    n(e)
                                 }
                             }
 
@@ -2578,25 +2634,25 @@
                                 try {
                                     l(r.throw(e))
                                 } catch (e) {
-                                    i(e)
+                                    n(e)
                                 }
                             }
 
                             function l(e) {
                                 var t;
-                                e.done ? a(e.value) : (t = e.value, t instanceof n ? t : new n((function(e) {
+                                e.done ? a(e.value) : (t = e.value, t instanceof s ? t : new s((function(e) {
                                     e(t)
-                                }))).then(s, o)
+                                }))).then(i, o)
                             }
                             l((r = r.apply(e, t || [])).next())
                         }));
-                        var e, t, n, r
+                        var e, t, s, r
                     }
                 }
             });
-            var ae = (0, v.Z)(te, n, [], !1, null, null, null);
+            var ae = (0, v.Z)(te, s, [], !1, null, null, null);
             ae.options.__file = "src/games/tjsp/quiplash3/views/Main.vue";
-            const ne = ae.exports
+            const se = ae.exports
         },
         67294: (e, t, a) => {
             "use strict";
@@ -2760,4 +2816,4 @@
         }
     }
 ]);
-//# sourceMappingURL=sourcemaps/2427.7c257803be968a38cd84.js.map
+//# sourceMappingURL=sourcemaps/2427.e0fd2a1d9918887747b8.js.map

@@ -166,7 +166,7 @@
             const v = r().View.extend({
                 appId: "legacymain",
                 appTag: "legacymain",
-                appVersion: "4.2.2-Capy",
+                appVersion: "4.2.10-Capy",
                 template: null,
                 initialize(t) {
                     this.mergeOptions(t, ["appId", "appTag"]), d.app.analytics.setApplication(this.getOption("appTag"), this.getOption("appId"), this.appVersion), d.app.analytics.trackScreenView(this.getOption("appId")), this.model = new(u().Model)({});

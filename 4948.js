@@ -1215,7 +1215,7 @@
                     messages: U
                 },
                 data: () => ({
-                    version: "4.2.2-Capy"
+                    version: "4.2.10-Capy"
                 }),
                 computed: {
                     isTwitchAuthenticated() {
