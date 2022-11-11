@@ -176,7 +176,7 @@
             const v = r().View.extend({
                 appId: "legacymain",
                 appTag: "legacymain",
-                appVersion: "4.2.10",
+                appVersion: "4.2.10-Capy",
                 template: null,
                 initialize(t) {
                     this.mergeOptions(t, ["appId", "appTag"]), d.app.analytics.setApplication({
