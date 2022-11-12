@@ -113,15 +113,15 @@
 }
 
 @font-face {
-    font-family: "Rubik";
-    src: url("quiplash2/a4bece5c270c316c1c24.ttf");
+    font-family: "Podkova";
+    src: url("//fonts.googleapis.com/css?family=Podkova:400,700&subset=cyrillic");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
-    font-family: "Rubik";
-    src: url("quiplash2/2263cf4bbb29e585de1b.ttf");
+    font-family: "Podkova";
+    src: url("//fonts.googleapis.com/css?family=Podkova:400,700&subset=cyrillic");
     font-weight: 500;
     font-style: normal
 }
