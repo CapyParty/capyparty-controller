@@ -879,7 +879,7 @@
                     const e = this.sanitizeInput(t).replace(/'/g, "’");
                     return p.c.htmlEscape(e).trim()
                 },
-                sanitizeInput: t => t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF!?*$+\-’'_ .,=<>:;]/gi, ""),
+                sanitizeInput: t => t.replace(/[^A-Z0-9\u00A1\u0020-\u002F\u00BF-\u00FF\u0406-\u0408\u0410-\u044F\u0401\u0451\u0456-\u0458!?*$+\-’'_ .,=<>:;]/gi, ""),
                 validateInput(t) {
                     const e = s()(t.target);
                     let i = e.val();
