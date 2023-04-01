@@ -3879,7 +3879,7 @@
                             return Promise.all([n.e(6498), n.e(524), n.e(990), n.e(972), n.e(4442), n.e(4340), n.e("games/jackbox-talks")]).then(n.bind(n, 54677))
                         }))
                     }, {
-                        name: "UNSUPPORTED GAME",
+                        name: "Blindlash 3",
                         app: "marionette",
                         tag: "quiplash3",
                         features: ["moderation"],
